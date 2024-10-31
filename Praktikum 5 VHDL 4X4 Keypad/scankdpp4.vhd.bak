@@ -1,0 +1,57 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+USE ieee.std_logic_unsigned.all;
+
+ENTITY scankdpp4 IS
+PORT(
+    clk,clr : IN Std_logic;
+    s : OUT std_logic_vector(6 downto 0)
+);
+END scankdpp4;
+
+ARCHITECTURE scankdpp4_arch OF scankdpp4 IS
+    SIGNAL divd : std_logic_vector(6 downto 0);
+    SIGNAL sftd : std_logic_vector(15 downto 0);
+    SIGNAL sel : std_logic_vector(1 downto 0);
+    SIGNAL cntout : std_logic_vector(3 downto 0);
+    SIGNAL count : INTEGER RANGE 0 TO 3 := 0; -- counter for displaying numbers
+
+BEGIN
+
+    ----------scan display--------
+    PROCESS(clk)
+    BEGIN
+        IF clk'EVENT AND clk = '1' THEN
+            divd <= divd + 1;
+            sel <= divd(5 downto 4);
+            
+            -- Increment counter every 4 cycles
+            IF divd = "1100001" THEN
+                count <= (count + 1) MOD 4;
+            END IF;
+        END IF;
+
+        CASE count IS
+            WHEN 0 =>
+                cntout <= "0001";  -- Display 1
+            WHEN 1 =>
+                cntout <= "0010";  -- Display 2
+            WHEN 2 =>
+                cntout <= "0011";  -- Display 3
+            WHEN 3 =>
+                cntout <= "0100";  -- Display 4
+            WHEN OTHERS =>
+                cntout <= "1111";  -- Turn off display
+        END CASE;
+    END PROCESS;
+
+    -----------------7-segment display table------------
+    s <=  "0111111" WHEN cntout = "0000" ELSE
+          "0000110" WHEN cntout = "0001" ELSE
+          "1011011" WHEN cntout = "0010" ELSE
+          "1001111" WHEN cntout = "0011" ELSE
+          "1100110" WHEN cntout = "0100" ELSE
+          "0000000"; -- Add other patterns here if necessary
+
+END scankdpp4_arch;

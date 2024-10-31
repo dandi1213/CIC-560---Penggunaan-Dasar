@@ -1,0 +1,88 @@
+Flow report for pwmsin
+Thu Apr 27 16:44:23 2006
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Elapsed Time
+  5. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------+
+; Flow Summary                                                       ;
++-------------------------+------------------------------------------+
+; Flow Status             ; Successful - Thu Apr 27 16:44:23 2006    ;
+; Quartus II Version      ; 5.0 Build 148 04/26/2005 SJ Full Version ;
+; Revision Name           ; pwmsin                                   ;
+; Top-level Entity Name   ; pwmsin                                   ;
+; Family                  ; Cyclone                                  ;
+; Device                  ; EP1C12Q240C8                             ;
+; Timing Models           ; Final                                    ;
+; Met timing requirements ; Yes                                      ;
+; Total logic elements    ; 0 / 12,060 ( 0 % )                       ;
+; Total pins              ; 18 / 173 ( 10 % )                        ;
+; Total virtual pins      ; 0                                        ;
+; Total memory bits       ; 1,280 / 239,616 ( < 1 % )                ;
+; Total PLLs              ; 0 / 2 ( 0 % )                            ;
++-------------------------+------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 04/27/2006 16:44:08 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; pwmsin              ;
++-------------------+---------------------+
+
+
++-------------------------------------+
+; Flow Elapsed Time                   ;
++----------------------+--------------+
+; Module Name          ; Elapsed Time ;
++----------------------+--------------+
+; Analysis & Synthesis ; 00:00:02     ;
+; Fitter               ; 00:00:06     ;
+; Assembler            ; 00:00:03     ;
+; Timing Analyzer      ; 00:00:01     ;
+; Total                ; 00:00:12     ;
++----------------------+--------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off pwmsin -c pwmsin
+quartus_fit --read_settings_files=off --write_settings_files=off pwmsin -c pwmsin
+quartus_asm --read_settings_files=off --write_settings_files=off pwmsin -c pwmsin
+quartus_tan --read_settings_files=off --write_settings_files=off pwmsin -c pwmsin --timing_analysis_only
+
+
+

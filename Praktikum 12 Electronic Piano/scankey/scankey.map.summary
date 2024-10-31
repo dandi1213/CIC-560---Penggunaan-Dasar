@@ -1,0 +1,13 @@
+Flow Status : Successful - Fri Sep 01 15:28:12 2006
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : scankey
+Top-level Entity Name : scankey
+Family : Cyclone
+Device : EP1C12Q240C8
+Timing Models : Final
+Met timing requirements : N/A
+Total logic elements : 68
+Total pins : 27
+Total virtual pins : 0
+Total memory bits : 0
+Total PLLs : 0

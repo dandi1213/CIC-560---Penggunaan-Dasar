@@ -1,0 +1,12 @@
+Fitter Status : Successful - Fri Jul 11 16:36:46 2008
+Quartus II Version : 6.0 Build 178 04/27/2006 SJ Full Version
+Revision Name : FNGDAS8
+Top-level Entity Name : fngdas8
+Family : Cyclone
+Device : EP1C12Q240C8
+Timing Models : Final
+Total logic elements : 54 / 12,060 ( < 1 % )
+Total pins : 36 / 173 ( 21 % )
+Total virtual pins : 0
+Total memory bits : 2,048 / 239,616 ( < 1 % )
+Total PLLs : 0 / 2 ( 0 % )

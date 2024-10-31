@@ -1,0 +1,790 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--scnt[2] is scnt[2] at LC3_D17
+--operation mode is normal
+
+scnt[2]_lut_out = scnt[0] & (scnt[1] $ scnt[2]) # !scnt[0] & scnt[1] & scnt[2];
+scnt[2] = DFFEA(scnt[2]_lut_out, GLOBAL(scnclk), , , , , );
+
+--A1L411Q is scnt[2]~65 at LC3_D17
+--operation mode is normal
+
+A1L411Q = scnt[2];
+
+
+--scnt[1] is scnt[1] at LC8_D17
+--operation mode is normal
+
+scnt[1]_lut_out = scnt[0] $ scnt[1];
+scnt[1] = DFFEA(scnt[1]_lut_out, GLOBAL(scnclk), , , , , );
+
+--A1L211Q is scnt[1]~66 at LC8_D17
+--operation mode is normal
+
+A1L211Q = scnt[1];
+
+
+--scnt[0] is scnt[0] at LC2_D17
+--operation mode is normal
+
+scnt[0]_lut_out = !scnt[0] & (scnt[1] # !scnt[2]);
+scnt[0] = DFFEA(scnt[0]_lut_out, GLOBAL(scnclk), , , , , );
+
+--A1L011Q is scnt[0]~67 at LC2_D17
+--operation mode is normal
+
+A1L011Q = scnt[0];
+
+
+--A1L55 is Mux~88 at LC7_D17
+--operation mode is normal
+
+A1L55 = !scnt[0] & !scnt[1] & scnt[2];
+
+--A1L06 is Mux~93 at LC7_D17
+--operation mode is normal
+
+A1L06 = !scnt[0] & !scnt[1] & scnt[2];
+
+
+--A1L65 is Mux~89 at LC4_D17
+--operation mode is normal
+
+A1L65 = !scnt[2] & scnt[0] & scnt[1];
+
+--A1L16 is Mux~94 at LC4_D17
+--operation mode is normal
+
+A1L16 = !scnt[2] & scnt[0] & scnt[1];
+
+
+--A1L75 is Mux~90 at LC1_D17
+--operation mode is normal
+
+A1L75 = !scnt[0] & !scnt[2] & scnt[1];
+
+--A1L26 is Mux~95 at LC1_D17
+--operation mode is normal
+
+A1L26 = !scnt[0] & !scnt[2] & scnt[1];
+
+
+--A1L85 is Mux~91 at LC6_D17
+--operation mode is normal
+
+A1L85 = !scnt[2] & !scnt[1] & scnt[0];
+
+--A1L36 is Mux~96 at LC6_D17
+--operation mode is normal
+
+A1L36 = !scnt[2] & !scnt[1] & scnt[0];
+
+
+--A1L95 is Mux~92 at LC5_D17
+--operation mode is normal
+
+A1L95 = !scnt[0] & !scnt[1] & !scnt[2];
+
+--A1L46 is Mux~97 at LC5_D17
+--operation mode is normal
+
+A1L46 = !scnt[0] & !scnt[1] & !scnt[2];
+
+
+--A1L12 is hexd[0]~873 at LC2_D15
+--operation mode is normal
+
+A1L12 = scnt[0] & (datai[4]) # !scnt[0] & (scnt[1] & (datai[4]) # !scnt[1] & datah[4]);
+
+--A1L52 is hexd[0]~899 at LC2_D15
+--operation mode is normal
+
+A1L52 = scnt[0] & (datai[4]) # !scnt[0] & (scnt[1] & (datai[4]) # !scnt[1] & datah[4]);
+
+
+--A1L22 is hexd[0]~874 at LC3_D15
+--operation mode is normal
+
+A1L22 = scnt[0] & (datai[4] # scnt[1]) # !scnt[0] & datai[8] & (!scnt[1]);
+
+--A1L62 is hexd[0]~900 at LC3_D15
+--operation mode is normal
+
+A1L62 = scnt[0] & (datai[4] # scnt[1]) # !scnt[0] & datai[8] & (!scnt[1]);
+
+
+--A1L32 is hexd[0]~875 at LC4_D15
+--operation mode is normal
+
+A1L32 = A1L22 & (datah[0] # !scnt[1]) # !A1L22 & (scnt[1] & datai[0]);
+
+--A1L72 is hexd[0]~901 at LC4_D15
+--operation mode is normal
+
+A1L72 = A1L22 & (datah[0] # !scnt[1]) # !A1L22 & (scnt[1] & datai[0]);
+
+
+--A1L42 is hexd[0]~876 at LC1_D15
+--operation mode is normal
+
+A1L42 = scnt[2] & (A1L12) # !scnt[2] & A1L32;
+
+--A1L82 is hexd[0]~902 at LC1_D15
+--operation mode is normal
+
+A1L82 = scnt[2] & (A1L12) # !scnt[2] & A1L32;
+
+
+--A1L92 is hexd[1]~877 at LC3_D3
+--operation mode is normal
+
+A1L92 = scnt[0] & (datai[5]) # !scnt[0] & (scnt[1] & (datai[5]) # !scnt[1] & datah[5]);
+
+--A1L33 is hexd[1]~903 at LC3_D3
+--operation mode is normal
+
+A1L33 = scnt[0] & (datai[5]) # !scnt[0] & (scnt[1] & (datai[5]) # !scnt[1] & datah[5]);
+
+
+--A1L03 is hexd[1]~878 at LC4_D3
+--operation mode is normal
+
+A1L03 = scnt[0] & (datai[5] # scnt[1]) # !scnt[0] & datai[9] & (!scnt[1]);
+
+--A1L43 is hexd[1]~904 at LC4_D3
+--operation mode is normal
+
+A1L43 = scnt[0] & (datai[5] # scnt[1]) # !scnt[0] & datai[9] & (!scnt[1]);
+
+
+--A1L13 is hexd[1]~879 at LC5_D3
+--operation mode is normal
+
+A1L13 = A1L03 & (datah[1] # !scnt[1]) # !A1L03 & (scnt[1] & datai[1]);
+
+--A1L53 is hexd[1]~905 at LC5_D3
+--operation mode is normal
+
+A1L53 = A1L03 & (datah[1] # !scnt[1]) # !A1L03 & (scnt[1] & datai[1]);
+
+
+--A1L23 is hexd[1]~880 at LC2_D3
+--operation mode is normal
+
+A1L23 = scnt[2] & (A1L92) # !scnt[2] & A1L13;
+
+--A1L63 is hexd[1]~906 at LC2_D3
+--operation mode is normal
+
+A1L63 = scnt[2] & (A1L92) # !scnt[2] & A1L13;
+
+
+--A1L511 is s~368 at LC2_D1
+--operation mode is normal
+
+A1L511 = A1L42 & (A1L23 $ !A1L04 # !A1L94) # !A1L42 & (A1L23 # A1L04 $ A1L94);
+
+--A1L821 is s~392 at LC2_D1
+--operation mode is normal
+
+A1L821 = A1L42 & (A1L23 $ !A1L04 # !A1L94) # !A1L42 & (A1L23 # A1L04 $ A1L94);
+
+
+--A1L611 is s~369 at LC1_D1
+--operation mode is normal
+
+A1L611 = A1L23 & (!A1L42 & !A1L04 # !A1L94) # !A1L23 & (A1L04 $ A1L94 # !A1L42);
+
+--A1L921 is s~393 at LC1_D1
+--operation mode is normal
+
+A1L921 = A1L23 & (!A1L42 & !A1L04 # !A1L94) # !A1L23 & (A1L04 $ A1L94 # !A1L42);
+
+
+--A1L711 is s~370 at LC3_D14
+--operation mode is normal
+
+A1L711 = A1L23 & (!A1L94 # !A1L42) # !A1L23 & (A1L04 & !A1L42 # !A1L04 & (!A1L94));
+
+--A1L031 is s~394 at LC3_D14
+--operation mode is normal
+
+A1L031 = A1L23 & (!A1L94 # !A1L42) # !A1L23 & (A1L04 & !A1L42 # !A1L04 & (!A1L94));
+
+
+--A1L811 is s~371 at LC7_D1
+--operation mode is normal
+
+A1L811 = A1L23 & (A1L42 & A1L04 # !A1L42 & (A1L94 # !A1L04)) # !A1L23 & (A1L42 $ A1L04 # !A1L94);
+
+--A1L131 is s~395 at LC7_D1
+--operation mode is normal
+
+A1L131 = A1L23 & (A1L42 & A1L04 # !A1L42 & (A1L94 # !A1L04)) # !A1L23 & (A1L42 $ A1L04 # !A1L94);
+
+
+--A1L911 is s~372 at LC4_D1
+--operation mode is normal
+
+A1L911 = A1L04 & (A1L42 # !A1L94 # !A1L23) # !A1L04 & (A1L94 # !A1L23 & A1L42);
+
+--A1L231 is s~396 at LC4_D1
+--operation mode is normal
+
+A1L231 = A1L04 & (A1L42 # !A1L94 # !A1L23) # !A1L04 & (A1L94 # !A1L23 & A1L42);
+
+
+--A1L021 is s~373 at LC5_D14
+--operation mode is normal
+
+A1L021 = A1L23 & (A1L42 & (A1L94) # !A1L42 & A1L04) # !A1L23 & (A1L04 # A1L42 $ A1L94);
+
+--A1L331 is s~397 at LC5_D14
+--operation mode is normal
+
+A1L331 = A1L23 & (A1L42 & (A1L94) # !A1L42 & A1L04) # !A1L23 & (A1L04 # A1L42 $ A1L94);
+
+
+--A1L121 is s~374 at LC5_D15
+--operation mode is normal
+
+A1L121 = A1L04 & (A1L23 $ !A1L94 # !A1L42) # !A1L04 & (A1L23 # A1L42 $ !A1L94);
+
+--A1L431 is s~398 at LC5_D15
+--operation mode is normal
+
+A1L431 = A1L04 & (A1L23 $ !A1L94 # !A1L42) # !A1L04 & (A1L23 # A1L42 $ !A1L94);
+
+
+--A1L64 is hexd[3]~887 at LC6_D3
+--operation mode is normal
+
+A1L64 = scnt[0] # scnt[2] # !scnt[1] # !datai[3];
+
+--A1L05 is hexd[3]~907 at LC6_D3
+--operation mode is normal
+
+A1L05 = scnt[0] # scnt[2] # !scnt[1] # !datai[3];
+
+--A1L15 is hexd[3]~908 at LC6_D3
+--operation mode is normal
+
+A1L15 = scnt[0] # scnt[2] # !scnt[1] # !datai[3];
+
+
+--A1L74 is hexd[3]~888 at LC2_D2
+--operation mode is normal
+
+A1L74 = scnt[1] & (datah[3]) # !scnt[1] & datai[7];
+
+--A1L25 is hexd[3]~909 at LC2_D2
+--operation mode is normal
+
+A1L25 = scnt[1] & (datah[3]) # !scnt[1] & datai[7];
+
+
+--A1L84 is hexd[3]~889 at LC5_D2
+--operation mode is normal
+
+A1L84 = scnt[0] & (datai[7]) # !scnt[0] & (scnt[1] & (datai[7]) # !scnt[1] & datah[7]);
+
+--A1L35 is hexd[3]~910 at LC5_D2
+--operation mode is normal
+
+A1L35 = scnt[0] & (datai[7]) # !scnt[0] & (scnt[1] & (datai[7]) # !scnt[1] & datah[7]);
+
+
+--A1L94 is hexd[3]~895 at LC7_D3
+--operation mode is normal
+
+A1L94 = (scnt[2] & !A1L84 # !scnt[2] & (!scnt[0] # !A1L74)) & CASCADE(A1L15);
+
+--A1L45 is hexd[3]~911 at LC7_D3
+--operation mode is normal
+
+A1L45 = (scnt[2] & !A1L84 # !scnt[2] & (!scnt[0] # !A1L74)) & CASCADE(A1L15);
+
+
+--A1L73 is hexd[2]~891 at LC7_D15
+--operation mode is normal
+
+A1L73 = scnt[0] # scnt[2] # !scnt[1] # !datai[2];
+
+--A1L14 is hexd[2]~912 at LC7_D15
+--operation mode is normal
+
+A1L14 = scnt[0] # scnt[2] # !scnt[1] # !datai[2];
+
+--A1L24 is hexd[2]~913 at LC7_D15
+--operation mode is normal
+
+A1L24 = scnt[0] # scnt[2] # !scnt[1] # !datai[2];
+
+
+--A1L83 is hexd[2]~892 at LC4_D2
+--operation mode is normal
+
+A1L83 = scnt[1] & (datah[2]) # !scnt[1] & datai[6];
+
+--A1L34 is hexd[2]~914 at LC4_D2
+--operation mode is normal
+
+A1L34 = scnt[1] & (datah[2]) # !scnt[1] & datai[6];
+
+
+--A1L93 is hexd[2]~893 at LC6_D15
+--operation mode is normal
+
+A1L93 = scnt[0] & (datai[6]) # !scnt[0] & (scnt[1] & (datai[6]) # !scnt[1] & datah[6]);
+
+--A1L44 is hexd[2]~915 at LC6_D15
+--operation mode is normal
+
+A1L44 = scnt[0] & (datai[6]) # !scnt[0] & (scnt[1] & (datai[6]) # !scnt[1] & datah[6]);
+
+
+--A1L04 is hexd[2]~896 at LC8_D15
+--operation mode is normal
+
+A1L04 = (scnt[2] & !A1L93 # !scnt[2] & (!scnt[0] # !A1L83)) & CASCADE(A1L24);
+
+--A1L54 is hexd[2]~916 at LC8_D15
+--operation mode is normal
+
+A1L54 = (scnt[2] & !A1L93 # !scnt[2] & (!scnt[0] # !A1L83)) & CASCADE(A1L24);
+
+
+--A1L56 is reduce_nor~163 at LC4_D14
+--operation mode is normal
+
+A1L56 = A1L23 & A1L42 & A1L04 & !A1L94;
+
+--A1L97 is reduce_nor~177 at LC4_D14
+--operation mode is normal
+
+A1L97 = A1L23 & A1L42 & A1L04 & !A1L94;
+
+
+--A1L66 is reduce_nor~164 at LC6_D14
+--operation mode is normal
+
+A1L66 = !A1L23 & A1L42 & !A1L04 & A1L94;
+
+--A1L08 is reduce_nor~178 at LC6_D14
+--operation mode is normal
+
+A1L08 = !A1L23 & A1L42 & !A1L04 & A1L94;
+
+
+--A1L76 is reduce_nor~165 at LC7_D14
+--operation mode is normal
+
+A1L76 = !A1L23 & !A1L42 & A1L04 & !A1L94;
+
+--A1L18 is reduce_nor~179 at LC7_D14
+--operation mode is normal
+
+A1L18 = !A1L23 & !A1L42 & A1L04 & !A1L94;
+
+
+--A1L86 is reduce_nor~166 at LC8_D14
+--operation mode is normal
+
+A1L86 = A1L23 & A1L42 & A1L04 & A1L94;
+
+--A1L28 is reduce_nor~180 at LC8_D14
+--operation mode is normal
+
+A1L28 = A1L23 & A1L42 & A1L04 & A1L94;
+
+
+--A1L221 is s~379 at LC1_D14
+--operation mode is normal
+
+A1L221 = A1L86 # A1L76 # A1L66 # A1L56;
+
+--A1L531 is s~399 at LC1_D14
+--operation mode is normal
+
+A1L531 = A1L86 # A1L76 # A1L66 # A1L56;
+
+
+--A1L96 is reduce_nor~167 at LC5_D1
+--operation mode is normal
+
+A1L96 = A1L23 & A1L42 & !A1L04 & A1L94;
+
+--A1L38 is reduce_nor~181 at LC5_D1
+--operation mode is normal
+
+A1L38 = A1L23 & A1L42 & !A1L04 & A1L94;
+
+
+--A1L07 is reduce_nor~168 at LC6_D1
+--operation mode is normal
+
+A1L07 = A1L23 & !A1L42 & !A1L04 & A1L94;
+
+--A1L48 is reduce_nor~182 at LC6_D1
+--operation mode is normal
+
+A1L48 = A1L23 & !A1L42 & !A1L04 & A1L94;
+
+
+--A1L321 is s~380 at LC8_D1
+--operation mode is normal
+
+A1L321 = !A1L07 & !A1L96 & !A1L221 & A1L721;
+
+--A1L631 is s~400 at LC8_D1
+--operation mode is normal
+
+A1L631 = !A1L07 & !A1L96 & !A1L221 & A1L721;
+
+--A1L731 is s~401 at LC8_D1
+--operation mode is normal
+
+A1L731 = !A1L07 & !A1L96 & !A1L221 & A1L721;
+
+
+--A1L421 is s~381 at LC8_D3
+--operation mode is normal
+
+A1L421 = !A1L04 & !A1L94;
+
+--A1L831 is s~402 at LC8_D3
+--operation mode is normal
+
+A1L831 = !A1L04 & !A1L94;
+
+
+--A1L621 is s~388 at LC1_D3
+--operation mode is normal
+
+A1L621 = (scnt[2] & !A1L92 # !scnt[2] & (!A1L13) # !A1L421) & CASCADE(A1L731);
+
+--A1L931 is s~403 at LC1_D3
+--operation mode is normal
+
+A1L931 = (scnt[2] & !A1L92 # !scnt[2] & (!A1L13) # !A1L421) & CASCADE(A1L731);
+
+
+--A1L17 is reduce_nor~169 at LC3_D1
+--operation mode is normal
+
+A1L17 = A1L23 & !A1L42 & A1L04 & A1L94;
+
+--A1L58 is reduce_nor~183 at LC3_D1
+--operation mode is normal
+
+A1L58 = A1L23 & !A1L42 & A1L04 & A1L94;
+
+
+--A1L27 is reduce_nor~170 at LC1_D23
+--operation mode is normal
+
+A1L27 = !A1L23 & A1L42 & !A1L04 & !A1L94;
+
+--A1L68 is reduce_nor~184 at LC1_D23
+--operation mode is normal
+
+A1L68 = !A1L23 & A1L42 & !A1L04 & !A1L94;
+
+
+--A1L37 is reduce_nor~171 at LC2_D23
+--operation mode is normal
+
+A1L37 = !A1L23 & !A1L42 & A1L04 & A1L94;
+
+--A1L78 is reduce_nor~185 at LC2_D23
+--operation mode is normal
+
+A1L78 = !A1L23 & !A1L42 & A1L04 & A1L94;
+
+
+--A1L47 is reduce_nor~172 at LC2_D14
+--operation mode is normal
+
+A1L47 = !A1L23 & !A1L42 & !A1L04 & !A1L94;
+
+--A1L88 is reduce_nor~186 at LC2_D14
+--operation mode is normal
+
+A1L88 = !A1L23 & !A1L42 & !A1L04 & !A1L94;
+
+
+--A1L521 is s~386 at LC3_D23
+--operation mode is normal
+
+A1L521 = !A1L47 & !A1L37 & !A1L27 & !A1L17;
+
+--A1L041 is s~404 at LC3_D23
+--operation mode is normal
+
+A1L041 = !A1L47 & !A1L37 & !A1L27 & !A1L17;
+
+--A1L141 is s~405 at LC3_D23
+--operation mode is normal
+
+A1L141 = !A1L47 & !A1L37 & !A1L27 & !A1L17;
+
+
+--A1L57 is reduce_nor~173 at LC5_D23
+--operation mode is normal
+
+A1L57 = A1L23 & !A1L42 & A1L04 & !A1L94;
+
+--A1L98 is reduce_nor~187 at LC5_D23
+--operation mode is normal
+
+A1L98 = A1L23 & !A1L42 & A1L04 & !A1L94;
+
+
+--A1L67 is reduce_nor~174 at LC6_D23
+--operation mode is normal
+
+A1L67 = !A1L23 & !A1L42 & !A1L04 & A1L94;
+
+--A1L09 is reduce_nor~188 at LC6_D23
+--operation mode is normal
+
+A1L09 = !A1L23 & !A1L42 & !A1L04 & A1L94;
+
+
+--A1L77 is reduce_nor~175 at LC7_D23
+--operation mode is normal
+
+A1L77 = !A1L23 & A1L42 & A1L04 & !A1L94;
+
+--A1L19 is reduce_nor~189 at LC7_D23
+--operation mode is normal
+
+A1L19 = !A1L23 & A1L42 & A1L04 & !A1L94;
+
+
+--A1L87 is reduce_nor~176 at LC8_D23
+--operation mode is normal
+
+A1L87 = !A1L23 & A1L42 & A1L04 & A1L94;
+
+--A1L29 is reduce_nor~190 at LC8_D23
+--operation mode is normal
+
+A1L29 = !A1L23 & A1L42 & A1L04 & A1L94;
+
+
+--A1L721 is s~389 at LC4_D23
+--operation mode is normal
+
+A1L721 = (!A1L87 & !A1L77 & !A1L67 & !A1L57) & CASCADE(A1L141);
+
+--A1L241 is s~406 at LC4_D23
+--operation mode is normal
+
+A1L241 = (!A1L87 & !A1L77 & !A1L67 & !A1L57) & CASCADE(A1L141);
+
+
+--scnclk is scnclk at PIN_79
+--operation mode is input
+
+scnclk = INPUT();
+
+
+--datai[4] is datai[4] at PIN_184
+--operation mode is input
+
+datai[4] = INPUT();
+
+
+--datah[4] is datah[4] at PIN_183
+--operation mode is input
+
+datah[4] = INPUT();
+
+
+--datai[0] is datai[0] at PIN_158
+--operation mode is input
+
+datai[0] = INPUT();
+
+
+--datai[8] is datai[8] at PIN_170
+--operation mode is input
+
+datai[8] = INPUT();
+
+
+--datah[0] is datah[0] at PIN_172
+--operation mode is input
+
+datah[0] = INPUT();
+
+
+--datai[5] is datai[5] at PIN_182
+--operation mode is input
+
+datai[5] = INPUT();
+
+
+--datah[5] is datah[5] at PIN_17
+--operation mode is input
+
+datah[5] = INPUT();
+
+
+--datai[1] is datai[1] at PIN_160
+--operation mode is input
+
+datai[1] = INPUT();
+
+
+--datai[9] is datai[9] at PIN_180
+--operation mode is input
+
+datai[9] = INPUT();
+
+
+--datah[1] is datah[1] at PIN_162
+--operation mode is input
+
+datah[1] = INPUT();
+
+
+--datai[3] is datai[3] at PIN_97
+--operation mode is input
+
+datai[3] = INPUT();
+
+
+--datah[3] is datah[3] at PIN_16
+--operation mode is input
+
+datah[3] = INPUT();
+
+
+--datai[7] is datai[7] at PIN_78
+--operation mode is input
+
+datai[7] = INPUT();
+
+
+--datah[7] is datah[7] at PIN_135
+--operation mode is input
+
+datah[7] = INPUT();
+
+
+--datai[2] is datai[2] at PIN_89
+--operation mode is input
+
+datai[2] = INPUT();
+
+
+--datah[2] is datah[2] at PIN_179
+--operation mode is input
+
+datah[2] = INPUT();
+
+
+--datai[6] is datai[6] at PIN_80
+--operation mode is input
+
+datai[6] = INPUT();
+
+
+--datah[6] is datah[6] at PIN_19
+--operation mode is input
+
+datah[6] = INPUT();
+
+
+--scan[0] is scan[0] at PIN_133
+--operation mode is output
+
+scan[0] = OUTPUT(A1L55);
+
+
+--scan[1] is scan[1] at PIN_149
+--operation mode is output
+
+scan[1] = OUTPUT(A1L65);
+
+
+--scan[2] is scan[2] at PIN_141
+--operation mode is output
+
+scan[2] = OUTPUT(A1L75);
+
+
+--scan[3] is scan[3] at PIN_168
+--operation mode is output
+
+scan[3] = OUTPUT(A1L85);
+
+
+--scan[4] is scan[4] at PIN_169
+--operation mode is output
+
+scan[4] = OUTPUT(A1L95);
+
+
+--s[6] is s[6] at PIN_104
+--operation mode is output
+
+s[6]_tri_out = TRI(A1L511, !A1L621);
+s[6] = OUTPUT(s[6]_tri_out);
+
+
+--s[5] is s[5] at PIN_122
+--operation mode is output
+
+s[5]_tri_out = TRI(A1L611, !A1L621);
+s[5] = OUTPUT(s[5]_tri_out);
+
+
+--s[4] is s[4] at PIN_93
+--operation mode is output
+
+s[4]_tri_out = TRI(A1L711, !A1L621);
+s[4] = OUTPUT(s[4]_tri_out);
+
+
+--s[3] is s[3] at PIN_103
+--operation mode is output
+
+s[3]_tri_out = TRI(A1L811, !A1L621);
+s[3] = OUTPUT(s[3]_tri_out);
+
+
+--s[2] is s[2] at PIN_112
+--operation mode is output
+
+s[2]_tri_out = TRI(A1L911, !A1L621);
+s[2] = OUTPUT(s[2]_tri_out);
+
+
+--s[1] is s[1] at PIN_18
+--operation mode is output
+
+s[1]_tri_out = TRI(A1L021, !A1L621);
+s[1] = OUTPUT(s[1]_tri_out);
+
+
+--s[0] is s[0] at PIN_134
+--operation mode is output
+
+s[0]_tri_out = TRI(A1L121, !A1L621);
+s[0] = OUTPUT(s[0]_tri_out);
+
+

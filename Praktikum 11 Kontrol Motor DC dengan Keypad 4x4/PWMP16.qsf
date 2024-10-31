@@ -1,0 +1,129 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, Altera MegaCore Function License
+# Agreement, or other applicable license agreement, including,
+# without limitation, that your use is for the sole purpose of
+# programming logic devices manufactured by Altera and sold by
+# Altera or its authorized distributors.  Please refer to the
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		PWMP16_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+
+# Project-Wide Assignments
+# ========================
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 6.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:04:22  APRIL 25, 2008"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name VHDL_FILE pwm16.vhd
+set_global_assignment -name BDF_FILE pwmp16.bdf
+set_global_assignment -name VHDL_FILE ../scankdpp4/sftd15.vhd
+set_global_assignment -name VHDL_FILE ../scankdpp4/debounceg.vhd
+set_global_assignment -name VHDL_FILE ../scankdpp4/decod4.vhd
+set_global_assignment -name BDF_FILE ../scankdpp4/fgdkey.bdf
+set_global_assignment -name VHDL_FILE ../scankdpp4/keybpg.vhd
+set_global_assignment -name VHDL_FILE ../scankdpp4/keyps4.vhd
+set_global_assignment -name VHDL_FILE ../scankdpp4/scankdpp4.vhd
+set_global_assignment -name VHDL_FILE ../scankdpp4/sel4.vhd
+set_global_assignment -name VHDL_FILE ../scankdpp4/keybpg/scank44.vhd
+set_global_assignment -name VHDL_FILE ../ACPWMSINE/scank44.vhd
+
+# Pin & Location Assignments
+# ==========================
+set_location_assignment PIN_1 -to clear
+set_location_assignment PIN_2 -to en
+set_location_assignment PIN_3 -to dir
+set_location_assignment PIN_128 -to prs
+set_location_assignment PIN_168 -to colk[3]
+set_location_assignment PIN_169 -to colk[2]
+set_location_assignment PIN_170 -to colk[1]
+set_location_assignment PIN_173 -to colk[0]
+set_location_assignment PIN_167 -to rowk[3]
+set_location_assignment PIN_166 -to rowk[2]
+set_location_assignment PIN_165 -to rowk[1]
+set_location_assignment PIN_164 -to rowk[0]
+set_location_assignment PIN_17 -to seg[6]
+set_location_assignment PIN_16 -to seg[5]
+set_location_assignment PIN_15 -to seg[4]
+set_location_assignment PIN_14 -to seg[3]
+set_location_assignment PIN_13 -to seg[2]
+set_location_assignment PIN_12 -to seg[1]
+set_location_assignment PIN_11 -to seg[0]
+set_location_assignment PIN_131 -to scn[3]
+set_location_assignment PIN_132 -to scn[2]
+set_location_assignment PIN_133 -to scn[1]
+set_location_assignment PIN_134 -to scn[0]
+set_location_assignment PIN_93 -to d[15]
+set_location_assignment PIN_94 -to d[14]
+set_location_assignment PIN_95 -to d[13]
+set_location_assignment PIN_98 -to d[12]
+set_location_assignment PIN_99 -to d[11]
+set_location_assignment PIN_100 -to d[10]
+set_location_assignment PIN_101 -to d[9]
+set_location_assignment PIN_104 -to d[8]
+set_location_assignment PIN_105 -to d[7]
+set_location_assignment PIN_106 -to d[6]
+set_location_assignment PIN_107 -to d[5]
+set_location_assignment PIN_108 -to d[4]
+set_location_assignment PIN_113 -to d[3]
+set_location_assignment PIN_114 -to d[2]
+set_location_assignment PIN_115 -to d[1]
+set_location_assignment PIN_116 -to d[0]
+set_location_assignment PIN_160 -to det[3]
+set_location_assignment PIN_161 -to det[2]
+set_location_assignment PIN_162 -to det[1]
+set_location_assignment PIN_163 -to det[0]
+set_location_assignment PIN_156 -to sdo
+set_location_assignment PIN_158 -to sign
+set_location_assignment PIN_28 -to sclk
+set_location_assignment PIN_136 -to pwm
+set_location_assignment PIN_135 -to f/r
+set_location_assignment PIN_153 -to pclk
+
+# Analysis & Synthesis Assignments
+# ================================
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 240
+set_global_assignment -name FAMILY Cyclone
+set_global_assignment -name TOP_LEVEL_ENTITY pwmp16
+
+# Fitter Assignments
+# ==================
+set_global_assignment -name DEVICE EP1C12Q240C8
+set_global_assignment -name CYCLONE_CONFIGURATION_SCHEME "PASSIVE SERIAL"
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+
+# Assembler Assignments
+# =====================
+set_global_assignment -name FLEX10K_CONFIGURATION_DEVICE EPC2
+set_global_assignment -name CYCLONE_CONFIGURATION_DEVICE EPC2
+
+# --------------------
+# start ENTITY(pwmp16)
+
+# end ENTITY(pwmp16)
+# ------------------
+set_global_assignment -name VECTOR_WAVEFORM_FILE PWMP16.vwf
+set_global_assignment -name VECTOR_INPUT_SOURCE PWMP16.vwf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name DEVICE_FILTER_PACKAGE PQFP
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVCMOS"
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name MISC_FILE "E:/CIC-560/Examples/Chapter6/6-14 pwmp16/PWMP16.dpf"
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"

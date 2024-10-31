@@ -1,0 +1,97 @@
+# Copyright (C) 1991-2005 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, Altera MegaCore Function License
+# Agreement, or other applicable license agreement, including,
+# without limitation, that your use is for the sole purpose of
+# programming logic devices manufactured by Altera and sold by
+# Altera or its authorized distributors.  Please refer to the
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		adc8dp_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+# Project-Wide Assignments
+# ========================
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 6.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:41:01  AUGUST 01, 2007"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
+
+# Pin & Location Assignments
+# ==========================
+set_location_assignment PIN_180 -to adco[0]
+set_location_assignment PIN_187 -to adco[7]
+set_location_assignment PIN_186 -to adco[6]
+set_location_assignment PIN_185 -to adco[5]
+set_location_assignment PIN_184 -to adco[4]
+set_location_assignment PIN_183 -to adco[3]
+set_location_assignment PIN_182 -to adco[2]
+set_location_assignment PIN_181 -to adco[1]
+set_location_assignment PIN_188 -to nWR
+set_location_assignment PIN_193 -to nRD
+set_location_assignment PIN_196 -to ADC_CS
+set_location_assignment PIN_194 -to int
+set_location_assignment PIN_11 -to SEG[0]
+set_location_assignment PIN_12 -to SEG[1]
+set_location_assignment PIN_13 -to SEG[2]
+set_location_assignment PIN_14 -to SEG[3]
+set_location_assignment PIN_15 -to SEG[4]
+set_location_assignment PIN_16 -to SEG[5]
+set_location_assignment PIN_17 -to SEG[6]
+set_location_assignment PIN_235 -to SCAN[2]
+set_location_assignment PIN_234 -to SCAN[1]
+set_location_assignment PIN_233 -to SCAN[0]
+set_location_assignment PIN_133 -to SCAN[4]
+set_location_assignment PIN_134 -to SCAN[3]
+set_location_assignment PIN_7 -to addr[2]
+set_location_assignment PIN_6 -to addr[1]
+set_location_assignment PIN_5 -to addr[0]
+set_location_assignment PIN_2 -to sampsel[1]
+set_location_assignment PIN_1 -to sampsel[0]
+set_location_assignment PIN_153 -to sclk
+set_location_assignment PIN_163 -to DATA_V
+
+# Analysis & Synthesis Assignments
+# ================================
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 240
+set_global_assignment -name FAMILY Cyclone
+set_global_assignment -name TOP_LEVEL_ENTITY adc8dp
+
+# Fitter Assignments
+# ==================
+set_global_assignment -name DEVICE EP1C12Q240C8
+set_global_assignment -name CYCLONE_CONFIGURATION_SCHEME "PASSIVE SERIAL"
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+
+# Assembler Assignments
+# =====================
+set_global_assignment -name FLEX10K_CONFIGURATION_DEVICE EPC2
+set_global_assignment -name CYCLONE_CONFIGURATION_DEVICE EPC2
+
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS OUTPUT DRIVING GROUND"
+set_global_assignment -name VECTOR_INPUT_SOURCE adc8dp.vwf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name ADD_DEFAULT_PINS_TO_SIMULATION_OUTPUT_WAVEFORMS OFF
+set_global_assignment -name BDF_FILE adc8dp.bdf
+set_global_assignment -name VHDL_FILE hexdec8/hexdec8.vhd
+set_global_assignment -name VHDL_FILE scndp5/scndp5.vhd
+set_global_assignment -name VHDL_FILE adc8i.vhd
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name DEVICE_FILTER_PACKAGE PQFP
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVCMOS"
+set_global_assignment -name SMART_RECOMPILE ON

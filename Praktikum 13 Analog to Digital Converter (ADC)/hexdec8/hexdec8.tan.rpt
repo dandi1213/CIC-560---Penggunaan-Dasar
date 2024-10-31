@@ -1,0 +1,423 @@
+Timing Analyzer report for hexdec8
+Sat Apr 22 22:02:53 2006
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'sysclk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                 ;
++------------------------------+-------+---------------+----------------------------------+--------------+---------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From         ; To      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------+---------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 7.100 ns                         ; hin[3]       ; hsr[3]  ;            ; sysclk   ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 14.300 ns                        ; dout[9]~reg0 ; dout[9] ; sysclk     ;          ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.400 ns                        ; hin[7]       ; hsr[7]  ;            ; sysclk   ; 0            ;
+; Clock Setup: 'sysclk'        ; N/A   ; None          ; 104.17 MHz ( period = 9.600 ns ) ; dsr[2]       ; dsr[0]  ; sysclk     ; sysclk   ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;              ;         ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------+---------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP1K100QC208-3     ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; Off                ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; sysclk          ;                    ; User Pin ; NONE             ; 0.000 ns      ; 0.000 ns     ; NONE     ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'sysclk'                                                                                                                                                                                                                                               ;
++-----------------------------------------+-----------------------------------------------------+----------------------------+----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                       ; To                         ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------+----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 104.17 MHz ( period = 9.600 ns )                    ; dsr[2]                     ; dsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.800 ns                ;
+; N/A                                     ; 104.17 MHz ( period = 9.600 ns )                    ; dsr[2]                     ; dsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.800 ns                ;
+; N/A                                     ; 107.53 MHz ( period = 9.300 ns )                    ; dsr[5]                     ; dsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.500 ns                ;
+; N/A                                     ; 108.70 MHz ( period = 9.200 ns )                    ; dsr[5]                     ; dsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.400 ns                ;
+; N/A                                     ; 108.70 MHz ( period = 9.200 ns )                    ; dsr[5]                     ; dsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.400 ns                ;
+; N/A                                     ; 108.70 MHz ( period = 9.200 ns )                    ; dsr[5]                     ; dsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.400 ns                ;
+; N/A                                     ; 109.89 MHz ( period = 9.100 ns )                    ; dsr[3]                     ; dsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.300 ns                ;
+; N/A                                     ; 109.89 MHz ( period = 9.100 ns )                    ; dsr[3]                     ; dsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.300 ns                ;
+; N/A                                     ; 111.11 MHz ( period = 9.000 ns )                    ; dsr[6]                     ; dsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.200 ns                ;
+; N/A                                     ; 111.11 MHz ( period = 9.000 ns )                    ; dsr[6]                     ; dsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.200 ns                ;
+; N/A                                     ; 111.11 MHz ( period = 9.000 ns )                    ; dsr[6]                     ; dsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.200 ns                ;
+; N/A                                     ; 111.11 MHz ( period = 9.000 ns )                    ; dsr[6]                     ; dsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.200 ns                ;
+; N/A                                     ; 111.11 MHz ( period = 9.000 ns )                    ; dsr[1]                     ; dsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.200 ns                ;
+; N/A                                     ; 111.11 MHz ( period = 9.000 ns )                    ; dsr[1]                     ; dsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.200 ns                ;
+; N/A                                     ; 112.36 MHz ( period = 8.900 ns )                    ; dsr[2]                     ; dsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 113.64 MHz ( period = 8.800 ns )                    ; dsr[4]                     ; dsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.000 ns                ;
+; N/A                                     ; 113.64 MHz ( period = 8.800 ns )                    ; dsr[2]                     ; dsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.000 ns                ;
+; N/A                                     ; 113.64 MHz ( period = 8.800 ns )                    ; stas[1]                    ; tdo[9]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.000 ns                ;
+; N/A                                     ; 113.64 MHz ( period = 8.800 ns )                    ; stas[1]                    ; tdo[8]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.000 ns                ;
+; N/A                                     ; 113.64 MHz ( period = 8.800 ns )                    ; stas[1]                    ; tdo[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.000 ns                ;
+; N/A                                     ; 113.64 MHz ( period = 8.800 ns )                    ; stas[1]                    ; tdo[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 7.000 ns                ;
+; N/A                                     ; 114.94 MHz ( period = 8.700 ns )                    ; dsr[4]                     ; dsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.900 ns                ;
+; N/A                                     ; 114.94 MHz ( period = 8.700 ns )                    ; dsr[4]                     ; dsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.900 ns                ;
+; N/A                                     ; 114.94 MHz ( period = 8.700 ns )                    ; dsr[4]                     ; dsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.900 ns                ;
+; N/A                                     ; 116.28 MHz ( period = 8.600 ns )                    ; stab                       ; tdo[9]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 116.28 MHz ( period = 8.600 ns )                    ; stab                       ; tdo[8]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 116.28 MHz ( period = 8.600 ns )                    ; stab                       ; tdo[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 116.28 MHz ( period = 8.600 ns )                    ; stab                       ; tdo[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 117.65 MHz ( period = 8.500 ns )                    ; dsr[0]                     ; dsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.700 ns                ;
+; N/A                                     ; 117.65 MHz ( period = 8.500 ns )                    ; dsr[0]                     ; dsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.700 ns                ;
+; N/A                                     ; 117.65 MHz ( period = 8.500 ns )                    ; stas[1]                    ; tdo[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.700 ns                ;
+; N/A                                     ; 117.65 MHz ( period = 8.500 ns )                    ; stas[1]                    ; tdo[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.700 ns                ;
+; N/A                                     ; 117.65 MHz ( period = 8.500 ns )                    ; stas[1]                    ; tdo[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.700 ns                ;
+; N/A                                     ; 117.65 MHz ( period = 8.500 ns )                    ; stas[1]                    ; tdo[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.700 ns                ;
+; N/A                                     ; 117.65 MHz ( period = 8.500 ns )                    ; stas[1]                    ; tdo[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.700 ns                ;
+; N/A                                     ; 119.05 MHz ( period = 8.400 ns )                    ; dsr[7]                     ; dsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.600 ns                ;
+; N/A                                     ; 119.05 MHz ( period = 8.400 ns )                    ; dsr[7]                     ; dsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.600 ns                ;
+; N/A                                     ; 119.05 MHz ( period = 8.400 ns )                    ; dsr[7]                     ; dsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.600 ns                ;
+; N/A                                     ; 119.05 MHz ( period = 8.400 ns )                    ; dsr[7]                     ; dsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.600 ns                ;
+; N/A                                     ; 119.05 MHz ( period = 8.400 ns )                    ; dsr[1]                     ; dsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.600 ns                ;
+; N/A                                     ; 119.05 MHz ( period = 8.400 ns )                    ; stas[1]                    ; dsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.600 ns                ;
+; N/A                                     ; 119.05 MHz ( period = 8.400 ns )                    ; stas[1]                    ; dsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.600 ns                ;
+; N/A                                     ; 119.05 MHz ( period = 8.400 ns )                    ; stas[1]                    ; tdo[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.600 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; stas[1]                    ; dsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; stas[1]                    ; dsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; stas[1]                    ; dsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; stas[1]                    ; dsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; dsr[3]                     ; dsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; dsr[3]                     ; dsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; stab                       ; tdo[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; stab                       ; tdo[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; stab                       ; tdo[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; stab                       ; tdo[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; stab                       ; tdo[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.500 ns                ;
+; N/A                                     ; 121.95 MHz ( period = 8.200 ns )                    ; dsr[1]                     ; dsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.400 ns                ;
+; N/A                                     ; 121.95 MHz ( period = 8.200 ns )                    ; stab                       ; dsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.400 ns                ;
+; N/A                                     ; 121.95 MHz ( period = 8.200 ns )                    ; stab                       ; dsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.400 ns                ;
+; N/A                                     ; 121.95 MHz ( period = 8.200 ns )                    ; stab                       ; tdo[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.400 ns                ;
+; N/A                                     ; 123.46 MHz ( period = 8.100 ns )                    ; stab                       ; dsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.300 ns                ;
+; N/A                                     ; 123.46 MHz ( period = 8.100 ns )                    ; stab                       ; dsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.300 ns                ;
+; N/A                                     ; 123.46 MHz ( period = 8.100 ns )                    ; stab                       ; dsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.300 ns                ;
+; N/A                                     ; 123.46 MHz ( period = 8.100 ns )                    ; stab                       ; dsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.300 ns                ;
+; N/A                                     ; 126.58 MHz ( period = 7.900 ns )                    ; dsr[0]                     ; dsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 6.100 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; dsr[0]                     ; dsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.900 ns                ;
+; N/A                                     ; 131.58 MHz ( period = 7.600 ns )                    ; stas[1]                    ; dsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.800 ns                ;
+; N/A                                     ; 131.58 MHz ( period = 7.600 ns )                    ; stas[1]                    ; dsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.800 ns                ;
+; N/A                                     ; 135.14 MHz ( period = 7.400 ns )                    ; stab                       ; dsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.600 ns                ;
+; N/A                                     ; 135.14 MHz ( period = 7.400 ns )                    ; stab                       ; dsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.600 ns                ;
+; N/A                                     ; 140.85 MHz ( period = 7.100 ns )                    ; sft                        ; dsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.300 ns                ;
+; N/A                                     ; 142.86 MHz ( period = 7.000 ns )                    ; sft                        ; dsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.200 ns                ;
+; N/A                                     ; 144.93 MHz ( period = 6.900 ns )                    ; sft                        ; dsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.100 ns                ;
+; N/A                                     ; 147.06 MHz ( period = 6.800 ns )                    ; stas[1]                    ; dsr[9]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.000 ns                ;
+; N/A                                     ; 147.06 MHz ( period = 6.800 ns )                    ; stas[1]                    ; dsr[8]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 5.000 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; stas[1]                    ; 74163:bcnt1|f74163:sub|134 ; sysclk     ; sysclk   ; None                        ; None                      ; 4.900 ns                ;
+; N/A                                     ; 151.52 MHz ( period = 6.600 ns )                    ; stab                       ; dsr[9]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.800 ns                ;
+; N/A                                     ; 151.52 MHz ( period = 6.600 ns )                    ; stab                       ; dsr[8]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.800 ns                ;
+; N/A                                     ; 153.85 MHz ( period = 6.500 ns )                    ; stas[1]                    ; 74163:bcnt1|f74163:sub|34  ; sysclk     ; sysclk   ; None                        ; None                      ; 4.700 ns                ;
+; N/A                                     ; 153.85 MHz ( period = 6.500 ns )                    ; stas[1]                    ; 74163:bcnt1|f74163:sub|111 ; sysclk     ; sysclk   ; None                        ; None                      ; 4.700 ns                ;
+; N/A                                     ; 153.85 MHz ( period = 6.500 ns )                    ; stas[1]                    ; 74163:bcnt1|f74163:sub|122 ; sysclk     ; sysclk   ; None                        ; None                      ; 4.700 ns                ;
+; N/A                                     ; 153.85 MHz ( period = 6.500 ns )                    ; stab                       ; 74163:bcnt1|f74163:sub|134 ; sysclk     ; sysclk   ; None                        ; None                      ; 4.700 ns                ;
+; N/A                                     ; 153.85 MHz ( period = 6.500 ns )                    ; stas[1]                    ; chk                        ; sysclk     ; sysclk   ; None                        ; None                      ; 4.700 ns                ;
+; N/A                                     ; 153.85 MHz ( period = 6.500 ns )                    ; stas[1]                    ; sft                        ; sysclk     ; sysclk   ; None                        ; None                      ; 4.700 ns                ;
+; N/A                                     ; 153.85 MHz ( period = 6.500 ns )                    ; 74163:bcnt1|f74163:sub|34  ; bcov                       ; sysclk     ; sysclk   ; None                        ; None                      ; 4.700 ns                ;
+; N/A                                     ; 153.85 MHz ( period = 6.500 ns )                    ; stas[1]                    ; done                       ; sysclk     ; sysclk   ; None                        ; None                      ; 4.700 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; sft                        ; hsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; sft                        ; hsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; sft                        ; hsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; sft                        ; hsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; stab                       ; 74163:bcnt1|f74163:sub|34  ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; stab                       ; 74163:bcnt1|f74163:sub|111 ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; stab                       ; 74163:bcnt1|f74163:sub|122 ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; sft                        ; hsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; stab                       ; chk                        ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; sft                        ; dsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; stab                       ; sft                        ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; 74163:bcnt1|f74163:sub|111 ; bcov                       ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; stab                       ; done                       ; sysclk     ; sysclk   ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 161.29 MHz ( period = 6.200 ns )                    ; sft                        ; hsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.400 ns                ;
+; N/A                                     ; 161.29 MHz ( period = 6.200 ns )                    ; sft                        ; hsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.400 ns                ;
+; N/A                                     ; 161.29 MHz ( period = 6.200 ns )                    ; stas[1]                    ; stas[0]                    ; sysclk     ; sysclk   ; None                        ; None                      ; 4.400 ns                ;
+; N/A                                     ; 161.29 MHz ( period = 6.200 ns )                    ; sft                        ; dsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.400 ns                ;
+; N/A                                     ; 161.29 MHz ( period = 6.200 ns )                    ; chk                        ; dsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.400 ns                ;
+; N/A                                     ; 161.29 MHz ( period = 6.200 ns )                    ; chk                        ; dsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.400 ns                ;
+; N/A                                     ; 161.29 MHz ( period = 6.200 ns )                    ; 74163:bcnt1|f74163:sub|122 ; bcov                       ; sysclk     ; sysclk   ; None                        ; None                      ; 4.400 ns                ;
+; N/A                                     ; 163.93 MHz ( period = 6.100 ns )                    ; sft                        ; dsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 166.67 MHz ( period = 6.000 ns )                    ; stab                       ; stas[0]                    ; sysclk     ; sysclk   ; None                        ; None                      ; 4.200 ns                ;
+; N/A                                     ; 166.67 MHz ( period = 6.000 ns )                    ; 74163:bcnt1|f74163:sub|134 ; bcov                       ; sysclk     ; sysclk   ; None                        ; None                      ; 4.200 ns                ;
+; N/A                                     ; 172.41 MHz ( period = 5.800 ns )                    ; hsr[2]                     ; hsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.000 ns                ;
+; N/A                                     ; 172.41 MHz ( period = 5.800 ns )                    ; hsr[6]                     ; hsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 4.000 ns                ;
+; N/A                                     ; 175.44 MHz ( period = 5.700 ns )                    ; dly                        ; tdo[9]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.900 ns                ;
+; N/A                                     ; 175.44 MHz ( period = 5.700 ns )                    ; dly                        ; tdo[8]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.900 ns                ;
+; N/A                                     ; 175.44 MHz ( period = 5.700 ns )                    ; dly                        ; tdo[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.900 ns                ;
+; N/A                                     ; 175.44 MHz ( period = 5.700 ns )                    ; dly                        ; tdo[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.900 ns                ;
+; N/A                                     ; 181.82 MHz ( period = 5.500 ns )                    ; stas[1]                    ; hsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.700 ns                ;
+; N/A                                     ; 181.82 MHz ( period = 5.500 ns )                    ; done                       ; tdo[9]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.700 ns                ;
+; N/A                                     ; 181.82 MHz ( period = 5.500 ns )                    ; done                       ; tdo[8]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.700 ns                ;
+; N/A                                     ; 181.82 MHz ( period = 5.500 ns )                    ; done                       ; tdo[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.700 ns                ;
+; N/A                                     ; 181.82 MHz ( period = 5.500 ns )                    ; done                       ; tdo[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.700 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; stas[1]                    ; hsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; stas[1]                    ; hsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; stas[1]                    ; hsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; stas[1]                    ; hsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; chk                        ; dsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; chk                        ; dsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; chk                        ; dsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; chk                        ; dsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; chk                        ; dsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; chk                        ; dsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; dly                        ; tdo[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; dly                        ; tdo[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; dly                        ; tdo[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; dly                        ; tdo[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 185.19 MHz ( period = 5.400 ns )                    ; dly                        ; tdo[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.600 ns                ;
+; N/A                                     ; 188.68 MHz ( period = 5.300 ns )                    ; stab                       ; hsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.500 ns                ;
+; N/A                                     ; 188.68 MHz ( period = 5.300 ns )                    ; sft                        ; dsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.500 ns                ;
+; N/A                                     ; 188.68 MHz ( period = 5.300 ns )                    ; stas[1]                    ; bcov                       ; sysclk     ; sysclk   ; None                        ; None                      ; 3.500 ns                ;
+; N/A                                     ; 188.68 MHz ( period = 5.300 ns )                    ; dly                        ; tdo[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.500 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; stab                       ; hsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.400 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; stab                       ; hsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.400 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; stab                       ; hsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.400 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; stab                       ; hsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.400 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; done                       ; tdo[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.400 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; done                       ; tdo[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.400 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; done                       ; tdo[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.400 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; done                       ; tdo[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.400 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; done                       ; tdo[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.400 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; hsr[1]                     ; hsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; hsr[2]                     ; hsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; hsr[3]                     ; hsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; hsr[4]                     ; hsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; hsr[5]                     ; hsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; hsr[6]                     ; hsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; hsr[7]                     ; hsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; sft                        ; dsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; stab                       ; bcov                       ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; done                       ; tdo[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.300 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; hsr[0]                     ; hsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.100 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; hsr[1]                     ; hsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.100 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; hsr[3]                     ; hsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.100 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; hsr[4]                     ; hsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.100 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; hsr[5]                     ; hsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 3.100 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; sft                        ; 74163:bcnt1|f74163:sub|34  ; sysclk     ; sysclk   ; None                        ; None                      ; 2.800 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; sft                        ; 74163:bcnt1|f74163:sub|111 ; sysclk     ; sysclk   ; None                        ; None                      ; 2.800 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; sft                        ; 74163:bcnt1|f74163:sub|122 ; sysclk     ; sysclk   ; None                        ; None                      ; 2.800 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; sft                        ; dsr[9]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.800 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; sft                        ; dsr[8]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.800 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[0]                    ; hsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.700 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[0]                    ; hsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.700 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[1]                    ; hsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.600 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[0]                    ; hsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.600 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[1]                    ; hsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.600 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[1]                    ; hsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.600 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; sft                        ; 74163:bcnt1|f74163:sub|134 ; sysclk     ; sysclk   ; None                        ; None                      ; 2.600 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[3]                     ; dsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.600 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[7]                     ; tdo[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.600 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[0]                    ; hsr[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[0]                    ; hsr[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[0]                    ; hsr[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[0]                    ; hsr[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[7]                     ; dsr[8]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stab                       ; hsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.400 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stab                       ; hsr[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.400 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stab                       ; hsr[2]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.400 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[6]                     ; tdo[6]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.400 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[0]                    ; sft                        ; sysclk     ; sysclk   ; None                        ; None                      ; 2.300 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[3]                     ; tdo[3]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.300 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; hsr[7]                     ; dsr[0]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.200 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[4]                     ; tdo[4]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.100 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[5]                     ; tdo[5]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.000 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[1]                     ; tdo[1]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 2.000 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; 74163:bcnt1|f74163:sub|34  ; 74163:bcnt1|f74163:sub|134 ; sysclk     ; sysclk   ; None                        ; None                      ; 1.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; stas[0]                    ; hsr[7]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 1.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; bcov                       ; chk                        ; sysclk     ; sysclk   ; None                        ; None                      ; 1.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; sft                        ; sft                        ; sysclk     ; sysclk   ; None                        ; None                      ; 1.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; sft                        ; done                       ; sysclk     ; sysclk   ; None                        ; None                      ; 1.500 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; chk                        ; chk                        ; sysclk     ; sysclk   ; None                        ; None                      ; 1.400 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[9]                     ; dsr[9]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 1.400 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; dsr[8]                     ; dsr[8]                     ; sysclk     ; sysclk   ; None                        ; None                      ; 1.400 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; chk                        ; sft                        ; sysclk     ; sysclk   ; None                        ; None                      ; 1.400 ns                ;
+; N/A                                     ; Restricted to 200.00 MHz ( period = 5.000 ns )      ; bcov                       ; done                       ; sysclk     ; sysclk   ; None                        ; None                      ; 1.400 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                            ;                            ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------+----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------+
+; tsu                                                            ;
++-------+--------------+------------+--------+--------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To     ; To Clock ;
++-------+--------------+------------+--------+--------+----------+
+; N/A   ; None         ; 7.100 ns   ; hin[3] ; hsr[3] ; sysclk   ;
+; N/A   ; None         ; 6.900 ns   ; hin[1] ; hsr[1] ; sysclk   ;
+; N/A   ; None         ; 6.000 ns   ; hin[0] ; hsr[0] ; sysclk   ;
+; N/A   ; None         ; 5.000 ns   ; hin[2] ; hsr[2] ; sysclk   ;
+; N/A   ; None         ; 2.100 ns   ; hin[4] ; hsr[4] ; sysclk   ;
+; N/A   ; None         ; 2.100 ns   ; hin[5] ; hsr[5] ; sysclk   ;
+; N/A   ; None         ; 2.100 ns   ; hin[6] ; hsr[6] ; sysclk   ;
+; N/A   ; None         ; 2.100 ns   ; sta    ; stab   ; sysclk   ;
+; N/A   ; None         ; 2.000 ns   ; hin[7] ; hsr[7] ; sysclk   ;
++-------+--------------+------------+--------+--------+----------+
+
+
++-------------------------------------------------------------------------+
+; tco                                                                     ;
++-------+--------------+------------+--------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From         ; To      ; From Clock ;
++-------+--------------+------------+--------------+---------+------------+
+; N/A   ; None         ; 14.300 ns  ; dout[9]~reg0 ; dout[9] ; sysclk     ;
+; N/A   ; None         ; 14.100 ns  ; dout[2]~reg0 ; dout[2] ; sysclk     ;
+; N/A   ; None         ; 14.100 ns  ; dout[1]~reg0 ; dout[1] ; sysclk     ;
+; N/A   ; None         ; 13.400 ns  ; dout[8]~reg0 ; dout[8] ; sysclk     ;
+; N/A   ; None         ; 12.900 ns  ; dout[5]~reg0 ; dout[5] ; sysclk     ;
+; N/A   ; None         ; 12.800 ns  ; dout[7]~reg0 ; dout[7] ; sysclk     ;
+; N/A   ; None         ; 12.800 ns  ; dout[3]~reg0 ; dout[3] ; sysclk     ;
+; N/A   ; None         ; 12.800 ns  ; dout[0]~reg0 ; dout[0] ; sysclk     ;
+; N/A   ; None         ; 12.800 ns  ; donf~reg0    ; donf    ; sysclk     ;
+; N/A   ; None         ; 12.600 ns  ; dout[6]~reg0 ; dout[6] ; sysclk     ;
+; N/A   ; None         ; 12.400 ns  ; dout[4]~reg0 ; dout[4] ; sysclk     ;
++-------+--------------+------------+--------------+---------+------------+
+
+
++----------------------------------------------------------------------+
+; th                                                                   ;
++---------------+-------------+-----------+--------+--------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To     ; To Clock ;
++---------------+-------------+-----------+--------+--------+----------+
+; N/A           ; None        ; -0.400 ns ; hin[7] ; hsr[7] ; sysclk   ;
+; N/A           ; None        ; -0.500 ns ; hin[4] ; hsr[4] ; sysclk   ;
+; N/A           ; None        ; -0.500 ns ; hin[5] ; hsr[5] ; sysclk   ;
+; N/A           ; None        ; -0.500 ns ; hin[6] ; hsr[6] ; sysclk   ;
+; N/A           ; None        ; -0.500 ns ; sta    ; stab   ; sysclk   ;
+; N/A           ; None        ; -3.400 ns ; hin[2] ; hsr[2] ; sysclk   ;
+; N/A           ; None        ; -4.400 ns ; hin[0] ; hsr[0] ; sysclk   ;
+; N/A           ; None        ; -5.300 ns ; hin[1] ; hsr[1] ; sysclk   ;
+; N/A           ; None        ; -5.500 ns ; hin[3] ; hsr[3] ; sysclk   ;
++---------------+-------------+-----------+--------+--------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Processing started: Sat Apr 22 22:02:52 2006
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off hexdec8 -c hexdec8
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "sysclk" is an undefined clock
+Info: Clock "sysclk" has Internal fmax of 104.17 MHz between source register "dsr[2]" and destination register "dsr[1]" (period= 9.6 ns)
+    Info: + Longest register to register delay is 7.800 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_C49; Fanout = 4; REG Node = 'dsr[2]'
+        Info: 2: + IC(1.000 ns) + CELL(0.700 ns) = 1.700 ns; Loc. = LC6_C48; Fanout = 1; COMB Node = 'lpm_add_sub:ladd|addcore:adder|a_csnbuffer:result_node|cout[2]'
+        Info: 3: + IC(0.000 ns) + CELL(1.600 ns) = 3.300 ns; Loc. = LC7_C48; Fanout = 1; COMB Node = 'lpm_add_sub:ladd|addcore:adder|unreg_res_node[3]'
+        Info: 4: + IC(1.000 ns) + CELL(2.200 ns) = 6.500 ns; Loc. = LC3_C49; Fanout = 5; COMB Node = 'rtl~3'
+        Info: 5: + IC(1.000 ns) + CELL(0.300 ns) = 7.800 ns; Loc. = LC8_C48; Fanout = 4; REG Node = 'dsr[1]'
+        Info: Total cell delay = 4.800 ns ( 61.54 % )
+        Info: Total interconnect delay = 3.000 ns ( 38.46 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "sysclk" to destination register is 1.900 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = PIN_79; Fanout = 54; CLK Node = 'sysclk'
+            Info: 2: + IC(1.400 ns) + CELL(0.000 ns) = 1.900 ns; Loc. = LC8_C48; Fanout = 4; REG Node = 'dsr[1]'
+            Info: Total cell delay = 0.500 ns ( 26.32 % )
+            Info: Total interconnect delay = 1.400 ns ( 73.68 % )
+        Info: - Longest clock path from clock "sysclk" to source register is 1.900 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = PIN_79; Fanout = 54; CLK Node = 'sysclk'
+            Info: 2: + IC(1.400 ns) + CELL(0.000 ns) = 1.900 ns; Loc. = LC1_C49; Fanout = 4; REG Node = 'dsr[2]'
+            Info: Total cell delay = 0.500 ns ( 26.32 % )
+            Info: Total interconnect delay = 1.400 ns ( 73.68 % )
+    Info: + Micro clock to output delay of source is 1.100 ns
+    Info: + Micro setup delay of destination is 0.700 ns
+Info: tsu for register "hsr[3]" (data pin = "hin[3]", clock pin = "sysclk") is 7.100 ns
+    Info: + Longest pin to register delay is 8.300 ns
+        Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_206; Fanout = 1; PIN Node = 'hin[3]'
+        Info: 2: + IC(4.000 ns) + CELL(1.200 ns) = 8.300 ns; Loc. = LC6_C43; Fanout = 2; REG Node = 'hsr[3]'
+        Info: Total cell delay = 4.300 ns ( 51.81 % )
+        Info: Total interconnect delay = 4.000 ns ( 48.19 % )
+    Info: + Micro setup delay of destination is 0.700 ns
+    Info: - Shortest clock path from clock "sysclk" to destination register is 1.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = PIN_79; Fanout = 54; CLK Node = 'sysclk'
+        Info: 2: + IC(1.400 ns) + CELL(0.000 ns) = 1.900 ns; Loc. = LC6_C43; Fanout = 2; REG Node = 'hsr[3]'
+        Info: Total cell delay = 0.500 ns ( 26.32 % )
+        Info: Total interconnect delay = 1.400 ns ( 73.68 % )
+Info: tco from clock "sysclk" to destination pin "dout[9]" through register "dout[9]~reg0" is 14.300 ns
+    Info: + Longest clock path from clock "sysclk" to source register is 1.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = PIN_79; Fanout = 54; CLK Node = 'sysclk'
+        Info: 2: + IC(1.400 ns) + CELL(0.000 ns) = 1.900 ns; Loc. = LC3_C30; Fanout = 1; REG Node = 'dout[9]~reg0'
+        Info: Total cell delay = 0.500 ns ( 26.32 % )
+        Info: Total interconnect delay = 1.400 ns ( 73.68 % )
+    Info: + Micro clock to output delay of source is 1.100 ns
+    Info: + Longest register to pin delay is 11.300 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC3_C30; Fanout = 1; REG Node = 'dout[9]~reg0'
+        Info: 2: + IC(2.700 ns) + CELL(8.600 ns) = 11.300 ns; Loc. = PIN_10; Fanout = 0; PIN Node = 'dout[9]'
+        Info: Total cell delay = 8.600 ns ( 76.11 % )
+        Info: Total interconnect delay = 2.700 ns ( 23.89 % )
+Info: th for register "hsr[7]" (data pin = "hin[7]", clock pin = "sysclk") is -0.400 ns
+    Info: + Longest clock path from clock "sysclk" to destination register is 1.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = PIN_79; Fanout = 54; CLK Node = 'sysclk'
+        Info: 2: + IC(1.400 ns) + CELL(0.000 ns) = 1.900 ns; Loc. = LC3_C46; Fanout = 3; REG Node = 'hsr[7]'
+        Info: Total cell delay = 0.500 ns ( 26.32 % )
+        Info: Total interconnect delay = 1.400 ns ( 73.68 % )
+    Info: + Micro hold delay of destination is 0.900 ns
+    Info: - Shortest pin to register delay is 3.200 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = PIN_182; Fanout = 1; PIN Node = 'hin[7]'
+        Info: 2: + IC(1.500 ns) + CELL(1.200 ns) = 3.200 ns; Loc. = LC3_C46; Fanout = 3; REG Node = 'hsr[7]'
+        Info: Total cell delay = 1.700 ns ( 53.13 % )
+        Info: Total interconnect delay = 1.500 ns ( 46.88 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Processing ended: Sat Apr 22 22:02:53 2006
+    Info: Elapsed time: 00:00:02
+
+

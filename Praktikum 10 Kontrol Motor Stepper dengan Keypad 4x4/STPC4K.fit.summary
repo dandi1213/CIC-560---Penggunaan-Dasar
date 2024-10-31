@@ -1,0 +1,12 @@
+Fitter Status : Successful - Wed Jun 30 08:43:26 2021
+Quartus II Version : 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition
+Revision Name : STPC4K
+Top-level Entity Name : STPCT4K
+Family : Cyclone
+Device : EP1C12Q240C8
+Timing Models : Final
+Total logic elements : 185 / 12,060 ( 2 % )
+Total pins : 48 / 173 ( 28 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

@@ -1,0 +1,98 @@
+PowerPlay Early Power Estimator File Generator report for PWMP16_CYCLONE
+Tue May 29 14:04:43 2007
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. PowerPlay Early Power Estimator File Generator Summary
+  3. PowerPlay Early Power Estimator File Generator Settings
+  4. PowerPlay Early Power Estimator File Generator Generated Files
+  5. PowerPlay Early Power Estimator File Generator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------+
+; PowerPlay Early Power Estimator File Generator Summary                                           ;
++-------------------------------------------------------+------------------------------------------+
+; PowerPlay Early Power Estimator File Generator Status ; Successful - Tue May 29 14:04:43 2007    ;
+; Quartus II Version                                    ; 6.0 Build 178 04/27/2006 SJ Full Version ;
+; Revision Name                                         ; PWMP16_CYCLONE                           ;
+; Top-level Entity Name                                 ; pwmp16                                   ;
+; Family                                                ; Cyclone                                  ;
+; Device                                                ; EP1C12Q240C8                             ;
++-------------------------------------------------------+------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; PowerPlay Early Power Estimator File Generator Settings           ;
++-----------------------------------------+---------+---------------+
+; Option                                  ; Setting ; Default Value ;
++-----------------------------------------+---------+---------------+
+; Use smart compilation                   ; Off     ; Off           ;
+; Default Power Toggle Rate               ; 12.5%   ; 12.5%         ;
+; Default Power Input I/O Toggle Rate     ; 12.5%   ; 12.5%         ;
+; Use Input Files                         ; Off     ; Off           ;
+; Filter Glitches in VCD File Reader      ; On      ; On            ;
+; Power Analyzer Report Signal Activity   ; On      ; On            ;
+; Power Analyzer Report Power Dissipation ; On      ; On            ;
+; Use vectorless estimation               ; Off     ;               ;
++-----------------------------------------+---------+---------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; PowerPlay Early Power Estimator File Generator Generated Files                                ;
++----------------------------------------------------------------+------------------------------+
+; Description                                                    ; Filename                     ;
++----------------------------------------------------------------+------------------------------+
+; Design summary for PowerPlay Early Power Estimator spreadsheet ; PWMP16_CYCLONE_early_pwr.txt ;
++----------------------------------------------------------------+------------------------------+
+
+
++---------------------------------------------------------+
+; PowerPlay Early Power Estimator File Generator Messages ;
++---------------------------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II PowerPlay Early Power Estimator File Generator
+    Info: Version 6.0 Build 178 04/27/2006 SJ Full Version
+    Info: Processing started: Tue May 29 14:04:43 2007
+Info: Command: quartus_pow --read_settings_files=on --write_settings_files=off pwmp16 -c PWMP16_CYCLONE --estimate_power=off --output_epe=PWMP16_CYCLONE_early_pwr.txt
+Info: No signal activity data is required.  Signal Activity File and Value Change Dump file settings will be ignored.
+Warning: No clock rate could be inferred for 4 clock domain(s).  The PowerPlay Early Power Estimator file will list these resources as having zero clock rate.
+    Warning: No clock rate could be inferred for clock pclk
+    Warning: No clock rate could be inferred for clock prs
+    Warning: No clock rate could be inferred for clock scankdpp4:inst7|keybpg:key|keyps4:u3|stk[0]
+    Warning: No clock rate could be inferred for clock sclk
+Info: The powerplay early power estimation file lists some resources as having zero clock rate.  These are either resources that are not in any clock domain or resources for which the domain clock rate could not be inferred.
+    Info: There are 39 pins listed as zero clock rate.
+    Info: There are 90 registers listed as zero clock rate.
+    Info: There are 140 LEs listed as zero clock rate.
+    Info: There are 57 LEs with carry listed as zero clock rate.
+Info: Created powerplay early power estimation file "PWMP16_CYCLONE_early_pwr.txt"
+Info: No power estimate will be produced.
+Info: Quartus II PowerPlay Early Power Estimator File Generator was successful. 0 errors, 5 warnings
+    Info: Processing ended: Tue May 29 14:04:43 2007
+    Info: Elapsed time: 00:00:01
+
+

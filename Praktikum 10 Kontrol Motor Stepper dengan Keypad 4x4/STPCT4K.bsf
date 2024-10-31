@@ -1,0 +1,141 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 224 208)
+	(text "STPCT4K" (rect 5 0 58 14)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 176 25 188)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "COLK[3..0]" (rect 0 0 61 14)(font "Arial" (font_size 8)))
+		(text "COLK[3..0]" (rect 21 27 82 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "STPCLK" (rect 0 0 46 14)(font "Arial" (font_size 8)))
+		(text "STPCLK" (rect 21 43 67 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "sel[2..0]" (rect 0 0 44 14)(font "Arial" (font_size 8)))
+		(text "sel[2..0]" (rect 21 59 65 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "SYSCLK" (rect 0 0 49 14)(font "Arial" (font_size 8)))
+		(text "SYSCLK" (rect 21 75 70 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "CLEAR" (rect 0 0 40 14)(font "Arial" (font_size 8)))
+		(text "CLEAR" (rect 21 91 61 105)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "EN_RUN" (rect 0 0 47 14)(font "Arial" (font_size 8)))
+		(text "EN_RUN" (rect 21 107 68 121)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "EN_PRS" (rect 0 0 46 14)(font "Arial" (font_size 8)))
+		(text "EN_PRS" (rect 21 123 67 137)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "SDO" (rect 0 0 25 14)(font "Arial" (font_size 8)))
+		(text "SDO" (rect 162 27 187 41)(font "Arial" (font_size 8)))
+		(line (pt 208 32)(pt 192 32)(line_width 1))
+	)
+	(port
+		(pt 208 48)
+		(output)
+		(text "SEG[6..0]" (rect 0 0 53 14)(font "Arial" (font_size 8)))
+		(text "SEG[6..0]" (rect 134 43 187 57)(font "Arial" (font_size 8)))
+		(line (pt 208 48)(pt 192 48)(line_width 3))
+	)
+	(port
+		(pt 208 64)
+		(output)
+		(text "R0W[3..0]" (rect 0 0 55 14)(font "Arial" (font_size 8)))
+		(text "R0W[3..0]" (rect 132 59 187 73)(font "Arial" (font_size 8)))
+		(line (pt 208 64)(pt 192 64)(line_width 3))
+	)
+	(port
+		(pt 208 80)
+		(output)
+		(text "KEY_DATA[3..0]" (rect 0 0 94 14)(font "Arial" (font_size 8)))
+		(text "KEY_DATA[3..0]" (rect 93 75 187 89)(font "Arial" (font_size 8)))
+		(line (pt 208 80)(pt 192 80)(line_width 3))
+	)
+	(port
+		(pt 208 96)
+		(output)
+		(text "SCN[3..0]" (rect 0 0 53 14)(font "Arial" (font_size 8)))
+		(text "SCN[3..0]" (rect 134 91 187 105)(font "Arial" (font_size 8)))
+		(line (pt 208 96)(pt 192 96)(line_width 3))
+	)
+	(port
+		(pt 208 112)
+		(output)
+		(text "CMPO" (rect 0 0 34 14)(font "Arial" (font_size 8)))
+		(text "CMPO" (rect 153 107 187 121)(font "Arial" (font_size 8)))
+		(line (pt 208 112)(pt 192 112)(line_width 1))
+	)
+	(port
+		(pt 208 128)
+		(output)
+		(text "SCAN[3..0]" (rect 0 0 62 14)(font "Arial" (font_size 8)))
+		(text "SCAN[3..0]" (rect 125 123 187 137)(font "Arial" (font_size 8)))
+		(line (pt 208 128)(pt 192 128)(line_width 3))
+	)
+	(port
+		(pt 208 144)
+		(output)
+		(text "MCT[3..0]" (rect 0 0 53 14)(font "Arial" (font_size 8)))
+		(text "MCT[3..0]" (rect 134 139 187 153)(font "Arial" (font_size 8)))
+		(line (pt 208 144)(pt 192 144)(line_width 3))
+	)
+	(port
+		(pt 208 160)
+		(output)
+		(text "SEGM[6..0]" (rect 0 0 62 14)(font "Arial" (font_size 8)))
+		(text "SEGM[6..0]" (rect 125 155 187 169)(font "Arial" (font_size 8)))
+		(line (pt 208 160)(pt 192 160)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 176)(line_width 1))
+	)
+)

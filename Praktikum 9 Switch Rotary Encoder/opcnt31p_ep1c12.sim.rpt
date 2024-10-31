@@ -1,0 +1,106 @@
+Simulator report for opcnt31p_ep1c12
+Sun May 14 12:47:44 2006
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Simulator INI Usage
+  6. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 5.0 ms       ;
+; Simulation Netlist Size     ; 542 nodes    ;
+; Simulation Coverage         ;      64.90 % ;
+; Total Number of Transitions ; 8456109      ;
++-----------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                   ;
++-------------------------------------------------------+----------------------------------------------+
+; Option                                                ; Setting                                      ;
++-------------------------------------------------------+----------------------------------------------+
+; Simulation mode                                       ; Timing                                       ;
+; Start time                                            ; 0ns                                          ;
+; Vector input source                                   ; C:/ddata/qutvhd/opcnt31p/opcnt31p_ep1c12.vwf ;
+; Add pins automatically to simulation output waveforms ; On                                           ;
+; Check outputs                                         ; Off                                          ;
+; Report simulation coverage                            ; On                                           ;
+; Detect setup and hold time violations                 ; Off                                          ;
+; Detect glitches                                       ; Off                                          ;
+; Automatically save/load simulation netlist            ; Off                                          ;
+; Disable timing delays in Timing Simulation            ; Off                                          ;
+; Generate Signal Activity File                         ; Off                                          ;
++-------------------------------------------------------+----------------------------------------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Processing started: Sun May 14 12:45:23 2006
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off opcnt31p -c opcnt31p_ep1c12
+Info: Overwriting simulation input file with simulation results
+Warning: Wrong node type for node "dio[0]~result" in vector source file. Design node is of type Output, but signal in vector source file is of type Buried
+Warning: Wrong node type for node "dio[1]~result" in vector source file. Design node is of type Output, but signal in vector source file is of type Buried
+Warning: Wrong node type for node "dio[2]~result" in vector source file. Design node is of type Output, but signal in vector source file is of type Buried
+Warning: Wrong node type for node "dio[3]~result" in vector source file. Design node is of type Output, but signal in vector source file is of type Buried
+Warning: Wrong node type for node "dio[4]~result" in vector source file. Design node is of type Output, but signal in vector source file is of type Buried
+Warning: Wrong node type for node "dio[5]~result" in vector source file. Design node is of type Output, but signal in vector source file is of type Buried
+Warning: Wrong node type for node "dio[6]~result" in vector source file. Design node is of type Output, but signal in vector source file is of type Buried
+Warning: Wrong node type for node "dio[7]~result" in vector source file. Design node is of type Output, but signal in vector source file is of type Buried
+Info: Simulation coverage is      64.90 %
+Info: Number of transitions in simulation is 8456109
+Info: Quartus II Simulator was successful. 0 errors, 8 warnings
+    Info: Processing ended: Sun May 14 12:47:44 2006
+    Info: Elapsed time: 00:02:22
+
+

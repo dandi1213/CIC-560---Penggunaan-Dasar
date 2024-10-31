@@ -1,0 +1,27 @@
+SUBDESIGN phigen
+(
+	rcclk,f_r,go	: INPUT;
+	phi1,phi0	: OUTPUT;)
+
+VARIABLE
+st[1..0]	: DFF;
+BEGIN
+
+st[].clk=rcclk;
+
+IF GO THEN
+	CASE st[] IS
+	WHEN B"00" =>
+		IF(f_r) THEN st[]=B"01"; ELSE st[]=B"10"; END IF;
+	WHEN B"01" =>
+		IF(f_r) THEN st[]=B"11"; ELSE st[]=B"00"; END IF;
+	WHEN B"11" =>
+		IF(f_r) THEN st[]=B"10"; ELSE st[]=B"01"; END IF;
+	WHEN B"10" =>
+		IF(f_r) THEN st[]=B"00"; ELSE st[]=B"11"; END IF;
+	END CASE;
+ELSE st[]=st[];
+END IF;
+
+(phi1,phi0)=st[];
+END;

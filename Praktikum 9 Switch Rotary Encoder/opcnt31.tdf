@@ -1,0 +1,205 @@
+function phigen (rcclk,f_r,go) returns (phi1,phi0);
+SUBDESIGN opcnt31
+(
+sysclk,pclk  : INPUT;
+pa,pb,clr,en,bd,f_r,extr	: INPUT;
+seg[6..0],scn[7..0],oprul[27..0] : OUTPUT;
+)
+
+VARIABLE
+sscal:phigen;								--the AB Pulse program
+st[1..0],fb[1..0],scnt[24..0],cnt[27..0]: DFF;
+sign,p,di								: DFF;
+ps,dis,sgd[3..0]						:node;
+
+BEGIN
+
+sscal.rcclk=pclk;			
+sscal.f_r=f_r;				
+sscal.go=extr;				
+
+
+(cnt[],sign).clk=sysclk;	--sign=dff cnt[27..0]=dff
+sign.clrn=!clr;
+cnt[].clrn=!(clr);
+oprul[]=cnt[];
+
+st[].clk=sysclk;			--st[1..0]=dff
+fb[].clk=sysclk;			--fb[1..0]=dff
+scnt[].clk=sysclk;			--scnt[24..0]=dff
+scnt[]=scnt[]+1;
+
+(p,di).clk=!sysclk;			--p.di=dff
+
+--select external clock input or encoder clock input--
+if extr then fb[]=(sscal.phi1,sscal.phi0);		--external clock
+else fb[]=(pa,pb);						  		--encoder clock
+end if;
+-----------determine Forward or Reverse-----
+st[]=fb[];
+ps = 	    fb0 & !fb1 & !st0 & !st1%1%
+         #  fb0 &  fb1 &  st0 & !st1%7%
+         # !fb0 &  fb1 &  st0 &  st1%e%
+         # !fb0 & !fb1 & !st0 &  st1%8%
+		 #  fb0 & !fb1 &  st0 &  st1%D%
+         #  fb0 &  fb1 & !st0 &  st1%b%
+         # !fb0 &  fb1 & !st0 & !st1%2%
+         # !fb0 & !fb1 &  st0 & !st1;%4%
+
+dis=  		fb0 & !fb1 & !st0 & !st1%1%
+         #  fb0 &  fb1 &  st0 & !st1%7%
+         # !fb0 &  fb1 &  st0 &  st1%e%
+         # !fb0 & !fb1 & !st0 &  st1;%8%
+p=ps;
+di=dis;
+----------------------------------------------
+if(cnt[]==0) then sign=di;
+else    sign=sign;
+end if;
+
+ if clr then cnt[]=0;--pcnt 31=preset load 
+ else
+  if p and en  then								--pcnt 30= en
+  	if(cnt[]==0 or di==sign ) then 
+------------------------hexadecimal up counter--------------------------
+	  if bd then cnt[]=cnt[]+1;			--pcnt 29 = b/d   pcnt 28= sign
+		 
+	 -----------------------------decimal up counter--------------------
+	  else 
+	     if cnt[3..0]==9 then cnt[3..0]=0;
+	     else cnt[3..0]=cnt[3..0]+1;
+	     end if;
+	     if cnt[3..0]==9 then
+	        if  cnt[7..4]==9 then cnt[7..4]=0;
+	        else cnt[7..4]=cnt[7..4]+1;
+	        end if;
+	     else cnt[7..4]=cnt[7..4];
+	     end if;
+   	     if cnt[3..0]==9 and cnt[7..4]==9 then
+	        if  cnt[11..8]==9 then cnt[11..8]=0;
+	        else cnt[11..8]=cnt[11..8]+1;
+	        end if;
+	     else cnt[11..8]=cnt[11..8];
+	     end if;
+		 if cnt[3..0]==9 and cnt[7..4]==9  and cnt[11..8]==9 then
+	        if  cnt[15..12]==9 then cnt[15..12]=0;
+	        else cnt[15..12]=cnt[15..12]+1;
+	        end if;
+	     else cnt[15..12]=cnt[15..12];
+	     end if;
+	     if cnt[3..0]==9 and cnt[7..4]==9  and cnt[11..8]==9 and cnt[15..12]==9 then
+	        if  cnt[19..16]==9 then cnt[19..16]=0;
+	        else cnt[19..16]=cnt[19..16]+1;
+	        end if;
+	     else cnt[19..16]=cnt[19..16];
+	     end if;
+	     if cnt[3..0]==9 and cnt[7..4]==9  and cnt[11..8]==9 and cnt[15..12]==9 
+	        and  cnt[19..16]==9 then
+	        if  cnt[23..20]==9 then cnt[23..20]=0;
+	        else cnt[23..20]=cnt[23..20]+1;
+	        end if;
+	     else cnt[23..20]=cnt[23..20];
+	     end if;	     
+		 if cnt[3..0]==9 and cnt[7..4]==9  and cnt[11..8]==9 and cnt[15..12]==9 
+	        and  cnt[19..16]==9  and cnt[23..20]==9 then
+	        if  cnt[27..24]==9 then cnt[27..24]=0;
+	        else cnt[27..24]=cnt[27..24]+1;
+	        end if;
+	     else cnt[27..24]=cnt[27..24];
+	     end if;	     
+      end if; 
+--------------------------------------------------------------------
+   	else  ---------------------------hexadecimal down counter-------
+	   if bd  then cnt[]=cnt[]-1;
+	   else -------------------------decimal down counter-----------
+	     if cnt[3..0]==0 then cnt[3..0]=9;
+	     else cnt[3..0]=cnt[3..0]-1;
+	     end if;
+	     if cnt[3..0]==0 then
+	        if  cnt[7..4]==0 then cnt[7..4]=9;
+	        else cnt[7..4]=cnt[7..4]-1;
+	        end if;
+	     else cnt[7..4]=cnt[7..4];
+	     end if;
+   	     if cnt[3..0]==0 and cnt[7..4]==0 then
+	        if  cnt[11..8]==0 then cnt[11..8]=9;
+	        else cnt[11..8]=cnt[11..8]-1;
+	        end if;
+	     else cnt[11..8]=cnt[11..8];
+	     end if;
+		 if cnt[3..0]==0 and cnt[7..4]==0  and cnt[11..8]==0 then
+	        if  cnt[15..12]==0 then cnt[15..12]=9;
+	        else cnt[15..12]=cnt[15..12]-1;
+	        end if;
+	     else cnt[15..12]=cnt[15..12];
+	     end if;
+	     if cnt[3..0]==0 and cnt[7..4]==0  and cnt[11..8]==0 and cnt[15..12]==0 then
+	        if  cnt[19..16]==0 then cnt[19..16]=9;
+	        else cnt[19..16]=cnt[19..16]-1;
+	        end if;
+	     else cnt[19..16]=cnt[19..16];
+	     end if;
+	     if cnt[3..0]==0 and cnt[7..4]==0  and cnt[11..8]==0 and cnt[15..12]==0 
+	        and  cnt[19..16]==0 then
+	        if  cnt[23..20]==0 then cnt[23..20]=9;
+	        else cnt[23..20]=cnt[23..20]-1;
+	        end if;
+	     else cnt[23..20]=cnt[23..20];
+	     end if;
+	     if cnt[3..0]==0 and cnt[7..4]==0  and cnt[11..8]==0 and cnt[15..12]==0 
+	        and  cnt[19..16]==0 and cnt[23..20]==0 then
+	        if  cnt[27..24]==0 then cnt[27..24]=9;
+	        else cnt[27..24]=cnt[27..24]-1;
+	        end if;
+	     else cnt[27..24]=cnt[27..24];
+	     end if;	     
+       end if;	
+     end if;
+--------------------------------------------------------
+ else
+	cnt[]=cnt[];
+	sign=sign;
+ end if;
+end if;
+
+-------------------------scan display-------------------
+case scnt[11..9] is when b"000" => scn[]=b"10000000";
+									sgd[]=(0,0,sign,1);
+				    when b"001" => scn[]=b"01000000";
+									sgd[]=cnt[27..24];
+ 				    when b"010" => scn[]=b"00100000";
+									sgd[]=cnt[23..20];
+					when b"011" => scn[]=b"00010000";
+									sgd[]=cnt[19..16];
+					when b"100" => scn[]=b"00001000";
+									sgd[]=cnt[15..12];
+					when b"101" => scn[]=b"00000100";
+									sgd[]=cnt[11..8];
+                    when b"110" => scn[]=b"00000010";
+									sgd[]=cnt[7..4];
+					when b"111" => scn[]=b"00000001";
+									sgd[]=cnt[3..0];
+end case;	
+----------------------------------------------------------
+--------------------7-segment diaplay table---------------
+TABLE			
+       sgd[]	=>	seg0,seg1,seg2,seg3,seg4,seg5,seg6;
+		H"0"	=>	1, 1, 1, 1, 1, 1, 0;
+		H"1"	=>	0, 1, 1, 0, 0, 0, 0;
+		H"2"	=>	1, 1, 0, 1, 1, 0, 1;
+		H"3"	=>	1, 1, 1, 1, 0, 0, 1;
+		H"4"	=>	0, 1, 1, 0, 0, 1, 1;
+		H"5"	=>	1, 0, 1, 1, 0, 1, 1;
+		H"6"	=>	1, 0, 1, 1, 1, 1, 1;
+		H"7"	=>	1, 1, 1, 0, 0, 0, 0;
+		H"8"	=>	1, 1, 1, 1, 1, 1, 1;
+		H"9"	=>	1, 1, 1, 1, 0, 1, 1;
+		H"A"	=>	1, 1, 1, 0, 1, 1, 1;
+		H"B"	=>	0, 0, 1, 1, 1, 1, 1;
+		H"C"	=>	1, 0, 0, 1, 1, 1, 0;
+		H"D"	=>	0, 1, 1, 1, 1, 0, 1;
+		H"E"	=>	1, 0, 0, 1, 1, 1, 1;
+		H"F"	=>	1, 0, 0, 0, 1, 1, 1;
+END TABLE;
+----------------------------------------------------------
+END;

@@ -1,0 +1,103 @@
+Quartus II Archive log --	E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8_tmp_archive.qarlog
+
+Archive:	E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8_tmp_archive.qar
+Date:		Fri May 30 09:43:05 2008
+Quartus II		6.0 Build 178 04/27/2006 SJ Full Version
+
+	=========== Files Selected: ===========
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.asm.rpt
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.fit.eqn
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.fit.rpt
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.fit.smsg
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.fit.summary
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.flow.rpt
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.map.eqn
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.map.rpt
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.map.summary
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.pof
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.qpf
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.qsf
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.qws
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.sim.rpt
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.sof
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.tan.rpt
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.tan.summary
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.vhd
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8.vwf
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8C.vwf
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8_assignment_defaults.qdf
+E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8_tmp_archive.qarlog
+E:/Projects/CIC-560/6-9 fngdas8/db/FNGDAS8.cbx.xml
+E:/Projects/CIC-560/6-9 fngdas8/db/add_sub_jjh.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_1i92.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_2fv2.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_3i92.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_4i92.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_7i92.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_8i92.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_9i92.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_ai92.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_di92.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_ff92.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_jmi2.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_mam2.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/altsyncram_pmi2.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cmpr_inh.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_1r9.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_419.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_7u9.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_9v7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_av7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_che.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_cn8.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_dv7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_ev7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_f29.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_ghe.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_gkf.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_gp7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_gv7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_h29.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_hbg.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_hv7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_i29.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_laf.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_ln7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_nk7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_no8.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_po8.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_qo8.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_qv9.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_tn7.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_vgh.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/cntr_vt9.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/decode_9ie.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/decode_fga.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/decode_iga.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/decode_ogi.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/mux_dcb.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/mux_ecb.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/mux_fcb.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/mux_gcb.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/mux_hcb.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/mux_icb.tdf
+E:/Projects/CIC-560/6-9 fngdas8/db/mux_jcb.tdf
+E:/Projects/CIC-560/6-9 fngdas8/fngdas8.bsf
+E:/Projects/CIC-560/6-9 fngdas8/memory16.bsf
+E:/Projects/CIC-560/6-9 fngdas8/memory16.inc
+E:/Projects/CIC-560/6-9 fngdas8/memory16.vhd
+E:/Projects/CIC-560/6-9 fngdas8/memory16_inst.vhd
+E:/Projects/CIC-560/6-9 fngdas8/memory16_waveforms.html
+E:/Projects/CIC-560/6-9 fngdas8/pfgn8.mif
+d:/altera/quartus60/win/assignment_defaults.qdf
+zlib_out_time_stamp_tmp.tmp
+	======= Total: 86 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Fri May 30 09:43:06 2008
+Source archive file:	E:/Projects/CIC-560/6-9 fngdas8/FNGDAS8_tmp_archive.qar
+Archive was extracted into	E:/Projects/CIC-560/6-15 fngdasa/
+		 - successfully.

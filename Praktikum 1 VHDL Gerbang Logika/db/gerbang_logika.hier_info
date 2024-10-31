@@ -1,0 +1,6 @@
+|gerbang_logika
+In1_AND => Out_AND~0.IN0
+In2_AND => Out_AND~0.IN1
+Out_AND <= Out_AND~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

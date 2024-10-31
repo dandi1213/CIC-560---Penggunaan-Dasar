@@ -1,0 +1,384 @@
+Simulator report for SEGB13A_1C12Q240
+Tue Jul 17 11:36:11 2007
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 5.0 ms       ;
+; Simulation Netlist Size     ; 156 nodes    ;
+; Simulation Coverage         ;      73.18 % ;
+; Total Number of Transitions ; 2494153      ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone      ;
+; Device                      ; EP1C12Q240C8 ;
++-----------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                                 ; Default Value ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Timing                                                                                  ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                                    ; 0 ns          ;
+; Vector input source                                                                        ; C:\Documents and Settings\WIND WIND\Desktop\Example unit\unit 6\6-3 segb13a\segb13a.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                                      ; On            ;
+; Check outputs                                                                              ; Off                                                                                     ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                                      ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                                      ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                                      ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                                      ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                                     ; Off           ;
+; Detect glitches                                                                            ; Off                                                                                     ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                                     ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                                     ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                                     ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                                      ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                                              ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                                     ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                                     ;               ;
+; Glitch Filtering                                                                           ; Off                                                                                     ; Off           ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      73.18 % ;
+; Total nodes checked                                 ; 156          ;
+; Total output ports checked                          ; 179          ;
+; Total output ports with complete 1/0-value coverage ; 131          ;
+; Total output ports with no 1/0-value coverage       ; 47           ;
+; Total output ports with no 1-value coverage         ; 47           ;
+; Total output ports with no 0-value coverage         ; 48           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                ;
++----------------------+----------------------------------+------------------+
+; Node Name            ; Output Port Name                 ; Output Port Type ;
++----------------------+----------------------------------+------------------+
+; |segb13a|scount[0]   ; |segb13a|scount[0]~506           ; cout0            ;
+; |segb13a|scount[0]   ; |segb13a|scount[0]~506COUT1_532  ; cout1            ;
+; |segb13a|scount[1]   ; |segb13a|scount[1]~507           ; cout0            ;
+; |segb13a|scount[1]   ; |segb13a|scount[1]~507COUT1_533  ; cout1            ;
+; |segb13a|scount[2]   ; |segb13a|scount[2]~508           ; cout0            ;
+; |segb13a|scount[2]   ; |segb13a|scount[2]~508COUT1_534  ; cout1            ;
+; |segb13a|scount[3]   ; |segb13a|scount[3]~509           ; cout0            ;
+; |segb13a|scount[3]   ; |segb13a|scount[3]~509COUT1_535  ; cout1            ;
+; |segb13a|Equal0~315  ; |segb13a|Equal0~315              ; combout          ;
+; |segb13a|scount[6]   ; |segb13a|scount[6]~510COUT1_537  ; cout1            ;
+; |segb13a|scount[7]   ; |segb13a|scount[7]~511COUT1_538  ; cout1            ;
+; |segb13a|scount[8]   ; |segb13a|scount[8]~512COUT1_539  ; cout1            ;
+; |segb13a|scount[9]   ; |segb13a|scount[9]~513           ; cout             ;
+; |segb13a|Equal0~316  ; |segb13a|Equal0~316              ; combout          ;
+; |segb13a|scount[4]   ; |segb13a|scount[4]~514           ; cout             ;
+; |segb13a|scount[5]   ; |segb13a|scount[5]~515COUT1_536  ; cout1            ;
+; |segb13a|Equal0~317  ; |segb13a|Equal0~317              ; combout          ;
+; |segb13a|scount[10]  ; |segb13a|scount[10]~516          ; cout0            ;
+; |segb13a|scount[11]  ; |segb13a|scount[11]~517          ; cout0            ;
+; |segb13a|scount[12]  ; |segb13a|scount[12]~518          ; cout0            ;
+; |segb13a|scount[13]  ; |segb13a|scount[13]~519          ; cout0            ;
+; |segb13a|Equal0~318  ; |segb13a|Equal0~318              ; combout          ;
+; |segb13a|scount[14]  ; |segb13a|scount[14]~520          ; cout             ;
+; |segb13a|scount[15]  ; |segb13a|scount[15]~521COUT1_544 ; cout1            ;
+; |segb13a|scount[16]  ; |segb13a|scount[16]~522COUT1_545 ; cout1            ;
+; |segb13a|j[4]~89     ; |segb13a|j[4]~89                 ; combout          ;
+; |segb13a|j[5]~90     ; |segb13a|j[5]~90                 ; combout          ;
+; |segb13a|j[2]~91     ; |segb13a|j[2]~91                 ; combout          ;
+; |segb13a|j[3]~92     ; |segb13a|j[3]~92                 ; combout          ;
+; |segb13a|j[1]~93     ; |segb13a|j[1]~93                 ; combout          ;
+; |segb13a|j[0]~94     ; |segb13a|j[0]~94                 ; combout          ;
+; |segb13a|Equal56~303 ; |segb13a|Equal56~303             ; combout          ;
+; |segb13a|comb~5125   ; |segb13a|comb~5125               ; combout          ;
+; |segb13a|comb~5126   ; |segb13a|comb~5126               ; combout          ;
+; |segb13a|comb~5127   ; |segb13a|comb~5127               ; combout          ;
+; |segb13a|comb~5128   ; |segb13a|comb~5128               ; combout          ;
+; |segb13a|comb~5129   ; |segb13a|comb~5129               ; combout          ;
+; |segb13a|Equal56~304 ; |segb13a|Equal56~304             ; combout          ;
+; |segb13a|comb~5130   ; |segb13a|comb~5130               ; combout          ;
+; |segb13a|comb~5131   ; |segb13a|comb~5131               ; combout          ;
+; |segb13a|comb~5132   ; |segb13a|comb~5132               ; combout          ;
+; |segb13a|comb~5133   ; |segb13a|comb~5133               ; combout          ;
+; |segb13a|comb~5134   ; |segb13a|comb~5134               ; combout          ;
+; |segb13a|comb~5135   ; |segb13a|comb~5135               ; combout          ;
+; |segb13a|comb~5136   ; |segb13a|comb~5136               ; combout          ;
+; |segb13a|comb~5137   ; |segb13a|comb~5137               ; combout          ;
+; |segb13a|comb~5138   ; |segb13a|comb~5138               ; combout          ;
+; |segb13a|comb~5139   ; |segb13a|comb~5139               ; combout          ;
+; |segb13a|comb~5140   ; |segb13a|comb~5140               ; combout          ;
+; |segb13a|comb~5141   ; |segb13a|comb~5141               ; combout          ;
+; |segb13a|comb~5142   ; |segb13a|comb~5142               ; combout          ;
+; |segb13a|comb~5143   ; |segb13a|comb~5143               ; combout          ;
+; |segb13a|comb~5144   ; |segb13a|comb~5144               ; combout          ;
+; |segb13a|comb~5145   ; |segb13a|comb~5145               ; combout          ;
+; |segb13a|comb~5146   ; |segb13a|comb~5146               ; combout          ;
+; |segb13a|comb~5147   ; |segb13a|comb~5147               ; combout          ;
+; |segb13a|comb~5148   ; |segb13a|comb~5148               ; combout          ;
+; |segb13a|comb~5149   ; |segb13a|comb~5149               ; combout          ;
+; |segb13a|comb~5150   ; |segb13a|comb~5150               ; combout          ;
+; |segb13a|comb~5151   ; |segb13a|comb~5151               ; combout          ;
+; |segb13a|comb~5152   ; |segb13a|comb~5152               ; combout          ;
+; |segb13a|comb~5153   ; |segb13a|comb~5153               ; combout          ;
+; |segb13a|comb~5154   ; |segb13a|comb~5154               ; combout          ;
+; |segb13a|comb~5155   ; |segb13a|comb~5155               ; combout          ;
+; |segb13a|comb~5156   ; |segb13a|comb~5156               ; combout          ;
+; |segb13a|comb~5157   ; |segb13a|comb~5157               ; combout          ;
+; |segb13a|comb~5158   ; |segb13a|comb~5158               ; combout          ;
+; |segb13a|comb~5159   ; |segb13a|comb~5159               ; combout          ;
+; |segb13a|comb~5160   ; |segb13a|comb~5160               ; combout          ;
+; |segb13a|comb~5161   ; |segb13a|comb~5161               ; combout          ;
+; |segb13a|comb~5162   ; |segb13a|comb~5162               ; combout          ;
+; |segb13a|comb~5163   ; |segb13a|comb~5163               ; combout          ;
+; |segb13a|comb~5164   ; |segb13a|comb~5164               ; combout          ;
+; |segb13a|comb~5165   ; |segb13a|comb~5165               ; combout          ;
+; |segb13a|comb~5166   ; |segb13a|comb~5166               ; combout          ;
+; |segb13a|comb~5167   ; |segb13a|comb~5167               ; combout          ;
+; |segb13a|comb~5168   ; |segb13a|comb~5168               ; combout          ;
+; |segb13a|comb~5169   ; |segb13a|comb~5169               ; combout          ;
+; |segb13a|comb~5170   ; |segb13a|comb~5170               ; combout          ;
+; |segb13a|comb~5171   ; |segb13a|comb~5171               ; combout          ;
+; |segb13a|comb~5172   ; |segb13a|comb~5172               ; combout          ;
+; |segb13a|comb~5173   ; |segb13a|comb~5173               ; combout          ;
+; |segb13a|comb~5174   ; |segb13a|comb~5174               ; combout          ;
+; |segb13a|comb~5175   ; |segb13a|comb~5175               ; combout          ;
+; |segb13a|comb~5176   ; |segb13a|comb~5176               ; combout          ;
+; |segb13a|comb~5177   ; |segb13a|comb~5177               ; combout          ;
+; |segb13a|comb~5178   ; |segb13a|comb~5178               ; combout          ;
+; |segb13a|comb~5179   ; |segb13a|comb~5179               ; combout          ;
+; |segb13a|comb~5180   ; |segb13a|comb~5180               ; combout          ;
+; |segb13a|comb~5181   ; |segb13a|comb~5181               ; combout          ;
+; |segb13a|comb~5182   ; |segb13a|comb~5182               ; combout          ;
+; |segb13a|comb~5183   ; |segb13a|comb~5183               ; combout          ;
+; |segb13a|comb~5184   ; |segb13a|comb~5184               ; combout          ;
+; |segb13a|comb~5185   ; |segb13a|comb~5185               ; combout          ;
+; |segb13a|comb~5186   ; |segb13a|comb~5186               ; combout          ;
+; |segb13a|comb~5187   ; |segb13a|comb~5187               ; combout          ;
+; |segb13a|comb~5188   ; |segb13a|comb~5188               ; combout          ;
+; |segb13a|comb~5189   ; |segb13a|comb~5189               ; combout          ;
+; |segb13a|comb~5190   ; |segb13a|comb~5190               ; combout          ;
+; |segb13a|comb~5191   ; |segb13a|comb~5191               ; combout          ;
+; |segb13a|comb~5192   ; |segb13a|comb~5192               ; combout          ;
+; |segb13a|comb~5193   ; |segb13a|comb~5193               ; combout          ;
+; |segb13a|comb~5194   ; |segb13a|comb~5194               ; combout          ;
+; |segb13a|Equal56~305 ; |segb13a|Equal56~305             ; combout          ;
+; |segb13a|comb~5195   ; |segb13a|comb~5195               ; combout          ;
+; |segb13a|comb~5196   ; |segb13a|comb~5196               ; combout          ;
+; |segb13a|comb~5197   ; |segb13a|comb~5197               ; combout          ;
+; |segb13a|comb~5198   ; |segb13a|comb~5198               ; combout          ;
+; |segb13a|sclk        ; |segb13a|sclk                    ; combout          ;
+; |segb13a|js[4]       ; |segb13a|js[4]                   ; combout          ;
+; |segb13a|js[5]       ; |segb13a|js[5]                   ; combout          ;
+; |segb13a|js[2]       ; |segb13a|js[2]                   ; combout          ;
+; |segb13a|js[3]       ; |segb13a|js[3]                   ; combout          ;
+; |segb13a|js[1]       ; |segb13a|js[1]                   ; combout          ;
+; |segb13a|js[0]       ; |segb13a|js[0]                   ; combout          ;
+; |segb13a|s[15]       ; |segb13a|s[15]                   ; padio            ;
+; |segb13a|s[14]       ; |segb13a|s[14]                   ; padio            ;
+; |segb13a|s[13]       ; |segb13a|s[13]                   ; padio            ;
+; |segb13a|s[12]       ; |segb13a|s[12]                   ; padio            ;
+; |segb13a|s[11]       ; |segb13a|s[11]                   ; padio            ;
+; |segb13a|s[10]       ; |segb13a|s[10]                   ; padio            ;
+; |segb13a|s[9]        ; |segb13a|s[9]                    ; padio            ;
+; |segb13a|s[8]        ; |segb13a|s[8]                    ; padio            ;
+; |segb13a|s[7]        ; |segb13a|s[7]                    ; padio            ;
+; |segb13a|s[6]        ; |segb13a|s[6]                    ; padio            ;
+; |segb13a|s[5]        ; |segb13a|s[5]                    ; padio            ;
+; |segb13a|s[4]        ; |segb13a|s[4]                    ; padio            ;
+; |segb13a|s[3]        ; |segb13a|s[3]                    ; padio            ;
+; |segb13a|s[2]        ; |segb13a|s[2]                    ; padio            ;
+; |segb13a|s[1]        ; |segb13a|s[1]                    ; padio            ;
+; |segb13a|s[0]        ; |segb13a|s[0]                    ; padio            ;
++----------------------+----------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                      ;
++-------------------------+----------------------------------+------------------+
+; Node Name               ; Output Port Name                 ; Output Port Type ;
++-------------------------+----------------------------------+------------------+
+; |segb13a|scount[24]     ; |segb13a|scount[24]~500          ; cout             ;
+; |segb13a|scount[25]     ; |segb13a|scount[25]~501          ; cout0            ;
+; |segb13a|scount[25]     ; |segb13a|scount[25]~501COUT1_552 ; cout1            ;
+; |segb13a|scount[26]     ; |segb13a|scount[26]~502          ; cout0            ;
+; |segb13a|scount[26]     ; |segb13a|scount[26]~502COUT1_553 ; cout1            ;
+; |segb13a|scount[27]     ; |segb13a|scount[27]~503          ; cout0            ;
+; |segb13a|scount[27]     ; |segb13a|scount[27]~503COUT1_554 ; cout1            ;
+; |segb13a|scount[28]     ; |segb13a|scount[28]~504          ; cout0            ;
+; |segb13a|scount[28]     ; |segb13a|scount[28]~504COUT1_555 ; cout1            ;
+; |segb13a|Equal0~312     ; |segb13a|Equal0~312              ; combout          ;
+; |segb13a|Equal0~313     ; |segb13a|Equal0~313              ; combout          ;
+; |segb13a|Equal0~314     ; |segb13a|Equal0~314              ; combout          ;
+; |segb13a|scount[6]      ; |segb13a|scount[6]~510           ; cout0            ;
+; |segb13a|scount[7]      ; |segb13a|scount[7]~511           ; cout0            ;
+; |segb13a|scount[8]      ; |segb13a|scount[8]~512           ; cout0            ;
+; |segb13a|scount[5]      ; |segb13a|scount[5]~515           ; cout0            ;
+; |segb13a|scount[10]     ; |segb13a|scount[10]~516COUT1_540 ; cout1            ;
+; |segb13a|scount[11]     ; |segb13a|scount[11]~517COUT1_541 ; cout1            ;
+; |segb13a|scount[12]     ; |segb13a|scount[12]~518COUT1_542 ; cout1            ;
+; |segb13a|scount[13]     ; |segb13a|scount[13]~519COUT1_543 ; cout1            ;
+; |segb13a|scount[15]     ; |segb13a|scount[15]~521          ; cout0            ;
+; |segb13a|scount[16]     ; |segb13a|scount[16]~522          ; cout0            ;
+; |segb13a|scount[17]     ; |segb13a|scount[17]~523          ; cout0            ;
+; |segb13a|scount[17]     ; |segb13a|scount[17]~523COUT1_546 ; cout1            ;
+; |segb13a|Equal0~319     ; |segb13a|Equal0~319              ; combout          ;
+; |segb13a|scount[18]     ; |segb13a|scount[18]~524          ; cout0            ;
+; |segb13a|scount[18]     ; |segb13a|scount[18]~524COUT1_547 ; cout1            ;
+; |segb13a|scount[19]     ; |segb13a|scount[19]~525          ; cout             ;
+; |segb13a|scount[20]     ; |segb13a|scount[20]~526          ; cout0            ;
+; |segb13a|scount[20]     ; |segb13a|scount[20]~526COUT1_548 ; cout1            ;
+; |segb13a|scount[21]     ; |segb13a|scount[21]~527          ; cout0            ;
+; |segb13a|scount[21]     ; |segb13a|scount[21]~527COUT1_549 ; cout1            ;
+; |segb13a|Equal0~320     ; |segb13a|Equal0~320              ; combout          ;
+; |segb13a|scount[22]     ; |segb13a|scount[22]~528          ; cout0            ;
+; |segb13a|scount[22]     ; |segb13a|scount[22]~528COUT1_550 ; cout1            ;
+; |segb13a|scount[23]     ; |segb13a|scount[23]~529          ; cout0            ;
+; |segb13a|scount[23]     ; |segb13a|scount[23]~529COUT1_551 ; cout1            ;
+; |segb13a|Equal0~321     ; |segb13a|Equal0~321              ; combout          ;
+; |segb13a|Equal0~322     ; |segb13a|Equal0~322              ; combout          ;
+; |segb13a|scount[24]~530 ; |segb13a|scount[24]~530          ; combout          ;
+; |segb13a|clr            ; |segb13a|clr                     ; combout          ;
+; |segb13a|scndp[0]       ; |segb13a|scndp[0]                ; padio            ;
+; |segb13a|scndp[1]       ; |segb13a|scndp[1]                ; padio            ;
+; |segb13a|scndp[2]       ; |segb13a|scndp[2]                ; padio            ;
+; |segb13a|scndp[3]       ; |segb13a|scndp[3]                ; padio            ;
+; |segb13a|scndp[4]       ; |segb13a|scndp[4]                ; padio            ;
+; |segb13a|scndp[5]       ; |segb13a|scndp[5]                ; padio            ;
++-------------------------+----------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                      ;
++-------------------------+----------------------------------+------------------+
+; Node Name               ; Output Port Name                 ; Output Port Type ;
++-------------------------+----------------------------------+------------------+
+; |segb13a|scount[24]     ; |segb13a|scount[24]~500          ; cout             ;
+; |segb13a|scount[25]     ; |segb13a|scount[25]~501          ; cout0            ;
+; |segb13a|scount[25]     ; |segb13a|scount[25]~501COUT1_552 ; cout1            ;
+; |segb13a|scount[26]     ; |segb13a|scount[26]~502          ; cout0            ;
+; |segb13a|scount[26]     ; |segb13a|scount[26]~502COUT1_553 ; cout1            ;
+; |segb13a|scount[27]     ; |segb13a|scount[27]~503          ; cout0            ;
+; |segb13a|scount[27]     ; |segb13a|scount[27]~503COUT1_554 ; cout1            ;
+; |segb13a|scount[28]     ; |segb13a|scount[28]~504          ; cout0            ;
+; |segb13a|scount[28]     ; |segb13a|scount[28]~504COUT1_555 ; cout1            ;
+; |segb13a|Equal0~312     ; |segb13a|Equal0~312              ; combout          ;
+; |segb13a|Equal0~313     ; |segb13a|Equal0~313              ; combout          ;
+; |segb13a|Equal0~314     ; |segb13a|Equal0~314              ; combout          ;
+; |segb13a|scount[6]      ; |segb13a|scount[6]~510           ; cout0            ;
+; |segb13a|scount[7]      ; |segb13a|scount[7]~511           ; cout0            ;
+; |segb13a|scount[8]      ; |segb13a|scount[8]~512           ; cout0            ;
+; |segb13a|scount[5]      ; |segb13a|scount[5]~515           ; cout0            ;
+; |segb13a|scount[10]     ; |segb13a|scount[10]~516COUT1_540 ; cout1            ;
+; |segb13a|scount[11]     ; |segb13a|scount[11]~517COUT1_541 ; cout1            ;
+; |segb13a|scount[12]     ; |segb13a|scount[12]~518COUT1_542 ; cout1            ;
+; |segb13a|scount[13]     ; |segb13a|scount[13]~519COUT1_543 ; cout1            ;
+; |segb13a|scount[15]     ; |segb13a|scount[15]~521          ; cout0            ;
+; |segb13a|scount[16]     ; |segb13a|scount[16]~522          ; cout0            ;
+; |segb13a|scount[17]     ; |segb13a|scount[17]~523          ; cout0            ;
+; |segb13a|scount[17]     ; |segb13a|scount[17]~523COUT1_546 ; cout1            ;
+; |segb13a|Equal0~319     ; |segb13a|Equal0~319              ; combout          ;
+; |segb13a|scount[18]     ; |segb13a|scount[18]~524          ; cout0            ;
+; |segb13a|scount[18]     ; |segb13a|scount[18]~524COUT1_547 ; cout1            ;
+; |segb13a|scount[19]     ; |segb13a|scount[19]~525          ; cout             ;
+; |segb13a|scount[20]     ; |segb13a|scount[20]~526          ; cout0            ;
+; |segb13a|scount[20]     ; |segb13a|scount[20]~526COUT1_548 ; cout1            ;
+; |segb13a|scount[21]     ; |segb13a|scount[21]~527          ; cout0            ;
+; |segb13a|scount[21]     ; |segb13a|scount[21]~527COUT1_549 ; cout1            ;
+; |segb13a|Equal0~320     ; |segb13a|Equal0~320              ; combout          ;
+; |segb13a|scount[22]     ; |segb13a|scount[22]~528          ; cout0            ;
+; |segb13a|scount[22]     ; |segb13a|scount[22]~528COUT1_550 ; cout1            ;
+; |segb13a|scount[23]     ; |segb13a|scount[23]~529          ; cout0            ;
+; |segb13a|scount[23]     ; |segb13a|scount[23]~529COUT1_551 ; cout1            ;
+; |segb13a|Equal0~321     ; |segb13a|Equal0~321              ; combout          ;
+; |segb13a|Equal0~322     ; |segb13a|Equal0~322              ; combout          ;
+; |segb13a|scount[24]~530 ; |segb13a|scount[24]~530          ; combout          ;
+; |segb13a|clr            ; |segb13a|clr                     ; combout          ;
+; |segb13a|sel            ; |segb13a|sel                     ; combout          ;
+; |segb13a|scndp[0]       ; |segb13a|scndp[0]                ; padio            ;
+; |segb13a|scndp[1]       ; |segb13a|scndp[1]                ; padio            ;
+; |segb13a|scndp[2]       ; |segb13a|scndp[2]                ; padio            ;
+; |segb13a|scndp[3]       ; |segb13a|scndp[3]                ; padio            ;
+; |segb13a|scndp[4]       ; |segb13a|scndp[4]                ; padio            ;
+; |segb13a|scndp[5]       ; |segb13a|scndp[5]                ; padio            ;
++-------------------------+----------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 6.0 Build 178 04/27/2006 SJ Full Version
+    Info: Processing started: Tue Jul 17 11:35:03 2007
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off segb13a -c SEGB13A_1C12Q240
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      73.18 %
+Info: Number of transitions in simulation is 2494153
+Info: Vector file SEGB13A_1C12Q240.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Processing ended: Tue Jul 17 11:36:10 2007
+    Info: Elapsed time: 00:01:07
+
+

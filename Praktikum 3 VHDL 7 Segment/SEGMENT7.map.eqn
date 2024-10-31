@@ -1,0 +1,121 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L41 is seg~608
+--operation mode is normal
+
+A1L41 = i[0] & (i[3] # i[1] $ i[2]) # !i[0] & (i[1] # i[3] $ i[2]);
+
+
+--A1L51 is seg~609
+--operation mode is normal
+
+A1L51 = i[1] & (i[3] # i[2] & !i[0]) # !i[1] & (i[3] $ i[2] # !i[0]);
+
+
+--A1L61 is seg~610
+--operation mode is normal
+
+A1L61 = i[1] & (i[3] # !i[0]) # !i[1] & (i[2] & (i[3]) # !i[2] & !i[0]);
+
+
+--A1L71 is seg~611
+--operation mode is normal
+
+A1L71 = i[1] & (i[2] & (i[0]) # !i[2] & i[3] & !i[0]) # !i[1] & !i[3] & (i[2] $ i[0]);
+
+
+--A1L81 is seg~612
+--operation mode is normal
+
+A1L81 = i[3] & (i[0] & !i[1] # !i[2]) # !i[3] & (i[0] # i[2] # !i[1]);
+
+
+--A1L91 is seg~613
+--operation mode is normal
+
+A1L91 = i[1] & (i[0] & (!i[3]) # !i[0] & !i[2]) # !i[1] & (i[0] $ !i[3] # !i[2]);
+
+
+--A1L02 is seg~614
+--operation mode is normal
+
+A1L02 = i[3] & (i[1] $ !i[2] # !i[0]) # !i[3] & (i[1] # i[0] $ !i[2]);
+
+
+--i[3] is i[3]
+--operation mode is input
+
+i[3] = INPUT();
+
+
+--i[1] is i[1]
+--operation mode is input
+
+i[1] = INPUT();
+
+
+--i[0] is i[0]
+--operation mode is input
+
+i[0] = INPUT();
+
+
+--i[2] is i[2]
+--operation mode is input
+
+i[2] = INPUT();
+
+
+--seg[0] is seg[0]
+--operation mode is output
+
+seg[0] = OUTPUT(A1L41);
+
+
+--seg[1] is seg[1]
+--operation mode is output
+
+seg[1] = OUTPUT(A1L51);
+
+
+--seg[2] is seg[2]
+--operation mode is output
+
+seg[2] = OUTPUT(A1L61);
+
+
+--seg[3] is seg[3]
+--operation mode is output
+
+seg[3] = OUTPUT(!A1L71);
+
+
+--seg[4] is seg[4]
+--operation mode is output
+
+seg[4] = OUTPUT(A1L81);
+
+
+--seg[5] is seg[5]
+--operation mode is output
+
+seg[5] = OUTPUT(A1L91);
+
+
+--seg[6] is seg[6]
+--operation mode is output
+
+seg[6] = OUTPUT(A1L02);
+
+

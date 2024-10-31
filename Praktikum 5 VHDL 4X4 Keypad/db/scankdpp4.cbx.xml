@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="scankdpp4">
+		<CBX_INST_ENTRY INSTANCE_NAME="|scankdpp4|keybpg:key|LPM_COUNTER:count4" CBX_FILE_NAME="cntr_n8i.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

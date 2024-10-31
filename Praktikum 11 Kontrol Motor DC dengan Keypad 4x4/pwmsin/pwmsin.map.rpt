@@ -1,0 +1,279 @@
+Analysis & Synthesis report for pwmsin
+Thu Apr 27 16:44:09 2006
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: altsyncram:altsyncram_component
+ 10. Analysis & Synthesis Equations
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Apr 27 16:44:09 2006    ;
+; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
+; Revision Name               ; pwmsin                                   ;
+; Top-level Entity Name       ; pwmsin                                   ;
+; Family                      ; Cyclone                                  ;
+; Total logic elements        ; 0                                        ;
+; Total pins                  ; 18                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 1,280                                    ;
+; Total PLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                     ;
++--------------------------------------------------------------------+--------------+---------------+
+; Option                                                             ; Setting      ; Default Value ;
++--------------------------------------------------------------------+--------------+---------------+
+; Device                                                             ; EP1C12Q240C8 ;               ;
+; Top-level entity name                                              ; pwmsin       ; pwmsin        ;
+; Family name                                                        ; Cyclone      ; Stratix       ;
+; Use smart compilation                                              ; Off          ; Off           ;
+; Restructure Multiplexers                                           ; Auto         ; Auto          ;
+; Create Debugging Nodes for IP Cores                                ; off          ; off           ;
+; Preserve fewer node names                                          ; On           ; On            ;
+; Disable OpenCore Plus hardware evaluation                          ; Off          ; Off           ;
+; Verilog Version                                                    ; Verilog_2001 ; Verilog_2001  ;
+; VHDL Version                                                       ; VHDL93       ; VHDL93        ;
+; State Machine Processing                                           ; Auto         ; Auto          ;
+; Extract Verilog State Machines                                     ; On           ; On            ;
+; Extract VHDL State Machines                                        ; On           ; On            ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On           ; On            ;
+; NOT Gate Push-Back                                                 ; On           ; On            ;
+; Power-Up Don't Care                                                ; On           ; On            ;
+; Remove Redundant Logic Cells                                       ; Off          ; Off           ;
+; Remove Duplicate Registers                                         ; On           ; On            ;
+; Ignore CARRY Buffers                                               ; Off          ; Off           ;
+; Ignore CASCADE Buffers                                             ; Off          ; Off           ;
+; Ignore GLOBAL Buffers                                              ; Off          ; Off           ;
+; Ignore ROW GLOBAL Buffers                                          ; Off          ; Off           ;
+; Ignore LCELL Buffers                                               ; Off          ; Off           ;
+; Ignore SOFT Buffers                                                ; On           ; On            ;
+; Limit AHDL Integers to 32 Bits                                     ; Off          ; Off           ;
+; Optimization Technique -- Cyclone                                  ; Balanced     ; Balanced      ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70           ; 70            ;
+; Auto Carry Chains                                                  ; On           ; On            ;
+; Auto Open-Drain Pins                                               ; On           ; On            ;
+; Remove Duplicate Logic                                             ; On           ; On            ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off          ; Off           ;
+; Perform gate-level register retiming                               ; Off          ; Off           ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On           ; On            ;
+; Auto ROM Replacement                                               ; On           ; On            ;
+; Auto RAM Replacement                                               ; On           ; On            ;
+; Auto Shift Register Replacement                                    ; On           ; On            ;
+; Auto Clock Enable Replacement                                      ; On           ; On            ;
+; Allows Synchronous Control Signal Usage in Normal Mode Logic Cells ; On           ; On            ;
+; Auto RAM Block Balancing                                           ; On           ; On            ;
+; Auto Resource Sharing                                              ; Off          ; Off           ;
+; Allow Any RAM Size For Recognition                                 ; Off          ; Off           ;
+; Allow Any ROM Size For Recognition                                 ; Off          ; Off           ;
+; Allow Any Shift Register Size For Recognition                      ; Off          ; Off           ;
+; Maximum Number of M512 Memory Blocks                               ; -1           ; -1            ;
+; Maximum Number of M4K Memory Blocks                                ; -1           ; -1            ;
+; Maximum Number of M-RAM Memory Blocks                              ; -1           ; -1            ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off          ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On           ; On            ;
++--------------------------------------------------------------------+--------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
+; ../pwmsin.vhd                    ; yes             ; User VHDL File               ; C:/ddata/qutvhd/ep1c12/pwmp16/pwmsin.vhd                          ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/quartus50/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/stratix_ram_block.inc ;
+; lpm_mux.inc                      ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/lpm_decode.inc        ;
+; aglobal50.inc                    ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/aglobal50.inc         ;
+; altsyncram.inc                   ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/altsyncram.inc        ;
+; a_rdenreg.inc                    ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/altrom.inc            ;
+; altram.inc                       ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/altram.inc            ;
+; altdpram.inc                     ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/altdpram.inc          ;
+; altqpram.inc                     ; yes             ; Other                        ; c:/altera/quartus50/libraries/megafunctions/altqpram.inc          ;
+; db/altsyncram_d6s.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/ddata/qutvhd/ep1c12/pwmp16/pwmsin/db/altsyncram_d6s.tdf        ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++---------------------------------+-----------+
+; Resource                        ; Usage     ;
++---------------------------------+-----------+
+; Total logic elements            ; 0         ;
+; Total combinational functions   ; 0         ;
+;     -- Total 4-input functions  ; 0         ;
+;     -- Total 3-input functions  ; 0         ;
+;     -- Total 2-input functions  ; 0         ;
+;     -- Total 1-input functions  ; 0         ;
+;     -- Total 0-input functions  ; 0         ;
+; Combinational cells for routing ; 0         ;
+; Total registers                 ; 0         ;
+; I/O pins                        ; 18        ;
+; Total memory bits               ; 1280      ;
+; Maximum fan-out node            ; clock     ;
+; Maximum fan-out                 ; 10        ;
+; Total fan-out                   ; 90        ;
+; Average fan-out                 ; 3.21      ;
++---------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                    ;
++---------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+-----------------------------------------------------------------------+
+; Compilation Hierarchy Node            ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name                                                   ;
++---------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+-----------------------------------------------------------------------+
+; |pwmsin                               ; 0 (0)       ; 0            ; 1280        ; 18   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |pwmsin                                                               ;
+;    |altsyncram:altsyncram_component|  ; 0 (0)       ; 0            ; 1280        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |pwmsin|altsyncram:altsyncram_component                               ;
+;       |altsyncram_d6s:auto_generated| ; 0 (0)       ; 0            ; 1280        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |pwmsin|altsyncram:altsyncram_component|altsyncram_d6s:auto_generated ;
++---------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+-----------------------------------------------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                         ;
++--------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------------+
+; Name                                                                     ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                          ;
++--------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------------+
+; altsyncram:altsyncram_component|altsyncram_d6s:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 128          ; 10           ; --           ; --           ; 1280 ; E:/max2work/vhdl/sine10f.mif ;
++--------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: altsyncram:altsyncram_component       ;
++------------------------------------+------------------------------+----------------+
+; Parameter Name                     ; Value                        ; Type           ;
++------------------------------------+------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                            ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                           ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                          ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                           ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                          ; IGNORE_CASCADE ;
+; OPERATION_MODE                     ; ROM                          ; Untyped        ;
+; WIDTH_A                            ; 10                           ; Integer        ;
+; WIDTHAD_A                          ; 7                            ; Integer        ;
+; NUMWORDS_A                         ; 128                          ; Integer        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                 ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                         ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                         ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                         ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                         ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                         ; Untyped        ;
+; WIDTH_B                            ; 1                            ; Untyped        ;
+; WIDTHAD_B                          ; 1                            ; Untyped        ;
+; NUMWORDS_B                         ; 1                            ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                       ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                       ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                       ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                       ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                 ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                       ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                         ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                         ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                         ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                         ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                         ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                         ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                            ; Integer        ;
+; WIDTH_BYTEENA_B                    ; 1                            ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                         ; Untyped        ;
+; BYTE_SIZE                          ; 8                            ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                    ; Untyped        ;
+; INIT_FILE                          ; E:/max2work/vhdl/sine10f.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                       ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                            ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                       ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                       ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                       ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                       ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone                      ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_d6s               ; Untyped        ;
++------------------------------------+------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in C:/ddata/qutvhd/ep1c12/pwmp16/pwmsin/pwmsin.map.eqn.
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Processing started: Thu Apr 27 16:44:08 2006
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pwmsin -c pwmsin
+Info: Found 2 design units, including 1 entities, in source file ../pwmsin.vhd
+    Info: Found design unit 1: pwmsin-SYN
+    Info: Found entity 1: pwmsin
+Info: Elaborating entity "pwmsin" for the top level hierarchy
+Info: Found 1 design units, including 1 entities, in source file ../../../../../altera/quartus50/libraries/megafunctions/altsyncram.tdf
+    Info: Found entity 1: altsyncram
+Info: Elaborating entity "altsyncram" for hierarchy "altsyncram:altsyncram_component"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_d6s.tdf
+    Info: Found entity 1: altsyncram_d6s
+Info: Elaborating entity "altsyncram_d6s" for hierarchy "altsyncram:altsyncram_component|altsyncram_d6s:auto_generated"
+Info: Implemented 28 device resources after synthesis - the final resource count might be different
+    Info: Implemented 8 input pins
+    Info: Implemented 10 output pins
+    Info: Implemented 10 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Processing ended: Thu Apr 27 16:44:09 2006
+    Info: Elapsed time: 00:00:02
+
+

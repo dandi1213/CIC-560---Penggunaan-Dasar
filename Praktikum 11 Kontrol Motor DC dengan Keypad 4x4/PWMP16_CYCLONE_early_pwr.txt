@@ -1,0 +1,27 @@
+PowerPlay Early Power Estimator File for PWMP16_CYCLONE - Do not edit this line
+
+
+<name=DEVICE value=EP1C12Q240C8>
+
+<name=fmax_GC1 value=0>
+<name=ff_GC1 value=90>
+<name=dspnum_GC1 value=0>
+<name=RAMM512num_GC1 value=0>
+<name=RAMM4Knum_GC1 value=0>
+<name=RAMMRAMnum_GC1 value=0>
+ 
+ 
+<name=fmax_LE1 value=0>
+<name=tot_LE1 value=140>
+<name=totwcc_LE1 value=57>
+ 
+ 
+<name=fmax_GIO1 value=0>
+<name=NumbOB_GIO1 value=39>
+<name=avgCLoad_GIO1 value=10>
+<name=iostd_GIO1 value=3.3_LVTTL/LVCMOS_24>
+<name=iodatarate_GIO1 value=SDR>
+
+ 
+<name=LE_avgFanOut value=3.20>
+

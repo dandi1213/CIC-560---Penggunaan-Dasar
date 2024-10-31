@@ -1,0 +1,65 @@
+
+subdesign decp8d9
+(clk,ena,clrn:input;
+ cntp[31..0]:output;)
+variable
+  cntn[31..0]:dff;
+begin    --8 digital BCD UP COUNTER
+ cntn[].clk=clk;
+ cntn[].CLRN=NOT clrn;
+ if clrn then cntn[]=0;
+    elsif ena then
+      if cntn[3..0]==9 then cntn[3..0]=0;  
+         else cntn[3..0]=cntn[3..0]+1;
+      end if;
+      if cntn[3..0]==9 then
+         if  cntn[7..4]==9 then cntn[7..4]=0;  
+         else cntn[7..4]=cntn[7..4]+1;
+         end if;
+      else cntn[7..4]=cntn[7..4]; 
+      end if;
+	  if (cntn[3..0]==9 & cntn[7..4]==9) then
+         if  cntn[11..8]==9 then cntn[11..8]=0;  
+         else cntn[11..8]=cntn[11..8]+1;
+         end if;
+      else cntn[11..8]=cntn[11..8]; 
+      end if;
+	  if (cntn[3..0]==9 & cntn[7..4]==9& cntn[11..8]==9) then
+         if  cntn[15..12]==9 then cntn[15..12]=0;  
+         else cntn[15..12]=cntn[15..12]+1;
+         end if;
+      else cntn[15..12]=cntn[15..12]; 
+      end if;
+
+
+      if (cntn[3..0]==9 & cntn[7..4]==9& cntn[11..8]==9& cntn[15..12]==9) then
+         if  cntn[19..16]==9 then cntn[19..16]=0;  
+         else cntn[19..16]=cntn[19..16]+1;
+         end if;
+      else cntn[19..16]=cntn[19..16]; 
+      end if;
+	  if (cntn[3..0]==9 & cntn[7..4]==9& cntn[11..8]==9& cntn[15..12]==9& cntn[19..16]==9) then
+         if  cntn[23..20]==9 then cntn[23..20]=0;  
+         else cntn[23..20]=cntn[23..20]+1;
+         end if;
+      else cntn[23..20]=cntn[23..20]; 
+      end if;
+      if (cntn[3..0]==9 & cntn[7..4]==9& cntn[11..8]==9& cntn[15..12]==9& cntn[19..16]==9 & cntn[23..20]==9) then
+         if  cntn[27..24]==9 then cntn[27..24]=0;  
+         else cntn[27..24]=cntn[27..24]+1;
+         end if;
+      else cntn[27..24]=cntn[27..24]; 
+      end if;
+      if (cntn[3..0]==9 & cntn[7..4]==9& cntn[11..8]==9& cntn[15..12]==9&
+										 cntn[19..16]==9 & cntn[23..20]==9 & cntn[27..24]==9 ) then
+         if  cntn[31..28]==9 then cntn[31..28]=0;  
+         else cntn[31..28]=cntn[31..28]+1;
+         end if;
+      else cntn[31..28]=cntn[31..28]; 
+      end if; 
+
+     else cntn[]=cntn[];
+    end if;
+ cntp[]=cntn[];
+ end;
+

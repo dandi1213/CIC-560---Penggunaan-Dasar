@@ -1,0 +1,44 @@
+function decp8d9(clk,ena,clrn)returns (cntp[31..0]);
+function 7segd (x[3..0]) returns (s[0..6]);
+subdesign 8dec714
+(clk,ena,clear,sel[2..0],exclk,phb:input;
+segd[0..6],scan[7..0],pha:output;)
+variable 
+  cntt :decp8d9;
+  sgd:7segd;  
+  sdiv[26..0]:dff;
+  dpsec:node;
+begin
+
+case sel[] is when b"000" => cntt.clk = exclk;
+			  when b"001" => cntt.clk = phb;
+						 	 pha= vcc;
+			  when b"010" => cntt.clk = phb;
+						 	 pha= exclk;
+         	  when b"011" => cntt.clk = dpsec; --1 sec counter
+			  when b"100" => cntt.clk = sdiv[20];
+			  when b"101" => cntt.clk = sdiv[12];
+			  when b"110" => cntt.clk = sdiv[9];
+			  when b"111" => cntt.clk = sdiv[4];
+end case;
+				
+  cntt.clrn=clear;
+  cntt.ena=ena;
+
+ sdiv[].clk=clk;
+ if sdiv[]==h"26259FF" then sdiv[]=0;dpsec=gnd; --input 40MHZ clock
+ else  sdiv[]=sdiv[]+1; dpsec=vcc;
+ end if; 
+  
+  case sdiv[17..15] is    --scan display--
+         when 0=>scan[]=b"10000000";sgd.x[]=cntt.cntp[31..28];
+         when 1=>scan[]=b"01000000";sgd.x[]=cntt.cntp[27..24];
+		 when 2=>scan[]=b"00100000";sgd.x[]=cntt.cntp[23..20];
+         when 3=>scan[]=b"00010000";sgd.x[]=cntt.cntp[19..16];  
+         when 4=>scan[]=b"00001000";sgd.x[]=cntt.cntp[15..12];
+         when 5=>scan[]=b"00000100";sgd.x[]=cntt.cntp[11..8];
+		 when 6=>scan[]=b"00000010";sgd.x[]=cntt.cntp[7..4];
+		 when 7=>scan[]=b"00000001";sgd.x[]=cntt.cntp[3..0];	     
+  end case;
+  segd[]=sgd.s[];
+end;

@@ -1,0 +1,12 @@
+Flow Status : Successful - Sat Apr 22 22:02:45 2006
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : hexdec8
+Top-level Entity Name : hexdec8
+Family : ACEX1K
+Device : EP1K100QC208-3
+Timing Models : Final
+Met timing requirements : N/A
+Total logic elements : 74 / 4,992 ( 1 % )
+Total pins : 21 / 147 ( 14 % )
+Total memory bits : 0 / 49,152 ( 0 % )
+Total PLLs : 0

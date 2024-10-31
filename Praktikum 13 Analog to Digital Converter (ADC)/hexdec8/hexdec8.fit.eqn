@@ -1,0 +1,1049 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L11Q is donf~reg0 at LC8_C39
+--operation mode is normal
+
+A1L11Q_lut_out = !dly & done;
+A1L11Q = DFFEA(A1L11Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L01Q is donf~10 at LC8_C39
+--operation mode is normal
+
+A1L01Q = A1L11Q;
+
+
+--A1L51Q is dout[0]~reg0 at LC3_C48
+--operation mode is normal
+
+A1L51Q_lut_out = tdo[0];
+A1L51Q = DFFEA(A1L51Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L41Q is dout[0]~10 at LC3_C48
+--operation mode is normal
+
+A1L41Q = A1L51Q;
+
+
+--A1L81Q is dout[1]~reg0 at LC6_C49
+--operation mode is normal
+
+A1L81Q_lut_out = tdo[1];
+A1L81Q = DFFEA(A1L81Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L71Q is dout[1]~11 at LC6_C49
+--operation mode is normal
+
+A1L71Q = A1L81Q;
+
+
+--A1L12Q is dout[2]~reg0 at LC2_C49
+--operation mode is normal
+
+A1L12Q_lut_out = tdo[2];
+A1L12Q = DFFEA(A1L12Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L02Q is dout[2]~12 at LC2_C49
+--operation mode is normal
+
+A1L02Q = A1L12Q;
+
+
+--A1L42Q is dout[3]~reg0 at LC7_C42
+--operation mode is normal
+
+A1L42Q_lut_out = tdo[3];
+A1L42Q = DFFEA(A1L42Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L32Q is dout[3]~13 at LC7_C42
+--operation mode is normal
+
+A1L32Q = A1L42Q;
+
+
+--A1L72Q is dout[4]~reg0 at LC7_C40
+--operation mode is normal
+
+A1L72Q_lut_out = tdo[4];
+A1L72Q = DFFEA(A1L72Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L62Q is dout[4]~14 at LC7_C40
+--operation mode is normal
+
+A1L62Q = A1L72Q;
+
+
+--A1L03Q is dout[5]~reg0 at LC8_C42
+--operation mode is normal
+
+A1L03Q_lut_out = tdo[5];
+A1L03Q = DFFEA(A1L03Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L92Q is dout[5]~15 at LC8_C42
+--operation mode is normal
+
+A1L92Q = A1L03Q;
+
+
+--A1L33Q is dout[6]~reg0 at LC2_C30
+--operation mode is normal
+
+A1L33Q_lut_out = tdo[6];
+A1L33Q = DFFEA(A1L33Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L23Q is dout[6]~16 at LC2_C30
+--operation mode is normal
+
+A1L23Q = A1L33Q;
+
+
+--A1L63Q is dout[7]~reg0 at LC2_C28
+--operation mode is normal
+
+A1L63Q_lut_out = tdo[7];
+A1L63Q = DFFEA(A1L63Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L53Q is dout[7]~17 at LC2_C28
+--operation mode is normal
+
+A1L53Q = A1L63Q;
+
+
+--A1L93Q is dout[8]~reg0 at LC4_C30
+--operation mode is normal
+
+A1L93Q_lut_out = tdo[8];
+A1L93Q = DFFEA(A1L93Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L83Q is dout[8]~18 at LC4_C30
+--operation mode is normal
+
+A1L83Q = A1L93Q;
+
+
+--A1L24Q is dout[9]~reg0 at LC3_C30
+--operation mode is normal
+
+A1L24Q_lut_out = tdo[9];
+A1L24Q = DFFEA(A1L24Q_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L14Q is dout[9]~19 at LC3_C30
+--operation mode is normal
+
+A1L14Q = A1L24Q;
+
+
+--done is done at LC5_C39
+--operation mode is normal
+
+done_lut_out = A1L031 & (done # sft & bcov);
+done = DFFEA(done_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L8Q is done~61 at LC5_C39
+--operation mode is normal
+
+A1L8Q = done;
+
+
+--dly is dly at LC6_C39
+--operation mode is normal
+
+dly_lut_out = done;
+dly = DFFEA(dly_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L6Q is dly~1 at LC6_C39
+--operation mode is normal
+
+A1L6Q = dly;
+
+
+--tdo[0] is tdo[0] at LC1_C48
+--operation mode is normal
+
+tdo[0]_lut_out = dsr[0];
+tdo[0] = DFFEA(tdo[0]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L631Q is tdo[0]~41 at LC1_C48
+--operation mode is normal
+
+A1L631Q = tdo[0];
+
+
+--tdo[1] is tdo[1] at LC5_C49
+--operation mode is normal
+
+tdo[1]_lut_out = dsr[1];
+tdo[1] = DFFEA(tdo[1]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L931Q is tdo[1]~42 at LC5_C49
+--operation mode is normal
+
+A1L931Q = tdo[1];
+
+
+--tdo[2] is tdo[2] at LC7_C49
+--operation mode is normal
+
+tdo[2]_lut_out = dsr[2];
+tdo[2] = DFFEA(tdo[2]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L141Q is tdo[2]~43 at LC7_C49
+--operation mode is normal
+
+A1L141Q = tdo[2];
+
+
+--tdo[3] is tdo[3] at LC2_C42
+--operation mode is normal
+
+tdo[3]_lut_out = dsr[3];
+tdo[3] = DFFEA(tdo[3]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L341Q is tdo[3]~44 at LC2_C42
+--operation mode is normal
+
+A1L341Q = tdo[3];
+
+
+--tdo[4] is tdo[4] at LC1_C40
+--operation mode is normal
+
+tdo[4]_lut_out = dsr[4];
+tdo[4] = DFFEA(tdo[4]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L541Q is tdo[4]~45 at LC1_C40
+--operation mode is normal
+
+A1L541Q = tdo[4];
+
+
+--tdo[5] is tdo[5] at LC3_C42
+--operation mode is normal
+
+tdo[5]_lut_out = dsr[5];
+tdo[5] = DFFEA(tdo[5]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L741Q is tdo[5]~46 at LC3_C42
+--operation mode is normal
+
+A1L741Q = tdo[5];
+
+
+--tdo[6] is tdo[6] at LC1_C30
+--operation mode is normal
+
+tdo[6]_lut_out = dsr[6];
+tdo[6] = DFFEA(tdo[6]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L941Q is tdo[6]~47 at LC1_C30
+--operation mode is normal
+
+A1L941Q = tdo[6];
+
+
+--tdo[7] is tdo[7] at LC1_C28
+--operation mode is normal
+
+tdo[7]_lut_out = dsr[7];
+tdo[7] = DFFEA(tdo[7]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L151Q is tdo[7]~48 at LC1_C28
+--operation mode is normal
+
+A1L151Q = tdo[7];
+
+
+--tdo[8] is tdo[8] at LC5_C30
+--operation mode is normal
+
+tdo[8]_lut_out = dsr[8];
+tdo[8] = DFFEA(tdo[8]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L351Q is tdo[8]~49 at LC5_C30
+--operation mode is normal
+
+A1L351Q = tdo[8];
+
+
+--tdo[9] is tdo[9] at LC6_C30
+--operation mode is normal
+
+tdo[9]_lut_out = dsr[9];
+tdo[9] = DFFEA(tdo[9]_lut_out, GLOBAL(sysclk), , , A1L531, , );
+
+--A1L551Q is tdo[9]~50 at LC6_C30
+--operation mode is normal
+
+A1L551Q = tdo[9];
+
+
+--bcov is bcov at LC7_C39
+--operation mode is normal
+
+bcov_lut_out = !A1L601;
+bcov = DFFEA(bcov_lut_out, GLOBAL(sysclk), , , A1L031, , );
+
+--A1L2Q is bcov~12 at LC7_C39
+--operation mode is normal
+
+A1L2Q = bcov;
+
+
+--sft is sft at LC3_C39
+--operation mode is normal
+
+sft_lut_out = A1L031 & (stas[0] # !sft & chk);
+sft = DFFEA(sft_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L121Q is sft~69 at LC3_C39
+--operation mode is normal
+
+A1L121Q = sft;
+
+
+--dsr[0] is dsr[0] at LC4_C48
+--operation mode is clrb_cntr
+
+dsr[0]_lut_out = ((!dsr[0] & A1L54) # (hsr[7] & !A1L54)) & A1L031;
+dsr[0] = DFFEA(dsr[0]_lut_out, GLOBAL(sysclk), , , A1L801, , );
+
+--A1L64Q is dsr[0]~264 at LC4_C48
+--operation mode is clrb_cntr
+
+A1L64Q = dsr[0];
+
+--G3_cout[0] is lpm_add_sub:ladd|addcore:adder|a_csnbuffer:result_node|cout[0] at LC4_C48
+--operation mode is clrb_cntr
+
+G3_cout[0] = CARRY(dsr[0]);
+
+
+--A1L531 is tdo[0]~9 at LC1_C39
+--operation mode is normal
+
+A1L531 = A1L031 & !dly & done;
+
+--A1L731 is tdo[0]~51 at LC1_C39
+--operation mode is normal
+
+A1L731 = A1L031 & !dly & done;
+
+
+--dsr[1] is dsr[1] at LC8_C48
+--operation mode is normal
+
+dsr[1]_lut_out = A1L031 & A1L011;
+dsr[1] = DFFEA(dsr[1]_lut_out, GLOBAL(sysclk), , , A1L801, , );
+
+--A1L94Q is dsr[1]~265 at LC8_C48
+--operation mode is normal
+
+A1L94Q = dsr[1];
+
+
+--dsr[2] is dsr[2] at LC1_C49
+--operation mode is normal
+
+dsr[2]_lut_out = A1L031 & A1L111;
+dsr[2] = DFFEA(dsr[2]_lut_out, GLOBAL(sysclk), , , A1L801, , );
+
+--A1L15Q is dsr[2]~266 at LC1_C49
+--operation mode is normal
+
+A1L15Q = dsr[2];
+
+
+--dsr[3] is dsr[3] at LC4_C49
+--operation mode is normal
+
+dsr[3]_lut_out = A1L031 & (dsr[2] # !sft);
+dsr[3] = DFFEA(dsr[3]_lut_out, GLOBAL(sysclk), , , A1L801, , );
+
+--A1L35Q is dsr[3]~267 at LC4_C49
+--operation mode is normal
+
+A1L35Q = dsr[3];
+
+
+--dsr[4] is dsr[4] at LC4_C41
+--operation mode is clrb_cntr
+
+dsr[4]_lut_out = ((!dsr[4] & A1L54) # (dsr[3] & !A1L54)) & A1L031;
+dsr[4] = DFFEA(dsr[4]_lut_out, GLOBAL(sysclk), , , A1L901, , );
+
+--A1L55Q is dsr[4]~268 at LC4_C41
+--operation mode is clrb_cntr
+
+A1L55Q = dsr[4];
+
+--G6_cout[0] is lpm_add_sub:madd|addcore:adder|a_csnbuffer:result_node|cout[0] at LC4_C41
+--operation mode is clrb_cntr
+
+G6_cout[0] = CARRY(dsr[4]);
+
+
+--dsr[5] is dsr[5] at LC1_C41
+--operation mode is normal
+
+dsr[5]_lut_out = A1L031 & A1L211;
+dsr[5] = DFFEA(dsr[5]_lut_out, GLOBAL(sysclk), , , A1L901, , );
+
+--A1L75Q is dsr[5]~269 at LC1_C41
+--operation mode is normal
+
+A1L75Q = dsr[5];
+
+
+--dsr[6] is dsr[6] at LC2_C41
+--operation mode is normal
+
+dsr[6]_lut_out = A1L031 & A1L311;
+dsr[6] = DFFEA(dsr[6]_lut_out, GLOBAL(sysclk), , , A1L901, , );
+
+--A1L95Q is dsr[6]~270 at LC2_C41
+--operation mode is normal
+
+A1L95Q = dsr[6];
+
+
+--dsr[7] is dsr[7] at LC3_C41
+--operation mode is normal
+
+dsr[7]_lut_out = A1L031 & (dsr[6] # !sft);
+dsr[7] = DFFEA(dsr[7]_lut_out, GLOBAL(sysclk), , , A1L901, , );
+
+--A1L16Q is dsr[7]~271 at LC3_C41
+--operation mode is normal
+
+A1L16Q = dsr[7];
+
+
+--dsr[8] is dsr[8] at LC7_C30
+--operation mode is normal
+
+dsr[8]_lut_out = A1L031 & (sft & (dsr[7]) # !sft & dsr[8]);
+dsr[8] = DFFEA(dsr[8]_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L36Q is dsr[8]~272 at LC7_C30
+--operation mode is normal
+
+A1L36Q = dsr[8];
+
+
+--dsr[9] is dsr[9] at LC8_C30
+--operation mode is normal
+
+dsr[9]_lut_out = A1L031 & (sft & (dsr[8]) # !sft & dsr[9]);
+dsr[9] = DFFEA(dsr[9]_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L56Q is dsr[9]~273 at LC8_C30
+--operation mode is normal
+
+A1L56Q = dsr[9];
+
+
+--stas[0] is stas[0] at LC2_C46
+--operation mode is normal
+
+stas[0]_lut_out = !A1L031;
+stas[0] = DFFEA(stas[0]_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L721Q is stas[0]~33 at LC2_C46
+--operation mode is normal
+
+A1L721Q = stas[0];
+
+
+--chk is chk at LC4_C39
+--operation mode is normal
+
+chk_lut_out = A1L031 & sft & (chk # !bcov);
+chk = DFFEA(chk_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L4Q is chk~98 at LC4_C39
+--operation mode is normal
+
+A1L4Q = chk;
+
+
+--stab is stab at LC3_C38
+--operation mode is normal
+
+stab_lut_out = sta;
+stab = DFFEA(stab_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L421Q is stab~1 at LC3_C38
+--operation mode is normal
+
+A1L421Q = stab;
+
+
+--stas[1] is stas[1] at LC4_C38
+--operation mode is normal
+
+stas[1]_lut_out = stab;
+stas[1] = DFFEA(stas[1]_lut_out, GLOBAL(sysclk), , , , , );
+
+--A1L921Q is stas[1]~34 at LC4_C38
+--operation mode is normal
+
+A1L921Q = stas[1];
+
+
+--A1L031 is stas~0 at LC2_C38
+--operation mode is normal
+
+A1L031 = stas[1] # !stab;
+
+--A1L131 is stas~35 at LC2_C38
+--operation mode is normal
+
+A1L131 = stas[1] # !stab;
+
+
+--D1_134 is 74163:bcnt1|f74163:sub|134 at LC7_C46
+--operation mode is normal
+
+D1_134_lut_out = A1L031 & (D1_134 $ (sft & D1_118));
+D1_134 = DFFEA(D1_134_lut_out, GLOBAL(sysclk), , , , , );
+
+--D1L11Q is 74163:bcnt1|f74163:sub|134~7 at LC7_C46
+--operation mode is normal
+
+D1L11Q = D1_134;
+
+
+--D1_122 is 74163:bcnt1|f74163:sub|122 at LC6_C46
+--operation mode is clrb_cntr
+
+D1_122_lut_out = (D1_122 $ (sft & D1_107)) & A1L031;
+D1_122 = DFFEA(D1_122_lut_out, GLOBAL(sysclk), , , , , );
+
+--D1L9Q is 74163:bcnt1|f74163:sub|122~8 at LC6_C46
+--operation mode is clrb_cntr
+
+D1L9Q = D1_122;
+
+--D1_118 is 74163:bcnt1|f74163:sub|118 at LC6_C46
+--operation mode is clrb_cntr
+
+D1_118 = CARRY(D1_122 & (D1_107));
+
+
+--D1_111 is 74163:bcnt1|f74163:sub|111 at LC5_C46
+--operation mode is clrb_cntr
+
+D1_111_lut_out = (D1_111 $ (sft & D1_74)) & A1L031;
+D1_111 = DFFEA(D1_111_lut_out, GLOBAL(sysclk), , , , , );
+
+--D1L6Q is 74163:bcnt1|f74163:sub|111~8 at LC5_C46
+--operation mode is clrb_cntr
+
+D1L6Q = D1_111;
+
+--D1_107 is 74163:bcnt1|f74163:sub|107 at LC5_C46
+--operation mode is clrb_cntr
+
+D1_107 = CARRY(D1_111 & (D1_74));
+
+
+--D1_34 is 74163:bcnt1|f74163:sub|34 at LC4_C46
+--operation mode is clrb_cntr
+
+D1_34_lut_out = (sft $ D1_34) & A1L031;
+D1_34 = DFFEA(D1_34_lut_out, GLOBAL(sysclk), , , , , );
+
+--D1L2Q is 74163:bcnt1|f74163:sub|34~8 at LC4_C46
+--operation mode is clrb_cntr
+
+D1L2Q = D1_34;
+
+--D1_74 is 74163:bcnt1|f74163:sub|74 at LC4_C46
+--operation mode is clrb_cntr
+
+D1_74 = CARRY(D1_34);
+
+
+--A1L601 is reduce_nor~18 at LC1_C46
+--operation mode is normal
+
+A1L601 = D1_134 # !D1_122 # !D1_111 # !D1_34;
+
+--A1L701 is reduce_nor~19 at LC1_C46
+--operation mode is normal
+
+A1L701 = D1_134 # !D1_122 # !D1_111 # !D1_34;
+
+
+--hsr[7] is hsr[7] at LC3_C46
+--operation mode is normal
+
+hsr[7]_lut_out = stas[0] & hin[7] # !stas[0] & (A1L29);
+hsr[7] = DFFEA(hsr[7]_lut_out, GLOBAL(sysclk), , , A1L031, , );
+
+--A1L19Q is hsr[7]~675 at LC3_C46
+--operation mode is normal
+
+A1L19Q = hsr[7];
+
+
+--G3_cs_buffer[1] is lpm_add_sub:ladd|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] at LC5_C48
+--operation mode is arithmetic
+
+G3_cs_buffer[1] = dsr[1] $ G3_cout[0];
+
+--G3L7 is lpm_add_sub:ladd|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~40 at LC5_C48
+--operation mode is arithmetic
+
+G3L7 = dsr[1] $ G3_cout[0];
+
+--G3_cout[1] is lpm_add_sub:ladd|addcore:adder|a_csnbuffer:result_node|cout[1] at LC5_C48
+--operation mode is arithmetic
+
+G3_cout[1] = CARRY(dsr[1] # G3_cout[0]);
+
+
+--A1L011 is rtl~388 at LC2_C48
+--operation mode is normal
+
+A1L011 = sft & (dsr[0]) # !sft & !G3_cs_buffer[1];
+
+--A1L411 is rtl~395 at LC2_C48
+--operation mode is normal
+
+A1L411 = sft & (dsr[0]) # !sft & !G3_cs_buffer[1];
+
+
+--A1L801 is rtl~3 at LC3_C49
+--operation mode is normal
+
+A1L801 = sft # E1_unreg_res_node[3] & chk # !A1L031;
+
+--A1L511 is rtl~396 at LC3_C49
+--operation mode is normal
+
+A1L511 = sft # E1_unreg_res_node[3] & chk # !A1L031;
+
+
+--G3_cs_buffer[2] is lpm_add_sub:ladd|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] at LC6_C48
+--operation mode is arithmetic
+
+G3_cs_buffer[2] = dsr[2] $ G3_cout[1];
+
+--G3L9 is lpm_add_sub:ladd|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~41 at LC6_C48
+--operation mode is arithmetic
+
+G3L9 = dsr[2] $ G3_cout[1];
+
+--G3_cout[2] is lpm_add_sub:ladd|addcore:adder|a_csnbuffer:result_node|cout[2] at LC6_C48
+--operation mode is arithmetic
+
+G3_cout[2] = CARRY(dsr[2] & G3_cout[1]);
+
+
+--A1L111 is rtl~389 at LC8_C49
+--operation mode is normal
+
+A1L111 = sft & (dsr[1]) # !sft & G3_cs_buffer[2];
+
+--A1L611 is rtl~397 at LC8_C49
+--operation mode is normal
+
+A1L611 = sft & (dsr[1]) # !sft & G3_cs_buffer[2];
+
+
+--G6_cs_buffer[1] is lpm_add_sub:madd|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] at LC5_C41
+--operation mode is arithmetic
+
+G6_cs_buffer[1] = dsr[5] $ G6_cout[0];
+
+--G6L7 is lpm_add_sub:madd|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~40 at LC5_C41
+--operation mode is arithmetic
+
+G6L7 = dsr[5] $ G6_cout[0];
+
+--G6_cout[1] is lpm_add_sub:madd|addcore:adder|a_csnbuffer:result_node|cout[1] at LC5_C41
+--operation mode is arithmetic
+
+G6_cout[1] = CARRY(dsr[5] # G6_cout[0]);
+
+
+--A1L211 is rtl~391 at LC8_C41
+--operation mode is normal
+
+A1L211 = sft & (dsr[4]) # !sft & !G6_cs_buffer[1];
+
+--A1L711 is rtl~398 at LC8_C41
+--operation mode is normal
+
+A1L711 = sft & (dsr[4]) # !sft & !G6_cs_buffer[1];
+
+
+--A1L901 is rtl~13 at LC2_C39
+--operation mode is normal
+
+A1L901 = sft # E2_unreg_res_node[3] & chk # !A1L031;
+
+--A1L811 is rtl~399 at LC2_C39
+--operation mode is normal
+
+A1L811 = sft # E2_unreg_res_node[3] & chk # !A1L031;
+
+
+--G6_cs_buffer[2] is lpm_add_sub:madd|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] at LC6_C41
+--operation mode is arithmetic
+
+G6_cs_buffer[2] = dsr[6] $ G6_cout[1];
+
+--G6L9 is lpm_add_sub:madd|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~41 at LC6_C41
+--operation mode is arithmetic
+
+G6L9 = dsr[6] $ G6_cout[1];
+
+--G6_cout[2] is lpm_add_sub:madd|addcore:adder|a_csnbuffer:result_node|cout[2] at LC6_C41
+--operation mode is arithmetic
+
+G6_cout[2] = CARRY(dsr[6] & G6_cout[1]);
+
+
+--A1L311 is rtl~392 at LC1_C42
+--operation mode is normal
+
+A1L311 = sft & (dsr[5]) # !sft & G6_cs_buffer[2];
+
+--A1L911 is rtl~400 at LC1_C42
+--operation mode is normal
+
+A1L911 = sft & (dsr[5]) # !sft & G6_cs_buffer[2];
+
+
+--E1_unreg_res_node[3] is lpm_add_sub:ladd|addcore:adder|unreg_res_node[3] at LC7_C48
+--operation mode is normal
+
+E1_unreg_res_node[3] = G3_cout[2] $ dsr[3];
+
+--E1L3 is lpm_add_sub:ladd|addcore:adder|unreg_res_node[3]~7 at LC7_C48
+--operation mode is normal
+
+E1L3 = G3_cout[2] $ dsr[3];
+
+
+--E2_unreg_res_node[3] is lpm_add_sub:madd|addcore:adder|unreg_res_node[3] at LC7_C41
+--operation mode is normal
+
+E2_unreg_res_node[3] = G6_cout[2] $ dsr[7];
+
+--E2L3 is lpm_add_sub:madd|addcore:adder|unreg_res_node[3]~7 at LC7_C41
+--operation mode is normal
+
+E2L3 = G6_cout[2] $ dsr[7];
+
+
+--hsr[6] is hsr[6] at LC1_C43
+--operation mode is normal
+
+hsr[6]_lut_out = stas[0] & hin[6] # !stas[0] & (A1L39);
+hsr[6] = DFFEA(hsr[6]_lut_out, GLOBAL(sysclk), , , A1L031, , );
+
+--A1L98Q is hsr[6]~676 at LC1_C43
+--operation mode is normal
+
+A1L98Q = hsr[6];
+
+
+--A1L29 is hsr~648 at LC8_C46
+--operation mode is normal
+
+A1L29 = sft & (hsr[6]) # !sft & hsr[7];
+
+--A1L99 is hsr~677 at LC8_C46
+--operation mode is normal
+
+A1L99 = sft & (hsr[6]) # !sft & hsr[7];
+
+
+--hsr[5] is hsr[5] at LC2_C43
+--operation mode is normal
+
+hsr[5]_lut_out = stas[0] & hin[5] # !stas[0] & (A1L49);
+hsr[5] = DFFEA(hsr[5]_lut_out, GLOBAL(sysclk), , , A1L031, , );
+
+--A1L78Q is hsr[5]~678 at LC2_C43
+--operation mode is normal
+
+A1L78Q = hsr[5];
+
+
+--A1L39 is hsr~651 at LC3_C43
+--operation mode is normal
+
+A1L39 = sft & (hsr[5]) # !sft & hsr[6];
+
+--A1L001 is hsr~679 at LC3_C43
+--operation mode is normal
+
+A1L001 = sft & (hsr[5]) # !sft & hsr[6];
+
+
+--hsr[4] is hsr[4] at LC4_C43
+--operation mode is normal
+
+hsr[4]_lut_out = stas[0] & hin[4] # !stas[0] & (A1L59);
+hsr[4] = DFFEA(hsr[4]_lut_out, GLOBAL(sysclk), , , A1L031, , );
+
+--A1L58Q is hsr[4]~680 at LC4_C43
+--operation mode is normal
+
+A1L58Q = hsr[4];
+
+
+--A1L49 is hsr~654 at LC5_C43
+--operation mode is normal
+
+A1L49 = sft & (hsr[4]) # !sft & hsr[5];
+
+--A1L101 is hsr~681 at LC5_C43
+--operation mode is normal
+
+A1L101 = sft & (hsr[4]) # !sft & hsr[5];
+
+
+--hsr[3] is hsr[3] at LC6_C43
+--operation mode is normal
+
+hsr[3]_lut_out = stas[0] & hin[3] # !stas[0] & (A1L69);
+hsr[3] = DFFEA(hsr[3]_lut_out, GLOBAL(sysclk), , , A1L031, , );
+
+--A1L38Q is hsr[3]~682 at LC6_C43
+--operation mode is normal
+
+A1L38Q = hsr[3];
+
+
+--A1L59 is hsr~657 at LC7_C43
+--operation mode is normal
+
+A1L59 = sft & (hsr[3]) # !sft & hsr[4];
+
+--A1L201 is hsr~683 at LC7_C43
+--operation mode is normal
+
+A1L201 = sft & (hsr[3]) # !sft & hsr[4];
+
+
+--hsr[2] is hsr[2] at LC1_C38
+--operation mode is normal
+
+hsr[2]_lut_out = stas[0] & hin[2] # !stas[0] & (A1L79);
+hsr[2] = DFFEA(hsr[2]_lut_out, GLOBAL(sysclk), , , A1L031, , );
+
+--A1L18Q is hsr[2]~684 at LC1_C38
+--operation mode is normal
+
+A1L18Q = hsr[2];
+
+
+--A1L69 is hsr~660 at LC8_C43
+--operation mode is normal
+
+A1L69 = sft & (hsr[2]) # !sft & hsr[3];
+
+--A1L301 is hsr~685 at LC8_C43
+--operation mode is normal
+
+A1L301 = sft & (hsr[2]) # !sft & hsr[3];
+
+
+--hsr[1] is hsr[1] at LC5_C38
+--operation mode is normal
+
+hsr[1]_lut_out = stas[0] & hin[1] # !stas[0] & (A1L89);
+hsr[1] = DFFEA(hsr[1]_lut_out, GLOBAL(sysclk), , , A1L031, , );
+
+--A1L97Q is hsr[1]~686 at LC5_C38
+--operation mode is normal
+
+A1L97Q = hsr[1];
+
+
+--A1L79 is hsr~663 at LC6_C38
+--operation mode is normal
+
+A1L79 = sft & (hsr[1]) # !sft & hsr[2];
+
+--A1L401 is hsr~687 at LC6_C38
+--operation mode is normal
+
+A1L401 = sft & (hsr[1]) # !sft & hsr[2];
+
+
+--hsr[0] is hsr[0] at LC7_C38
+--operation mode is normal
+
+hsr[0]_lut_out = stas[0] & hin[0];
+hsr[0] = DFFEA(hsr[0]_lut_out, GLOBAL(sysclk), , , A1L031, , );
+
+--A1L77Q is hsr[0]~688 at LC7_C38
+--operation mode is normal
+
+A1L77Q = hsr[0];
+
+
+--A1L89 is hsr~666 at LC8_C38
+--operation mode is normal
+
+A1L89 = sft & (hsr[0]) # !sft & hsr[1];
+
+--A1L501 is hsr~689 at LC8_C38
+--operation mode is normal
+
+A1L501 = sft & (hsr[0]) # !sft & hsr[1];
+
+
+--A1L54 is dsr[0]~263 at LC1_C44
+--operation mode is normal
+
+A1L54 = !sft;
+
+--A1L74 is dsr[0]~274 at LC1_C44
+--operation mode is normal
+
+A1L74 = !sft;
+
+
+--sysclk is sysclk at PIN_79
+--operation mode is input
+
+sysclk = INPUT();
+
+
+--sta is sta at PIN_184
+--operation mode is input
+
+sta = INPUT();
+
+
+--hin[7] is hin[7] at PIN_182
+--operation mode is input
+
+hin[7] = INPUT();
+
+
+--hin[6] is hin[6] at PIN_78
+--operation mode is input
+
+hin[6] = INPUT();
+
+
+--hin[5] is hin[5] at PIN_80
+--operation mode is input
+
+hin[5] = INPUT();
+
+
+--hin[4] is hin[4] at PIN_183
+--operation mode is input
+
+hin[4] = INPUT();
+
+
+--hin[3] is hin[3] at PIN_206
+--operation mode is input
+
+hin[3] = INPUT();
+
+
+--hin[2] is hin[2] at PIN_14
+--operation mode is input
+
+hin[2] = INPUT();
+
+
+--hin[1] is hin[1] at PIN_195
+--operation mode is input
+
+hin[1] = INPUT();
+
+
+--hin[0] is hin[0] at PIN_141
+--operation mode is input
+
+hin[0] = INPUT();
+
+
+--donf is donf at PIN_136
+--operation mode is output
+
+donf = OUTPUT(A1L11Q);
+
+
+--dout[0] is dout[0] at PIN_202
+--operation mode is output
+
+dout[0] = OUTPUT(A1L51Q);
+
+
+--dout[1] is dout[1] at PIN_18
+--operation mode is output
+
+dout[1] = OUTPUT(A1L81Q);
+
+
+--dout[2] is dout[2] at PIN_8
+--operation mode is output
+
+dout[2] = OUTPUT(A1L12Q);
+
+
+--dout[3] is dout[3] at PIN_196
+--operation mode is output
+
+dout[3] = OUTPUT(A1L42Q);
+
+
+--dout[4] is dout[4] at PIN_15
+--operation mode is output
+
+dout[4] = OUTPUT(A1L72Q);
+
+
+--dout[5] is dout[5] at PIN_139
+--operation mode is output
+
+dout[5] = OUTPUT(A1L03Q);
+
+
+--dout[6] is dout[6] at PIN_140
+--operation mode is output
+
+dout[6] = OUTPUT(A1L33Q);
+
+
+--dout[7] is dout[7] at PIN_187
+--operation mode is output
+
+dout[7] = OUTPUT(A1L63Q);
+
+
+--dout[8] is dout[8] at PIN_73
+--operation mode is output
+
+dout[8] = OUTPUT(A1L93Q);
+
+
+--dout[9] is dout[9] at PIN_10
+--operation mode is output
+
+dout[9] = OUTPUT(A1L24Q);
+
+

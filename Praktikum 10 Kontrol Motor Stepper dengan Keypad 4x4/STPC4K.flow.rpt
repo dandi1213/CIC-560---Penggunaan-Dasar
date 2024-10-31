@@ -1,0 +1,122 @@
+Flow report for STPC4K
+Wed Jun 30 08:43:52 2021
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Flow Summary                                                           ;
++-------------------------+----------------------------------------------+
+; Flow Status             ; Successful - Wed Jun 30 08:43:52 2021        ;
+; Quartus II Version      ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name           ; STPC4K                                       ;
+; Top-level Entity Name   ; STPCT4K                                      ;
+; Family                  ; Cyclone                                      ;
+; Device                  ; EP1C12Q240C8                                 ;
+; Timing Models           ; Final                                        ;
+; Met timing requirements ; Yes                                          ;
+; Total logic elements    ; 185 / 12,060 ( 2 % )                         ;
+; Total pins              ; 48 / 173 ( 28 % )                            ;
+; Total virtual pins      ; 0                                            ;
+; Total memory bits       ; 0 / 239,616 ( 0 % )                          ;
+; Total PLLs              ; 0 / 2 ( 0 % )                                ;
++-------------------------+----------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 06/28/2021 15:15:34 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; STPC4K              ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                  ;
++-----------------------+--------------------------------+---------------+-------------+------------+
+; Assignment Name       ; Value                          ; Default Value ; Entity Name ; Section Id ;
++-----------------------+--------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID ; 61762879423217.162486813307768 ; --            ; --          ; --         ;
+; SMART_RECOMPILE       ; On                             ; Off           ; --          ; --         ;
+; TOP_LEVEL_ENTITY      ; STPCT4K                        ; STPC4K        ; --          ; --         ;
++-----------------------+--------------------------------+---------------+-------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis    ; 00:00:31     ; 1.0                     ; 249 MB              ; 00:00:06                           ;
+; Fitter                  ; 00:00:08     ; 1.0                     ; 264 MB              ; 00:00:06                           ;
+; Assembler               ; 00:00:04     ; 1.0                     ; 227 MB              ; 00:00:02                           ;
+; Classic Timing Analyzer ; 00:00:02     ; 1.0                     ; 175 MB              ; 00:00:01                           ;
+; Fitter                  ; 00:00:18     ; 1.0                     ; 290 MB              ; 00:00:06                           ;
+; Assembler               ; 00:00:03     ; 1.0                     ; 226 MB              ; 00:00:02                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 171 MB              ; 00:00:01                           ;
+; Total                   ; 00:01:07     ; --                      ; --                  ; 00:00:24                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++-------------------------+------------------+---------------+------------+----------------+
+; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++-------------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis    ; DESKTOP-KDQ9PME  ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                  ; DESKTOP-KDQ9PME  ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler               ; DESKTOP-KDQ9PME  ; Windows Vista ; 6.2        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-KDQ9PME  ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                  ; DESKTOP-KDQ9PME  ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler               ; DESKTOP-KDQ9PME  ; Windows Vista ; 6.2        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-KDQ9PME  ; Windows Vista ; 6.2        ; x86_64         ;
++-------------------------+------------------+---------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off STPCT4K -c STPC4K
+quartus_fit --read_settings_files=off --write_settings_files=off STPCT4K -c STPC4K
+quartus_asm --read_settings_files=off --write_settings_files=off STPCT4K -c STPC4K
+quartus_tan --read_settings_files=off --write_settings_files=off STPCT4K -c STPC4K --timing_analysis_only
+quartus_fit --read_settings_files=on --write_settings_files=off STPCT4K -c STPC4K
+quartus_asm --read_settings_files=off --write_settings_files=off STPCT4K -c STPC4K
+quartus_tan --read_settings_files=off --write_settings_files=off STPCT4K -c STPC4K --timing_analysis_only
+
+
+

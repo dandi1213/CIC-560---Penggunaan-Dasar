@@ -1,0 +1,766 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--krcnt[1] is krcnt[1]
+--operation mode is normal
+
+krcnt[1]_lut_out = !krcnt[1];
+krcnt[1] = DFFEAS(krcnt[1]_lut_out, clk, VCC, , A1L84, , , , );
+
+
+--krcnt[0] is krcnt[0]
+--operation mode is normal
+
+krcnt[0]_lut_out = !krcnt[0];
+krcnt[0] = DFFEAS(krcnt[0]_lut_out, clk, VCC, , A1L67, , , , );
+
+
+--A1L27 is Mux~53
+--operation mode is normal
+
+A1L27 = krcnt[1] # krcnt[0];
+
+
+--A1L37 is Mux~54
+--operation mode is normal
+
+A1L37 = krcnt[0] & (!krcnt[1]);
+
+
+--A1L47 is Mux~55
+--operation mode is normal
+
+A1L47 = krcnt[1] & (!krcnt[0]);
+
+
+--A1L57 is Mux~56
+--operation mode is normal
+
+A1L57 = krcnt[1] & krcnt[0];
+
+
+--A1L1 is add~313
+--operation mode is arithmetic
+
+A1L1 = !kdatap[0];
+
+--A1L2 is add~315
+--operation mode is arithmetic
+
+A1L2 = CARRY(kdatap[0]);
+
+
+--A1L3 is add~318
+--operation mode is arithmetic
+
+A1L3_carry_eqn = A1L2;
+A1L3 = kdatap[1] $ (A1L3_carry_eqn);
+
+--A1L4 is add~320
+--operation mode is arithmetic
+
+A1L4 = CARRY(!A1L2 # !kdatap[1]);
+
+
+--A1L5 is add~323
+--operation mode is arithmetic
+
+A1L5_carry_eqn = A1L4;
+A1L5 = kdatap[2] $ (!A1L5_carry_eqn);
+
+--A1L6 is add~325
+--operation mode is arithmetic
+
+A1L6 = CARRY(kdatap[2] & (!A1L4));
+
+
+--A1L7 is add~328
+--operation mode is arithmetic
+
+A1L7_carry_eqn = A1L6;
+A1L7 = kdatap[3] $ (A1L7_carry_eqn);
+
+--A1L8 is add~330
+--operation mode is arithmetic
+
+A1L8 = CARRY(!A1L6 # !kdatap[3]);
+
+
+--A1L9 is add~333
+--operation mode is arithmetic
+
+A1L9_carry_eqn = A1L8;
+A1L9 = htone $ (!A1L9_carry_eqn);
+
+--A1L01 is add~335
+--operation mode is arithmetic
+
+A1L01 = CARRY(htone & (!A1L8));
+
+
+--A1L11 is add~338
+--operation mode is normal
+
+A1L11_carry_eqn = A1L01;
+A1L11 = A1L11_carry_eqn;
+
+
+--kdatap[0] is kdatap[0]
+--operation mode is normal
+
+kdatap[0]_lut_out = dlt & A1L53 & (!dlt1);
+kdatap[0] = DFFEAS(kdatap[0]_lut_out, clk, VCC, , A1L34, , , , );
+
+
+--kdatap[1] is kdatap[1]
+--operation mode is normal
+
+kdatap[1]_lut_out = dlt & A1L63 & (!dlt1);
+kdatap[1] = DFFEAS(kdatap[1]_lut_out, clk, VCC, , A1L34, , , , );
+
+
+--kdatap[2] is kdatap[2]
+--operation mode is normal
+
+kdatap[2]_lut_out = krcnt[0] & dlt & A1L73 & !dlt1;
+kdatap[2] = DFFEAS(kdatap[2]_lut_out, clk, VCC, , A1L34, , , , );
+
+
+--kdatap[3] is kdatap[3]
+--operation mode is normal
+
+kdatap[3]_lut_out = krcnt[1] & dlt & A1L73 & !dlt1;
+kdatap[3] = DFFEAS(kdatap[3]_lut_out, clk, VCC, , A1L34, , , , );
+
+
+--ltdatap[0] is ltdatap[0]
+--operation mode is normal
+
+ltdatap[0]_lut_out = A1L53;
+ltdatap[0] = DFFEAS(ltdatap[0]_lut_out, clk, VCC, , ltd, , , , );
+
+
+--ltdatap[1] is ltdatap[1]
+--operation mode is normal
+
+ltdatap[1]_lut_out = A1L63;
+ltdatap[1] = DFFEAS(ltdatap[1]_lut_out, clk, VCC, , ltd, , , , );
+
+
+--ltdatap[2] is ltdatap[2]
+--operation mode is normal
+
+ltdatap[2]_lut_out = krcnt[0] & A1L73;
+ltdatap[2] = DFFEAS(ltdatap[2]_lut_out, clk, VCC, , ltd, , , , );
+
+
+--ltdatap[3] is ltdatap[3]
+--operation mode is normal
+
+ltdatap[3]_lut_out = krcnt[1] & A1L73;
+ltdatap[3] = DFFEAS(ltdatap[3]_lut_out, clk, VCC, , ltd, , , , );
+
+
+--dlp4 is dlp4
+--operation mode is normal
+
+dlp4_lut_out = dlp3;
+dlp4 = DFFEAS(dlp4_lut_out, clk, VCC, , A1L77, , , , );
+
+
+--dlp3 is dlp3
+--operation mode is normal
+
+dlp3_lut_out = dlp2;
+dlp3 = DFFEAS(dlp3_lut_out, clk, VCC, , A1L77, , , , );
+
+
+--A1L68 is release~26
+--operation mode is normal
+
+A1L68 = dlp4 # dlp3;
+
+
+--dlp2 is dlp2
+--operation mode is normal
+
+dlp2_lut_out = dlp1;
+dlp2 = DFFEAS(dlp2_lut_out, clk, VCC, , A1L77, , , , );
+
+
+--dlp1 is dlp1
+--operation mode is normal
+
+dlp1_lut_out = A1L73;
+dlp1 = DFFEAS(dlp1_lut_out, clk, VCC, , A1L77, , , , );
+
+
+--A1L73 is kdatab[4]~299
+--operation mode is normal
+
+A1L73 = kcol[0] & !kcol[1] & !kcol[2] & !kcol[3] # !kcol[0] & (kcol[1] & !kcol[2] & !kcol[3] # !kcol[1] & (kcol[2] $ kcol[3]));
+
+
+--A1L58 is release~3
+--operation mode is normal
+
+A1L58 = A1L68 # dlp2 # dlp1 # A1L73;
+
+
+--dlt1 is dlt1
+--operation mode is normal
+
+dlt1_lut_out = dlt;
+dlt1 = DFFEAS(dlt1_lut_out, clk, VCC, , , , , , );
+
+
+--dlt4 is dlt4
+--operation mode is normal
+
+dlt4_lut_out = dlt3;
+dlt4 = DFFEAS(dlt4_lut_out, clk, VCC, , , , , , );
+
+
+--A1L42 is intp~0
+--operation mode is normal
+
+A1L42 = dlt1 & (!dlt4);
+
+
+--dlt2 is dlt2
+--operation mode is normal
+
+dlt2_lut_out = dlt1;
+dlt2 = DFFEAS(dlt2_lut_out, clk, VCC, , , , , , );
+
+
+--A1L821 is strobe~0
+--operation mode is normal
+
+A1L821 = dlt1 & (!dlt2);
+
+
+--scount[0] is scount[0]
+--operation mode is arithmetic
+
+scount[0]_lut_out = !scount[0];
+scount[0] = DFFEAS(scount[0]_lut_out, clk, VCC, , , , , , );
+
+--A1L98 is scount[0]~421
+--operation mode is arithmetic
+
+A1L98 = CARRY(scount[0]);
+
+
+--scount[2] is scount[2]
+--operation mode is arithmetic
+
+scount[2]_carry_eqn = A1L19;
+scount[2]_lut_out = scount[2] $ (!scount[2]_carry_eqn);
+scount[2] = DFFEAS(scount[2]_lut_out, clk, VCC, , , , , , );
+
+--A1L39 is scount[2]~425
+--operation mode is arithmetic
+
+A1L39 = CARRY(scount[2] & (!A1L19));
+
+
+--scount[4] is scount[4]
+--operation mode is arithmetic
+
+scount[4]_carry_eqn = A1L59;
+scount[4]_lut_out = scount[4] $ (!scount[4]_carry_eqn);
+scount[4] = DFFEAS(scount[4]_lut_out, clk, VCC, , , , , , );
+
+--A1L79 is scount[4]~429
+--operation mode is arithmetic
+
+A1L79 = CARRY(scount[4] & (!A1L59));
+
+
+--scount[5] is scount[5]
+--operation mode is arithmetic
+
+scount[5]_carry_eqn = A1L79;
+scount[5]_lut_out = scount[5] $ (scount[5]_carry_eqn);
+scount[5] = DFFEAS(scount[5]_lut_out, clk, VCC, , , , , , );
+
+--A1L99 is scount[5]~433
+--operation mode is arithmetic
+
+A1L99 = CARRY(!A1L79 # !scount[5]);
+
+
+--A1L87 is reduce_nor~144
+--operation mode is normal
+
+A1L87 = !scount[0] & !scount[2] & !scount[4] & !scount[5];
+
+
+--scount[6] is scount[6]
+--operation mode is arithmetic
+
+scount[6]_carry_eqn = A1L99;
+scount[6]_lut_out = scount[6] $ (!scount[6]_carry_eqn);
+scount[6] = DFFEAS(scount[6]_lut_out, clk, VCC, , , , , , );
+
+--A1L101 is scount[6]~437
+--operation mode is arithmetic
+
+A1L101 = CARRY(scount[6] & (!A1L99));
+
+
+--scount[7] is scount[7]
+--operation mode is arithmetic
+
+scount[7]_carry_eqn = A1L101;
+scount[7]_lut_out = scount[7] $ (scount[7]_carry_eqn);
+scount[7] = DFFEAS(scount[7]_lut_out, clk, VCC, , , , , , );
+
+--A1L301 is scount[7]~441
+--operation mode is arithmetic
+
+A1L301 = CARRY(!A1L101 # !scount[7]);
+
+
+--scount[8] is scount[8]
+--operation mode is arithmetic
+
+scount[8]_carry_eqn = A1L301;
+scount[8]_lut_out = scount[8] $ (!scount[8]_carry_eqn);
+scount[8] = DFFEAS(scount[8]_lut_out, clk, VCC, , , , , , );
+
+--A1L501 is scount[8]~445
+--operation mode is arithmetic
+
+A1L501 = CARRY(scount[8] & (!A1L301));
+
+
+--scount[9] is scount[9]
+--operation mode is arithmetic
+
+scount[9]_carry_eqn = A1L501;
+scount[9]_lut_out = scount[9] $ (scount[9]_carry_eqn);
+scount[9] = DFFEAS(scount[9]_lut_out, clk, VCC, , , , , , );
+
+--A1L701 is scount[9]~449
+--operation mode is arithmetic
+
+A1L701 = CARRY(!A1L501 # !scount[9]);
+
+
+--A1L97 is reduce_nor~145
+--operation mode is normal
+
+A1L97 = !scount[6] & !scount[7] & !scount[8] & !scount[9];
+
+
+--scount[10] is scount[10]
+--operation mode is arithmetic
+
+scount[10]_carry_eqn = A1L701;
+scount[10]_lut_out = scount[10] $ (!scount[10]_carry_eqn);
+scount[10] = DFFEAS(scount[10]_lut_out, clk, VCC, , , , , , );
+
+--A1L901 is scount[10]~453
+--operation mode is arithmetic
+
+A1L901 = CARRY(scount[10] & (!A1L701));
+
+
+--scount[11] is scount[11]
+--operation mode is arithmetic
+
+scount[11]_carry_eqn = A1L901;
+scount[11]_lut_out = scount[11] $ (scount[11]_carry_eqn);
+scount[11] = DFFEAS(scount[11]_lut_out, clk, VCC, , , , , , );
+
+--A1L111 is scount[11]~457
+--operation mode is arithmetic
+
+A1L111 = CARRY(!A1L901 # !scount[11]);
+
+
+--scount[12] is scount[12]
+--operation mode is arithmetic
+
+scount[12]_carry_eqn = A1L111;
+scount[12]_lut_out = scount[12] $ (!scount[12]_carry_eqn);
+scount[12] = DFFEAS(scount[12]_lut_out, clk, VCC, , , , , , );
+
+--A1L311 is scount[12]~461
+--operation mode is arithmetic
+
+A1L311 = CARRY(scount[12] & (!A1L111));
+
+
+--scount[13] is scount[13]
+--operation mode is arithmetic
+
+scount[13]_carry_eqn = A1L311;
+scount[13]_lut_out = scount[13] $ (scount[13]_carry_eqn);
+scount[13] = DFFEAS(scount[13]_lut_out, clk, VCC, , , , , , );
+
+--A1L511 is scount[13]~465
+--operation mode is arithmetic
+
+A1L511 = CARRY(!A1L311 # !scount[13]);
+
+
+--A1L08 is reduce_nor~146
+--operation mode is normal
+
+A1L08 = !scount[10] & !scount[11] & !scount[12] & !scount[13];
+
+
+--scount[14] is scount[14]
+--operation mode is arithmetic
+
+scount[14]_carry_eqn = A1L511;
+scount[14]_lut_out = scount[14] $ (!scount[14]_carry_eqn);
+scount[14] = DFFEAS(scount[14]_lut_out, clk, VCC, , , , , , );
+
+--A1L711 is scount[14]~469
+--operation mode is arithmetic
+
+A1L711 = CARRY(scount[14] & (!A1L511));
+
+
+--scount[15] is scount[15]
+--operation mode is arithmetic
+
+scount[15]_carry_eqn = A1L711;
+scount[15]_lut_out = scount[15] $ (scount[15]_carry_eqn);
+scount[15] = DFFEAS(scount[15]_lut_out, clk, VCC, , , , , , );
+
+--A1L911 is scount[15]~473
+--operation mode is arithmetic
+
+A1L911 = CARRY(!A1L711 # !scount[15]);
+
+
+--scount[16] is scount[16]
+--operation mode is arithmetic
+
+scount[16]_carry_eqn = A1L911;
+scount[16]_lut_out = scount[16] $ (!scount[16]_carry_eqn);
+scount[16] = DFFEAS(scount[16]_lut_out, clk, VCC, , , , , , );
+
+--A1L121 is scount[16]~477
+--operation mode is arithmetic
+
+A1L121 = CARRY(scount[16] & (!A1L911));
+
+
+--scount[17] is scount[17]
+--operation mode is arithmetic
+
+scount[17]_carry_eqn = A1L121;
+scount[17]_lut_out = scount[17] $ (scount[17]_carry_eqn);
+scount[17] = DFFEAS(scount[17]_lut_out, clk, VCC, , , , , , );
+
+--A1L321 is scount[17]~481
+--operation mode is arithmetic
+
+A1L321 = CARRY(!A1L121 # !scount[17]);
+
+
+--A1L18 is reduce_nor~147
+--operation mode is normal
+
+A1L18 = !scount[14] & !scount[15] & !scount[16] & !scount[17];
+
+
+--A1L28 is reduce_nor~148
+--operation mode is normal
+
+A1L28 = A1L87 & A1L97 & A1L08 & A1L18;
+
+
+--scount[18] is scount[18]
+--operation mode is arithmetic
+
+scount[18]_carry_eqn = A1L321;
+scount[18]_lut_out = scount[18] $ (!scount[18]_carry_eqn);
+scount[18] = DFFEAS(scount[18]_lut_out, clk, VCC, , , , , , );
+
+--A1L521 is scount[18]~485
+--operation mode is arithmetic
+
+A1L521 = CARRY(scount[18] & (!A1L321));
+
+
+--scount[19] is scount[19]
+--operation mode is normal
+
+scount[19]_carry_eqn = A1L521;
+scount[19]_lut_out = scount[19] $ (scount[19]_carry_eqn);
+scount[19] = DFFEAS(scount[19]_lut_out, clk, VCC, , , , , , );
+
+
+--A1L38 is reduce_nor~149
+--operation mode is normal
+
+A1L38 = !scount[18] & !scount[19];
+
+
+--scount[3] is scount[3]
+--operation mode is arithmetic
+
+scount[3]_carry_eqn = A1L39;
+scount[3]_lut_out = scount[3] $ (scount[3]_carry_eqn);
+scount[3] = DFFEAS(scount[3]_lut_out, clk, VCC, , , , , , );
+
+--A1L59 is scount[3]~493
+--operation mode is arithmetic
+
+A1L59 = CARRY(!A1L39 # !scount[3]);
+
+
+--scount[1] is scount[1]
+--operation mode is arithmetic
+
+scount[1]_carry_eqn = A1L98;
+scount[1]_lut_out = scount[1] $ (scount[1]_carry_eqn);
+scount[1] = DFFEAS(scount[1]_lut_out, clk, VCC, , , , , , );
+
+--A1L19 is scount[1]~497
+--operation mode is arithmetic
+
+A1L19 = CARRY(!A1L98 # !scount[1]);
+
+
+--A1L48 is reduce_nor~150
+--operation mode is normal
+
+A1L48 = scount[3] # !scount[1];
+
+
+--A1L84 is krcnt[1]~30
+--operation mode is normal
+
+A1L84 = krcnt[0] & A1L28 & A1L38 & !A1L48;
+
+
+--A1L67 is reduce_nor~0
+--operation mode is normal
+
+A1L67 = !scount[3] & scount[1] & A1L28 & A1L38;
+
+
+--dlt is dlt
+--operation mode is normal
+
+dlt_lut_out = A1L73;
+dlt = DFFEAS(dlt_lut_out, clk, VCC, , , , , , );
+
+
+--A1L53 is kdatab[0]~300
+--operation mode is normal
+
+A1L53 = !kcol[0] & !kcol[2] & (kcol[1] $ kcol[3]);
+
+
+--A1L34 is kdatap[3]~172
+--operation mode is normal
+
+A1L34 = !dlt1 & (dlt) # !A1L58;
+
+
+--A1L63 is kdatab[1]~301
+--operation mode is normal
+
+A1L63 = !kcol[0] & !kcol[1] & (kcol[2] $ kcol[3]);
+
+
+--ltd is ltd
+--operation mode is normal
+
+ltd = dlt & (!dlt1);
+
+
+--A1L77 is reduce_nor~1
+--operation mode is normal
+
+A1L77 = !scount[1] & scount[3] & A1L28 & A1L38;
+
+
+--dlt3 is dlt3
+--operation mode is normal
+
+dlt3_lut_out = dlt2;
+dlt3 = DFFEAS(dlt3_lut_out, clk, VCC, , , , , , );
+
+
+--kcol[0] is kcol[0]
+--operation mode is input
+
+kcol[0] = INPUT();
+
+
+--kcol[1] is kcol[1]
+--operation mode is input
+
+kcol[1] = INPUT();
+
+
+--kcol[2] is kcol[2]
+--operation mode is input
+
+kcol[2] = INPUT();
+
+
+--kcol[3] is kcol[3]
+--operation mode is input
+
+kcol[3] = INPUT();
+
+
+--clk is clk
+--operation mode is input
+
+clk = INPUT();
+
+
+--htone is htone
+--operation mode is input
+
+htone = INPUT();
+
+
+--krow[0] is krow[0]
+--operation mode is output
+
+krow[0] = OUTPUT(!A1L27);
+
+
+--krow[1] is krow[1]
+--operation mode is output
+
+krow[1] = OUTPUT(A1L37);
+
+
+--krow[2] is krow[2]
+--operation mode is output
+
+krow[2] = OUTPUT(A1L47);
+
+
+--krow[3] is krow[3]
+--operation mode is output
+
+krow[3] = OUTPUT(A1L57);
+
+
+--musickey[0] is musickey[0]
+--operation mode is output
+
+musickey[0] = OUTPUT(A1L1);
+
+
+--musickey[1] is musickey[1]
+--operation mode is output
+
+musickey[1] = OUTPUT(A1L3);
+
+
+--musickey[2] is musickey[2]
+--operation mode is output
+
+musickey[2] = OUTPUT(A1L5);
+
+
+--musickey[3] is musickey[3]
+--operation mode is output
+
+musickey[3] = OUTPUT(A1L7);
+
+
+--musickey[4] is musickey[4]
+--operation mode is output
+
+musickey[4] = OUTPUT(A1L9);
+
+
+--musickey[5] is musickey[5]
+--operation mode is output
+
+musickey[5] = OUTPUT(A1L11);
+
+
+--kdata[0] is kdata[0]
+--operation mode is output
+
+kdata[0] = OUTPUT(kdatap[0]);
+
+
+--kdata[1] is kdata[1]
+--operation mode is output
+
+kdata[1] = OUTPUT(kdatap[1]);
+
+
+--kdata[2] is kdata[2]
+--operation mode is output
+
+kdata[2] = OUTPUT(kdatap[2]);
+
+
+--kdata[3] is kdata[3]
+--operation mode is output
+
+kdata[3] = OUTPUT(kdatap[3]);
+
+
+--ltdata[0] is ltdata[0]
+--operation mode is output
+
+ltdata[0] = OUTPUT(ltdatap[0]);
+
+
+--ltdata[1] is ltdata[1]
+--operation mode is output
+
+ltdata[1] = OUTPUT(ltdatap[1]);
+
+
+--ltdata[2] is ltdata[2]
+--operation mode is output
+
+ltdata[2] = OUTPUT(ltdatap[2]);
+
+
+--ltdata[3] is ltdata[3]
+--operation mode is output
+
+ltdata[3] = OUTPUT(ltdatap[3]);
+
+
+--keypress is keypress
+--operation mode is output
+
+keypress = OUTPUT(A1L58);
+
+
+--intp is intp
+--operation mode is output
+
+intp = OUTPUT(A1L42);
+
+
+--strobe is strobe
+--operation mode is output
+
+strobe = OUTPUT(A1L821);
+
+

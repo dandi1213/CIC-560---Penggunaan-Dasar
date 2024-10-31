@@ -1,0 +1,87 @@
+Flow report for hexdec8
+Sat Apr 22 22:02:53 2006
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Elapsed Time
+  5. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------+
+; Flow Summary                                                       ;
++-------------------------+------------------------------------------+
+; Flow Status             ; Successful - Sat Apr 22 22:02:53 2006    ;
+; Quartus II Version      ; 5.0 Build 148 04/26/2005 SJ Full Version ;
+; Revision Name           ; hexdec8                                  ;
+; Top-level Entity Name   ; hexdec8                                  ;
+; Family                  ; ACEX1K                                   ;
+; Device                  ; EP1K100QC208-3                           ;
+; Timing Models           ; Final                                    ;
+; Met timing requirements ; Yes                                      ;
+; Total logic elements    ; 74 / 4,992 ( 1 % )                       ;
+; Total pins              ; 21 / 147 ( 14 % )                        ;
+; Total memory bits       ; 0 / 49,152 ( 0 % )                       ;
+; Total PLLs              ; 0                                        ;
++-------------------------+------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 04/22/2006 22:02:25 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; hexdec8             ;
++-------------------+---------------------+
+
+
++-------------------------------------+
+; Flow Elapsed Time                   ;
++----------------------+--------------+
+; Module Name          ; Elapsed Time ;
++----------------------+--------------+
+; Analysis & Synthesis ; 00:00:04     ;
+; Fitter               ; 00:00:15     ;
+; Assembler            ; 00:00:03     ;
+; Timing Analyzer      ; 00:00:02     ;
+; Total                ; 00:00:24     ;
++----------------------+--------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off hexdec8 -c hexdec8
+quartus_fit --read_settings_files=off --write_settings_files=off hexdec8 -c hexdec8
+quartus_asm --read_settings_files=off --write_settings_files=off hexdec8 -c hexdec8
+quartus_tan --read_settings_files=off --write_settings_files=off hexdec8 -c hexdec8
+
+
+

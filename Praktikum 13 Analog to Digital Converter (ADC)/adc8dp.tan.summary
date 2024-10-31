@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.971 ns
+From           : sampsel[0]
+To             : adc8i:inst1|sftp[0]
+From Clock     : --
+To Clock       : sclk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 24.323 ns
+From           : scndp5:inst3|scnt[0]
+To             : SEG[1]
+From Clock     : sclk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.021 ns
+From           : addr[2]
+To             : ADC_CS
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.877 ns
+From           : int
+To             : adc8i:inst1|stkp[0]
+From Clock     : --
+To Clock       : sclk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sclk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 140.92 MHz ( period = 7.096 ns )
+From           : adc8i:inst1|data[2]
+To             : hexdec8:inst|hsr[2]
+From Clock     : sclk
+To Clock       : sclk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'sclk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : adc8i:inst1|scount[20]
+To             : adc8i:inst1|sftp[0]
+From Clock     : sclk
+To Clock       : sclk
+Failed Paths   : 4
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 4
+
+--------------------------------------------------------------------------------------
+

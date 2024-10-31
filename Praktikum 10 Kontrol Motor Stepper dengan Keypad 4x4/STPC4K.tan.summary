@@ -1,0 +1,106 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.664 ns
+From           : COLK[0]
+To             : scankdpp4:inst|keybpg:key|debounceg:u0|count[15]
+From Clock     : --
+To Clock       : SYSCLK
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 27.098 ns
+From           : stpct4:inst1|cnt16:cntn|ct[11]
+To             : SEGM[5]
+From Clock     : sel[0]
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.175 ns
+From           : EN_RUN
+To             : CMPO
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.572 ns
+From           : CLEAR
+To             : stpct4:inst1|cnt16:cntn|ct[6]
+From Clock     : --
+To Clock       : sel[0]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sel[0]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 125.38 MHz ( period = 7.976 ns )
+From           : stpct4:inst1|cnt16:cntn|ct[7]
+To             : stpct4:inst1|cnt16:cntn|ct[14]
+From Clock     : sel[0]
+To Clock       : sel[0]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sel[1]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 131.41 MHz ( period = 7.610 ns )
+From           : stpct4:inst1|cnt16:cntn|ct[7]
+To             : stpct4:inst1|cnt16:cntn|ct[14]
+From Clock     : sel[1]
+To Clock       : sel[1]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SYSCLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 131.63 MHz ( period = 7.597 ns )
+From           : stpct4:inst1|cnt16:cntn|ct[7]
+To             : stpct4:inst1|cnt16:cntn|ct[14]
+From Clock     : SYSCLK
+To Clock       : SYSCLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sel[2]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 149.63 MHz ( period = 6.683 ns )
+From           : stpct4:inst1|cnt16:cntn|ct[7]
+To             : stpct4:inst1|cnt16:cntn|ct[14]
+From Clock     : sel[2]
+To Clock       : sel[2]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'STPCLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 149.63 MHz ( period = 6.683 ns )
+From           : stpct4:inst1|cnt16:cntn|ct[7]
+To             : stpct4:inst1|cnt16:cntn|ct[14]
+From Clock     : STPCLK
+To Clock       : STPCLK
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity CombinationalLogic is
+    port (
+        A, B, C: in std_logic;
+        Output: out std_logic
+    );
+end entity CombinationalLogic;
+
+architecture data_flow of CombinationalLogic is
+    signal Not_A, Not_B, Not_C: std_logic;
+
+begin
+    -- NOT gates
+    Not_A <= not A;
+    Not_B <= not B;
+    Not_C <= not C;
+
+    -- AND gates with concurrent signal assignment
+    Output <= '1' when (A = '1' and Not_B = '1') or
+                     (Not_A = '1' and C = '1' and Not_B = '1') or
+                     (Not_A = '1' and B = '1' and C = '1')
+              else '0';
+
+end data_flow;

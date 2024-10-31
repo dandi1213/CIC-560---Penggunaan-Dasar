@@ -1,0 +1,106 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.378 ns
+From           : en
+To             : scan[5]
+From Clock     : --
+To Clock       : sel[2]
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 36.354 ns
+From           : scan[0]
+To             : dg[5]
+From Clock     : exclk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 27.748 ns
+From           : dsps
+To             : dr[6]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 4.747 ns
+From           : en
+To             : scan[0]
+From Clock     : --
+To Clock       : exclk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sel[2]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 275.03 MHz ( period = 3.636 ns )
+From           : scan[0]
+To             : scan[5]
+From Clock     : sel[2]
+To Clock       : sel[2]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sel[0]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 275.03 MHz ( period = 3.636 ns )
+From           : scan[0]
+To             : scan[5]
+From Clock     : sel[0]
+To Clock       : sel[0]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'exclk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 275.03 MHz ( period = 3.636 ns )
+From           : scan[0]
+To             : scan[5]
+From Clock     : exclk
+To Clock       : exclk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clks'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 275.03 MHz ( period = 3.636 ns )
+From           : scount[1]
+To             : scount[28]
+From Clock     : clks
+To Clock       : clks
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sel[1]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 275.03 MHz ( period = 3.636 ns )
+From           : scan[0]
+To             : scan[5]
+From Clock     : sel[1]
+To Clock       : sel[1]
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

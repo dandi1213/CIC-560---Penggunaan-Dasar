@@ -1,0 +1,665 @@
+Classic Timing Analyzer report for adc8dp
+Wed Jun 23 14:03:26 2021
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'sclk'
+  7. Clock Hold: 'sclk'
+  8. tsu
+  9. tco
+ 10. tpd
+ 11. th
+ 12. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                          ;
++------------------------------+------------------------------------------+---------------+----------------------------------+------------------------+---------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                   ; To                  ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+------------------------+---------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 1.971 ns                         ; sampsel[0]             ; adc8i:inst1|sftp[0] ; --         ; sclk     ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 24.323 ns                        ; scndp5:inst3|scnt[0]   ; SEG[1]              ; sclk       ; --       ; 0            ;
+; Worst-case tpd               ; N/A                                      ; None          ; 14.021 ns                        ; addr[2]                ; ADC_CS              ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 0.877 ns                         ; int                    ; adc8i:inst1|stkp[0] ; --         ; sclk     ; 0            ;
+; Clock Setup: 'sclk'          ; N/A                                      ; None          ; 140.92 MHz ( period = 7.096 ns ) ; adc8i:inst1|data[2]    ; hexdec8:inst|hsr[2] ; sclk       ; sclk     ; 0            ;
+; Clock Hold: 'sclk'           ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; adc8i:inst1|scount[20] ; adc8i:inst1|sftp[0] ; sclk       ; sclk     ; 4            ;
+; Total number of failed paths ;                                          ;               ;                                  ;                        ;                     ;            ;          ; 4            ;
++------------------------------+------------------------------------------+---------------+----------------------------------+------------------------+---------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP1C12Q240C8       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; Off                ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; sclk            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'sclk'                                                                                                                                                                                                                                                                           ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------+-----------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                    ; To                                      ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------+-----------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 140.92 MHz ( period = 7.096 ns )                    ; adc8i:inst1|data[2]                     ; hexdec8:inst|hsr[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 1.485 ns                ;
+; N/A                                     ; 141.00 MHz ( period = 7.092 ns )                    ; adc8i:inst1|data[1]                     ; hexdec8:inst|hsr[1]                     ; sclk       ; sclk     ; None                        ; None                      ; 1.481 ns                ;
+; N/A                                     ; 141.10 MHz ( period = 7.087 ns )                    ; adc8i:inst1|data[6]                     ; hexdec8:inst|hsr[6]                     ; sclk       ; sclk     ; None                        ; None                      ; 1.476 ns                ;
+; N/A                                     ; 141.56 MHz ( period = 7.064 ns )                    ; adc8i:inst1|data[5]                     ; hexdec8:inst|hsr[5]                     ; sclk       ; sclk     ; None                        ; None                      ; 1.453 ns                ;
+; N/A                                     ; 142.82 MHz ( period = 7.002 ns )                    ; adc8i:inst1|sftd[2]                     ; hexdec8:inst|stab                       ; sclk       ; sclk     ; None                        ; None                      ; 1.391 ns                ;
+; N/A                                     ; 147.89 MHz ( period = 6.762 ns )                    ; adc8i:inst1|data[3]                     ; hexdec8:inst|hsr[3]                     ; sclk       ; sclk     ; None                        ; None                      ; 1.151 ns                ;
+; N/A                                     ; 149.43 MHz ( period = 6.692 ns )                    ; adc8i:inst1|data[0]                     ; hexdec8:inst|hsr[0]                     ; sclk       ; sclk     ; None                        ; None                      ; 1.081 ns                ;
+; N/A                                     ; 149.61 MHz ( period = 6.684 ns )                    ; adc8i:inst1|data[7]                     ; hexdec8:inst|hsr[7]                     ; sclk       ; sclk     ; None                        ; None                      ; 1.073 ns                ;
+; N/A                                     ; 149.70 MHz ( period = 6.680 ns )                    ; adc8i:inst1|data[4]                     ; hexdec8:inst|hsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 1.069 ns                ;
+; N/A                                     ; 186.36 MHz ( period = 5.366 ns )                    ; hexdec8:inst|dsr[4]                     ; hexdec8:inst|dsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 5.105 ns                ;
+; N/A                                     ; 197.04 MHz ( period = 5.075 ns )                    ; hexdec8:inst|dsr[0]                     ; hexdec8:inst|dsr[1]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.814 ns                ;
+; N/A                                     ; 197.08 MHz ( period = 5.074 ns )                    ; hexdec8:inst|dsr[0]                     ; hexdec8:inst|dsr[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.813 ns                ;
+; N/A                                     ; 197.36 MHz ( period = 5.067 ns )                    ; hexdec8:inst|dsr[0]                     ; hexdec8:inst|dsr[3]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.806 ns                ;
+; N/A                                     ; 198.61 MHz ( period = 5.035 ns )                    ; hexdec8:inst|dsr[4]                     ; hexdec8:inst|dsr[5]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.774 ns                ;
+; N/A                                     ; 198.65 MHz ( period = 5.034 ns )                    ; hexdec8:inst|dsr[4]                     ; hexdec8:inst|dsr[6]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.773 ns                ;
+; N/A                                     ; 204.67 MHz ( period = 4.886 ns )                    ; hexdec8:inst|dsr[0]                     ; hexdec8:inst|dsr[0]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.625 ns                ;
+; N/A                                     ; 214.22 MHz ( period = 4.668 ns )                    ; hexdec8:inst|dsr[5]                     ; hexdec8:inst|dsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 216.68 MHz ( period = 4.615 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[1]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.345 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.344 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[6]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.353 ns                ;
+; N/A                                     ; 218.58 MHz ( period = 4.575 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.314 ns                ;
+; N/A                                     ; 223.51 MHz ( period = 4.474 ns )                    ; adc8i:inst1|scount[12]                  ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 223.56 MHz ( period = 4.473 ns )                    ; adc8i:inst1|scount[12]                  ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 225.58 MHz ( period = 4.433 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.172 ns                ;
+; N/A                                     ; 228.05 MHz ( period = 4.385 ns )                    ; adc8i:inst1|scount[12]                  ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.124 ns                ;
+; N/A                                     ; 228.05 MHz ( period = 4.385 ns )                    ; adc8i:inst1|scount[12]                  ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.124 ns                ;
+; N/A                                     ; 228.05 MHz ( period = 4.385 ns )                    ; adc8i:inst1|scount[12]                  ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.124 ns                ;
+; N/A                                     ; 228.62 MHz ( period = 4.374 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.113 ns                ;
+; N/A                                     ; 228.94 MHz ( period = 4.368 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[5]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.107 ns                ;
+; N/A                                     ; 229.62 MHz ( period = 4.355 ns )                    ; hexdec8:inst|dsr[4]                     ; hexdec8:inst|dsr[7]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.094 ns                ;
+; N/A                                     ; 232.13 MHz ( period = 4.308 ns )                    ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.047 ns                ;
+; N/A                                     ; 233.59 MHz ( period = 4.281 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[0]                     ; sclk       ; sclk     ; None                        ; None                      ; 4.011 ns                ;
+; N/A                                     ; 234.47 MHz ( period = 4.265 ns )                    ; hexdec8:inst|done                       ; hexdec8:inst|tdo[8]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.995 ns                ;
+; N/A                                     ; 234.47 MHz ( period = 4.265 ns )                    ; hexdec8:inst|done                       ; hexdec8:inst|tdo[9]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.995 ns                ;
+; N/A                                     ; 234.47 MHz ( period = 4.265 ns )                    ; hexdec8:inst|done                       ; hexdec8:inst|tdo[7]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.995 ns                ;
+; N/A                                     ; 234.47 MHz ( period = 4.265 ns )                    ; hexdec8:inst|done                       ; hexdec8:inst|tdo[3]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.995 ns                ;
+; N/A                                     ; 234.69 MHz ( period = 4.261 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[14]                  ; sclk       ; sclk     ; None                        ; None                      ; 4.000 ns                ;
+; N/A                                     ; 234.96 MHz ( period = 4.256 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|hsr[0]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.995 ns                ;
+; N/A                                     ; 235.07 MHz ( period = 4.254 ns )                    ; hexdec8:inst|sft                        ; hexdec8:inst|dsr[1]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.984 ns                ;
+; N/A                                     ; 235.13 MHz ( period = 4.253 ns )                    ; hexdec8:inst|sft                        ; hexdec8:inst|dsr[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.983 ns                ;
+; N/A                                     ; 235.13 MHz ( period = 4.253 ns )                    ; hexdec8:inst|sft                        ; hexdec8:inst|dsr[6]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.992 ns                ;
+; N/A                                     ; 235.35 MHz ( period = 4.249 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.988 ns                ;
+; N/A                                     ; 237.08 MHz ( period = 4.218 ns )                    ; adc8i:inst1|scount[4]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.957 ns                ;
+; N/A                                     ; 237.36 MHz ( period = 4.213 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[8]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.943 ns                ;
+; N/A                                     ; 237.36 MHz ( period = 4.213 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[9]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.943 ns                ;
+; N/A                                     ; 240.10 MHz ( period = 4.165 ns )                    ; adc8i:inst1|scount[15]                  ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.904 ns                ;
+; N/A                                     ; 240.15 MHz ( period = 4.164 ns )                    ; adc8i:inst1|scount[15]                  ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.903 ns                ;
+; N/A                                     ; 242.78 MHz ( period = 4.119 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[14]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 243.66 MHz ( period = 4.104 ns )                    ; hexdec8:inst|dsr[5]                     ; hexdec8:inst|dsr[6]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.843 ns                ;
+; N/A                                     ; 244.02 MHz ( period = 4.098 ns )                    ; adc8i:inst1|scount[0]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.837 ns                ;
+; N/A                                     ; 244.62 MHz ( period = 4.088 ns )                    ; adc8i:inst1|scount[6]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.827 ns                ;
+; N/A                                     ; 244.74 MHz ( period = 4.086 ns )                    ; hexdec8:inst|dly                        ; hexdec8:inst|tdo[8]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.816 ns                ;
+; N/A                                     ; 244.74 MHz ( period = 4.086 ns )                    ; hexdec8:inst|dly                        ; hexdec8:inst|tdo[9]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.816 ns                ;
+; N/A                                     ; 244.74 MHz ( period = 4.086 ns )                    ; hexdec8:inst|dly                        ; hexdec8:inst|tdo[7]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.816 ns                ;
+; N/A                                     ; 244.74 MHz ( period = 4.086 ns )                    ; hexdec8:inst|dly                        ; hexdec8:inst|tdo[3]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.816 ns                ;
+; N/A                                     ; 245.34 MHz ( period = 4.076 ns )                    ; adc8i:inst1|scount[15]                  ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.815 ns                ;
+; N/A                                     ; 245.34 MHz ( period = 4.076 ns )                    ; adc8i:inst1|scount[15]                  ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.815 ns                ;
+; N/A                                     ; 245.34 MHz ( period = 4.076 ns )                    ; adc8i:inst1|scount[15]                  ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.815 ns                ;
+; N/A                                     ; 245.46 MHz ( period = 4.074 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|bcov                       ; sclk       ; sclk     ; None                        ; None                      ; 3.813 ns                ;
+; N/A                                     ; 245.88 MHz ( period = 4.067 ns )                    ; adc8i:inst1|scount[13]                  ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.806 ns                ;
+; N/A                                     ; 245.94 MHz ( period = 4.066 ns )                    ; adc8i:inst1|scount[13]                  ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.805 ns                ;
+; N/A                                     ; 246.00 MHz ( period = 4.065 ns )                    ; adc8i:inst1|scount[10]                  ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.804 ns                ;
+; N/A                                     ; 246.06 MHz ( period = 4.064 ns )                    ; adc8i:inst1|scount[10]                  ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.803 ns                ;
+; N/A                                     ; 246.31 MHz ( period = 4.060 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[14]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.799 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; hexdec8:inst|sft                        ; hexdec8:inst|dsr[5]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 250.38 MHz ( period = 3.994 ns )                    ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[14]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.733 ns                ;
+; N/A                                     ; 250.75 MHz ( period = 3.988 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.727 ns                ;
+; N/A                                     ; 250.82 MHz ( period = 3.987 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.726 ns                ;
+; N/A                                     ; 251.38 MHz ( period = 3.978 ns )                    ; adc8i:inst1|scount[13]                  ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.717 ns                ;
+; N/A                                     ; 251.38 MHz ( period = 3.978 ns )                    ; adc8i:inst1|scount[13]                  ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.717 ns                ;
+; N/A                                     ; 251.38 MHz ( period = 3.978 ns )                    ; adc8i:inst1|scount[13]                  ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.717 ns                ;
+; N/A                                     ; 251.51 MHz ( period = 3.976 ns )                    ; adc8i:inst1|scount[10]                  ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.715 ns                ;
+; N/A                                     ; 251.51 MHz ( period = 3.976 ns )                    ; adc8i:inst1|scount[10]                  ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.715 ns                ;
+; N/A                                     ; 251.51 MHz ( period = 3.976 ns )                    ; adc8i:inst1|scount[10]                  ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.715 ns                ;
+; N/A                                     ; 251.95 MHz ( period = 3.969 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[8]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.708 ns                ;
+; N/A                                     ; 251.95 MHz ( period = 3.969 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[9]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.708 ns                ;
+; N/A                                     ; 251.95 MHz ( period = 3.969 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[11]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.708 ns                ;
+; N/A                                     ; 252.02 MHz ( period = 3.968 ns )                    ; hexdec8:inst|chk                        ; hexdec8:inst|dsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.707 ns                ;
+; N/A                                     ; 254.97 MHz ( period = 3.922 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[12]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.661 ns                ;
+; N/A                                     ; 254.97 MHz ( period = 3.922 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[15]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.661 ns                ;
+; N/A                                     ; 255.89 MHz ( period = 3.908 ns )                    ; adc8i:inst1|scount[8]                   ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.647 ns                ;
+; N/A                                     ; 255.95 MHz ( period = 3.907 ns )                    ; adc8i:inst1|scount[10]                  ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.646 ns                ;
+; N/A                                     ; 255.95 MHz ( period = 3.907 ns )                    ; adc8i:inst1|scount[8]                   ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.646 ns                ;
+; N/A                                     ; 256.08 MHz ( period = 3.905 ns )                    ; adc8i:inst1|scount[7]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.644 ns                ;
+; N/A                                     ; 256.15 MHz ( period = 3.904 ns )                    ; adc8i:inst1|scount[4]                   ; adc8i:inst1|scount[14]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.643 ns                ;
+; N/A                                     ; 256.48 MHz ( period = 3.899 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 256.48 MHz ( period = 3.899 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 256.48 MHz ( period = 3.899 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 258.73 MHz ( period = 3.865 ns )                    ; hexdec8:inst|dsr[6]                     ; hexdec8:inst|dsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.604 ns                ;
+; N/A                                     ; 259.20 MHz ( period = 3.858 ns )                    ; hexdec8:inst|dsr[5]                     ; hexdec8:inst|dsr[5]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.597 ns                ;
+; N/A                                     ; 259.47 MHz ( period = 3.854 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[8]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.593 ns                ;
+; N/A                                     ; 259.47 MHz ( period = 3.854 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[9]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.593 ns                ;
+; N/A                                     ; 259.47 MHz ( period = 3.854 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[11]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.593 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; hexdec8:inst|sft                        ; hexdec8:inst|dsr[8]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.582 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; hexdec8:inst|sft                        ; hexdec8:inst|dsr[9]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.582 ns                ;
+; N/A                                     ; 260.01 MHz ( period = 3.846 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.585 ns                ;
+; N/A                                     ; 260.08 MHz ( period = 3.845 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.584 ns                ;
+; N/A                                     ; 261.85 MHz ( period = 3.819 ns )                    ; adc8i:inst1|scount[8]                   ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.558 ns                ;
+; N/A                                     ; 261.85 MHz ( period = 3.819 ns )                    ; adc8i:inst1|scount[8]                   ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.558 ns                ;
+; N/A                                     ; 261.85 MHz ( period = 3.819 ns )                    ; adc8i:inst1|scount[8]                   ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.558 ns                ;
+; N/A                                     ; 262.26 MHz ( period = 3.813 ns )                    ; adc8i:inst1|scount[4]                   ; adc8i:inst1|scount[8]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.552 ns                ;
+; N/A                                     ; 262.26 MHz ( period = 3.813 ns )                    ; adc8i:inst1|scount[4]                   ; adc8i:inst1|scount[9]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.552 ns                ;
+; N/A                                     ; 262.26 MHz ( period = 3.813 ns )                    ; adc8i:inst1|scount[4]                   ; adc8i:inst1|scount[11]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.552 ns                ;
+; N/A                                     ; 263.09 MHz ( period = 3.801 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[7]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.540 ns                ;
+; N/A                                     ; 263.09 MHz ( period = 3.801 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|hsr[7]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.540 ns                ;
+; N/A                                     ; 263.09 MHz ( period = 3.801 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|hsr[6]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.540 ns                ;
+; N/A                                     ; 263.09 MHz ( period = 3.801 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|hsr[5]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.540 ns                ;
+; N/A                                     ; 263.09 MHz ( period = 3.801 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|hsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.540 ns                ;
+; N/A                                     ; 263.09 MHz ( period = 3.801 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|hsr[3]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.540 ns                ;
+; N/A                                     ; 263.09 MHz ( period = 3.801 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|hsr[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.540 ns                ;
+; N/A                                     ; 263.09 MHz ( period = 3.801 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|hsr[1]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.540 ns                ;
+; N/A                                     ; 263.37 MHz ( period = 3.797 ns )                    ; hexdec8:inst|74163:bcnt1|f74163:sub|34  ; hexdec8:inst|74163:bcnt1|f74163:sub|122 ; sclk       ; sclk     ; None                        ; None                      ; 3.536 ns                ;
+; N/A                                     ; 263.64 MHz ( period = 3.793 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.532 ns                ;
+; N/A                                     ; 263.71 MHz ( period = 3.792 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.531 ns                ;
+; N/A                                     ; 264.27 MHz ( period = 3.784 ns )                    ; adc8i:inst1|scount[0]                   ; adc8i:inst1|scount[14]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.523 ns                ;
+; N/A                                     ; 264.41 MHz ( period = 3.782 ns )                    ; hexdec8:inst|sft                        ; hexdec8:inst|74163:bcnt1|f74163:sub|122 ; sclk       ; sclk     ; None                        ; None                      ; 3.521 ns                ;
+; N/A                                     ; 264.55 MHz ( period = 3.780 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[12]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.519 ns                ;
+; N/A                                     ; 264.55 MHz ( period = 3.780 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[15]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.519 ns                ;
+; N/A                                     ; 264.69 MHz ( period = 3.778 ns )                    ; adc8i:inst1|scount[9]                   ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.517 ns                ;
+; N/A                                     ; 264.76 MHz ( period = 3.777 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[10]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.516 ns                ;
+; N/A                                     ; 264.76 MHz ( period = 3.777 ns )                    ; adc8i:inst1|scount[9]                   ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.516 ns                ;
+; N/A                                     ; 264.90 MHz ( period = 3.775 ns )                    ; adc8i:inst1|scount[14]                  ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.514 ns                ;
+; N/A                                     ; 264.97 MHz ( period = 3.774 ns )                    ; adc8i:inst1|scount[6]                   ; adc8i:inst1|scount[14]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.513 ns                ;
+; N/A                                     ; 264.97 MHz ( period = 3.774 ns )                    ; adc8i:inst1|scount[14]                  ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.513 ns                ;
+; N/A                                     ; 265.25 MHz ( period = 3.770 ns )                    ; hexdec8:inst|done                       ; hexdec8:inst|tdo[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.509 ns                ;
+; N/A                                     ; 265.25 MHz ( period = 3.770 ns )                    ; hexdec8:inst|done                       ; hexdec8:inst|tdo[0]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.509 ns                ;
+; N/A                                     ; 265.25 MHz ( period = 3.770 ns )                    ; hexdec8:inst|done                       ; hexdec8:inst|tdo[1]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.509 ns                ;
+; N/A                                     ; 266.17 MHz ( period = 3.757 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.496 ns                ;
+; N/A                                     ; 266.17 MHz ( period = 3.757 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.496 ns                ;
+; N/A                                     ; 266.17 MHz ( period = 3.757 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.496 ns                ;
+; N/A                                     ; 266.67 MHz ( period = 3.750 ns )                    ; adc8i:inst1|scount[8]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.489 ns                ;
+; N/A                                     ; 267.38 MHz ( period = 3.740 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|74163:bcnt1|f74163:sub|111 ; sclk       ; sclk     ; None                        ; None                      ; 3.479 ns                ;
+; N/A                                     ; 268.53 MHz ( period = 3.724 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|dsr[0]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.454 ns                ;
+; N/A                                     ; 268.74 MHz ( period = 3.721 ns )                    ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.460 ns                ;
+; N/A                                     ; 268.74 MHz ( period = 3.721 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[12]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.460 ns                ;
+; N/A                                     ; 268.74 MHz ( period = 3.721 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[15]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.460 ns                ;
+; N/A                                     ; 268.82 MHz ( period = 3.720 ns )                    ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.459 ns                ;
+; N/A                                     ; 269.40 MHz ( period = 3.712 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[8]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.451 ns                ;
+; N/A                                     ; 269.40 MHz ( period = 3.712 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[9]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.451 ns                ;
+; N/A                                     ; 269.40 MHz ( period = 3.712 ns )                    ; adc8i:inst1|scount[1]                   ; adc8i:inst1|scount[11]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.451 ns                ;
+; N/A                                     ; 269.98 MHz ( period = 3.704 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.443 ns                ;
+; N/A                                     ; 269.98 MHz ( period = 3.704 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.443 ns                ;
+; N/A                                     ; 269.98 MHz ( period = 3.704 ns )                    ; adc8i:inst1|scount[5]                   ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.443 ns                ;
+; N/A                                     ; 270.12 MHz ( period = 3.702 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|dsr[3]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 270.34 MHz ( period = 3.699 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|hsr[0]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.438 ns                ;
+; N/A                                     ; 270.42 MHz ( period = 3.698 ns )                    ; hexdec8:inst|dsr[2]                     ; hexdec8:inst|dsr[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.437 ns                ;
+; N/A                                     ; 270.86 MHz ( period = 3.692 ns )                    ; hexdec8:inst|stab                       ; hexdec8:inst|dsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 271.08 MHz ( period = 3.689 ns )                    ; adc8i:inst1|scount[9]                   ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.428 ns                ;
+; N/A                                     ; 271.08 MHz ( period = 3.689 ns )                    ; adc8i:inst1|scount[9]                   ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.428 ns                ;
+; N/A                                     ; 271.08 MHz ( period = 3.689 ns )                    ; adc8i:inst1|scount[9]                   ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.428 ns                ;
+; N/A                                     ; 271.30 MHz ( period = 3.686 ns )                    ; adc8i:inst1|scount[14]                  ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.425 ns                ;
+; N/A                                     ; 271.30 MHz ( period = 3.686 ns )                    ; adc8i:inst1|scount[14]                  ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.425 ns                ;
+; N/A                                     ; 271.30 MHz ( period = 3.686 ns )                    ; adc8i:inst1|scount[14]                  ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.425 ns                ;
+; N/A                                     ; 271.52 MHz ( period = 3.683 ns )                    ; adc8i:inst1|scount[6]                   ; adc8i:inst1|scount[8]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.422 ns                ;
+; N/A                                     ; 271.52 MHz ( period = 3.683 ns )                    ; adc8i:inst1|scount[6]                   ; adc8i:inst1|scount[9]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.422 ns                ;
+; N/A                                     ; 271.52 MHz ( period = 3.683 ns )                    ; adc8i:inst1|scount[6]                   ; adc8i:inst1|scount[11]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.422 ns                ;
+; N/A                                     ; 273.07 MHz ( period = 3.662 ns )                    ; adc8i:inst1|scount[3]                   ; adc8i:inst1|scount[10]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.401 ns                ;
+; N/A                                     ; 273.45 MHz ( period = 3.657 ns )                    ; hexdec8:inst|dsr[5]                     ; hexdec8:inst|dsr[7]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.396 ns                ;
+; N/A                                     ; 273.60 MHz ( period = 3.655 ns )                    ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[12]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.394 ns                ;
+; N/A                                     ; 273.60 MHz ( period = 3.655 ns )                    ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[15]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.394 ns                ;
+; N/A                                     ; 274.05 MHz ( period = 3.649 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|74163:bcnt1|f74163:sub|122 ; sclk       ; sclk     ; None                        ; None                      ; 3.388 ns                ;
+; N/A                                     ; 274.05 MHz ( period = 3.649 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|74163:bcnt1|f74163:sub|34  ; sclk       ; sclk     ; None                        ; None                      ; 3.388 ns                ;
+; N/A                                     ; 274.57 MHz ( period = 3.642 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|done                       ; sclk       ; sclk     ; None                        ; None                      ; 3.381 ns                ;
+; N/A                                     ; 274.73 MHz ( period = 3.640 ns )                    ; hexdec8:inst|stas[1]                    ; hexdec8:inst|74163:bcnt1|f74163:sub|134 ; sclk       ; sclk     ; None                        ; None                      ; 3.379 ns                ;
+; N/A                                     ; 274.80 MHz ( period = 3.639 ns )                    ; hexdec8:inst|dsr[6]                     ; hexdec8:inst|dsr[6]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.378 ns                ;
+; N/A                                     ; 274.95 MHz ( period = 3.637 ns )                    ; adc8i:inst1|scount[4]                   ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.376 ns                ;
+; N/A                                     ; 275.03 MHz ( period = 3.636 ns )                    ; adc8i:inst1|scount[4]                   ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.375 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[16]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.371 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[19]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.371 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[17]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.371 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|stas[1]                    ; hexdec8:inst|chk                        ; sclk       ; sclk     ; None                        ; None                      ; 3.371 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[4]                   ; adc8i:inst1|scount[10]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.360 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[9]                   ; adc8i:inst1|scount[13]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.359 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|stas[1]                    ; hexdec8:inst|hsr[7]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.355 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|stas[1]                    ; hexdec8:inst|hsr[6]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.355 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|stas[1]                    ; hexdec8:inst|hsr[5]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.355 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|stas[1]                    ; hexdec8:inst|hsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.355 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|stas[1]                    ; hexdec8:inst|hsr[3]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.355 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|stas[1]                    ; hexdec8:inst|hsr[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.355 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|stas[1]                    ; hexdec8:inst|hsr[1]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.355 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[10]                  ; adc8i:inst1|scount[14]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|74163:bcnt1|f74163:sub|111 ; hexdec8:inst|74163:bcnt1|f74163:sub|122 ; sclk       ; sclk     ; None                        ; None                      ; 3.331 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|dly                        ; hexdec8:inst|tdo[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.330 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|dly                        ; hexdec8:inst|tdo[0]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.330 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|dly                        ; hexdec8:inst|tdo[1]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.330 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[7]                   ; adc8i:inst1|scount[14]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.330 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[8]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[9]                   ; sclk       ; sclk     ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[2]                   ; adc8i:inst1|scount[11]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[11]                  ; adc8i:inst1|scount[20]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.323 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[11]                  ; adc8i:inst1|scount[18]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.322 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|sft                        ; hexdec8:inst|hsr[7]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.312 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|sft                        ; hexdec8:inst|hsr[6]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.312 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|sft                        ; hexdec8:inst|hsr[5]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.312 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|sft                        ; hexdec8:inst|hsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.312 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|sft                        ; hexdec8:inst|hsr[3]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.312 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|sft                        ; hexdec8:inst|hsr[2]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.312 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|sft                        ; hexdec8:inst|hsr[1]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.312 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; hexdec8:inst|dsr[7]                     ; hexdec8:inst|dsr[4]                     ; sclk       ; sclk     ; None                        ; None                      ; 3.311 ns                ;
+; N/A                                     ; Restricted to 275.03 MHz ( period = 3.636 ns )      ; adc8i:inst1|scount[4]                   ; adc8i:inst1|scount[12]                  ; sclk       ; sclk     ; None                        ; None                      ; 3.304 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                         ;                                         ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------+-----------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'sclk'                                                                                                                                                                                   ;
++------------------------------------------+------------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                   ; To                  ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+------------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; adc8i:inst1|scount[20] ; adc8i:inst1|sftp[0] ; sclk       ; sclk     ; None                       ; None                       ; 0.845 ns                 ;
+; Not operational: Clock Skew > Data Delay ; adc8i:inst1|scount[16] ; adc8i:inst1|sftp[0] ; sclk       ; sclk     ; None                       ; None                       ; 1.980 ns                 ;
+; Not operational: Clock Skew > Data Delay ; adc8i:inst1|scount[14] ; adc8i:inst1|sftp[0] ; sclk       ; sclk     ; None                       ; None                       ; 2.533 ns                 ;
+; Not operational: Clock Skew > Data Delay ; adc8i:inst1|scount[13] ; adc8i:inst1|sftp[0] ; sclk       ; sclk     ; None                       ; None                       ; 2.815 ns                 ;
++------------------------------------------+------------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------+
+; tsu                                                                             ;
++-------+--------------+------------+------------+---------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From       ; To                  ; To Clock ;
++-------+--------------+------------+------------+---------------------+----------+
+; N/A   ; None         ; 1.971 ns   ; sampsel[0] ; adc8i:inst1|sftp[0] ; sclk     ;
+; N/A   ; None         ; 1.633 ns   ; sampsel[1] ; adc8i:inst1|sftp[0] ; sclk     ;
+; N/A   ; None         ; -0.047 ns  ; adco[0]    ; adc8i:inst1|data[0] ; sclk     ;
+; N/A   ; None         ; -0.335 ns  ; adco[3]    ; adc8i:inst1|data[3] ; sclk     ;
+; N/A   ; None         ; -0.381 ns  ; adco[4]    ; adc8i:inst1|data[4] ; sclk     ;
+; N/A   ; None         ; -0.516 ns  ; adco[7]    ; adc8i:inst1|data[7] ; sclk     ;
+; N/A   ; None         ; -0.520 ns  ; adco[2]    ; adc8i:inst1|data[2] ; sclk     ;
+; N/A   ; None         ; -0.644 ns  ; adco[1]    ; adc8i:inst1|data[1] ; sclk     ;
+; N/A   ; None         ; -0.690 ns  ; adco[5]    ; adc8i:inst1|data[5] ; sclk     ;
+; N/A   ; None         ; -0.814 ns  ; adco[6]    ; adc8i:inst1|data[6] ; sclk     ;
+; N/A   ; None         ; -0.823 ns  ; int        ; adc8i:inst1|stkp[1] ; sclk     ;
+; N/A   ; None         ; -0.825 ns  ; int        ; adc8i:inst1|stkp[0] ; sclk     ;
++-------+--------------+------------+------------+---------------------+----------+
+
+
++---------------------------------------------------------------------------------+
+; tco                                                                             ;
++-------+--------------+------------+----------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                 ; To      ; From Clock ;
++-------+--------------+------------+----------------------+---------+------------+
+; N/A   ; None         ; 24.323 ns  ; scndp5:inst3|scnt[0] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 24.315 ns  ; scndp5:inst3|scnt[0] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 24.307 ns  ; scndp5:inst3|scnt[0] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 24.303 ns  ; scndp5:inst3|scnt[0] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 23.929 ns  ; scndp5:inst3|scnt[1] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 23.921 ns  ; scndp5:inst3|scnt[1] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 23.913 ns  ; scndp5:inst3|scnt[1] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 23.909 ns  ; scndp5:inst3|scnt[1] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 23.878 ns  ; scndp5:inst3|scnt[0] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 23.876 ns  ; scndp5:inst3|scnt[0] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 23.870 ns  ; scndp5:inst3|scnt[0] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 23.484 ns  ; scndp5:inst3|scnt[1] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 23.482 ns  ; scndp5:inst3|scnt[1] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 23.476 ns  ; scndp5:inst3|scnt[1] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 22.991 ns  ; scndp5:inst3|scnt[2] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 22.983 ns  ; scndp5:inst3|scnt[2] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 22.975 ns  ; scndp5:inst3|scnt[2] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 22.971 ns  ; scndp5:inst3|scnt[2] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 22.566 ns  ; adc8i:inst1|data[0]  ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 22.565 ns  ; adc8i:inst1|data[0]  ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 22.562 ns  ; adc8i:inst1|data[0]  ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 22.561 ns  ; adc8i:inst1|data[0]  ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 22.546 ns  ; scndp5:inst3|scnt[2] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 22.544 ns  ; scndp5:inst3|scnt[2] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 22.538 ns  ; scndp5:inst3|scnt[2] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 22.130 ns  ; adc8i:inst1|data[0]  ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 22.128 ns  ; adc8i:inst1|data[0]  ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 22.128 ns  ; adc8i:inst1|data[0]  ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 20.888 ns  ; adc8i:inst1|data[4]  ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 20.887 ns  ; adc8i:inst1|data[4]  ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 20.884 ns  ; adc8i:inst1|data[4]  ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 20.883 ns  ; adc8i:inst1|data[4]  ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 20.452 ns  ; adc8i:inst1|data[4]  ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 20.450 ns  ; adc8i:inst1|data[4]  ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 20.450 ns  ; adc8i:inst1|data[4]  ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 20.377 ns  ; adc8i:inst1|data[7]  ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 20.377 ns  ; adc8i:inst1|data[7]  ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 20.376 ns  ; adc8i:inst1|data[7]  ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 20.376 ns  ; adc8i:inst1|data[7]  ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 20.201 ns  ; adc8i:inst1|data[6]  ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 20.194 ns  ; adc8i:inst1|data[6]  ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 20.186 ns  ; adc8i:inst1|data[6]  ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 20.178 ns  ; adc8i:inst1|data[6]  ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 20.158 ns  ; adc8i:inst1|data[3]  ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 20.158 ns  ; adc8i:inst1|data[3]  ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 20.157 ns  ; adc8i:inst1|data[3]  ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 20.157 ns  ; adc8i:inst1|data[3]  ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 19.962 ns  ; adc8i:inst1|data[5]  ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 19.954 ns  ; adc8i:inst1|data[5]  ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 19.946 ns  ; adc8i:inst1|data[5]  ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 19.945 ns  ; adc8i:inst1|data[7]  ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 19.944 ns  ; adc8i:inst1|data[7]  ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 19.943 ns  ; adc8i:inst1|data[7]  ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 19.942 ns  ; adc8i:inst1|data[5]  ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 19.757 ns  ; adc8i:inst1|data[6]  ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 19.755 ns  ; adc8i:inst1|data[6]  ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 19.749 ns  ; adc8i:inst1|data[6]  ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 19.726 ns  ; adc8i:inst1|data[3]  ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 19.725 ns  ; adc8i:inst1|data[3]  ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 19.724 ns  ; adc8i:inst1|data[3]  ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 19.693 ns  ; adc8i:inst1|data[1]  ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 19.685 ns  ; adc8i:inst1|data[1]  ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 19.683 ns  ; adc8i:inst1|data[2]  ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 19.677 ns  ; adc8i:inst1|data[1]  ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 19.676 ns  ; adc8i:inst1|data[2]  ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 19.673 ns  ; adc8i:inst1|data[1]  ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 19.668 ns  ; adc8i:inst1|data[2]  ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 19.660 ns  ; adc8i:inst1|data[2]  ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 19.517 ns  ; adc8i:inst1|data[5]  ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 19.515 ns  ; adc8i:inst1|data[5]  ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 19.509 ns  ; adc8i:inst1|data[5]  ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 19.248 ns  ; adc8i:inst1|data[1]  ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 19.246 ns  ; adc8i:inst1|data[1]  ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 19.240 ns  ; adc8i:inst1|data[1]  ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 19.239 ns  ; adc8i:inst1|data[2]  ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 19.237 ns  ; adc8i:inst1|data[2]  ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 19.231 ns  ; adc8i:inst1|data[2]  ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 18.412 ns  ; scndp5:inst3|scnt[0] ; SCAN[2] ; sclk       ;
+; N/A   ; None         ; 18.388 ns  ; scndp5:inst3|scnt[2] ; SCAN[2] ; sclk       ;
+; N/A   ; None         ; 18.353 ns  ; scndp5:inst3|scnt[0] ; SCAN[0] ; sclk       ;
+; N/A   ; None         ; 18.332 ns  ; scndp5:inst3|scnt[2] ; SCAN[0] ; sclk       ;
+; N/A   ; None         ; 18.271 ns  ; scndp5:inst3|scnt[1] ; SCAN[2] ; sclk       ;
+; N/A   ; None         ; 18.255 ns  ; scndp5:inst3|scnt[0] ; SCAN[1] ; sclk       ;
+; N/A   ; None         ; 18.231 ns  ; scndp5:inst3|scnt[2] ; SCAN[1] ; sclk       ;
+; N/A   ; None         ; 18.208 ns  ; scndp5:inst3|scnt[1] ; SCAN[0] ; sclk       ;
+; N/A   ; None         ; 18.115 ns  ; scndp5:inst3|scnt[1] ; SCAN[1] ; sclk       ;
+; N/A   ; None         ; 17.231 ns  ; adc8i:inst1|sftp[0]  ; nWR     ; sclk       ;
+; N/A   ; None         ; 16.649 ns  ; adc8i:inst1|sftp[2]  ; nWR     ; sclk       ;
+; N/A   ; None         ; 16.561 ns  ; hexdec8:inst|dout[9] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 16.553 ns  ; hexdec8:inst|dout[9] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 16.548 ns  ; scndp5:inst3|scnt[0] ; SCAN[4] ; sclk       ;
+; N/A   ; None         ; 16.545 ns  ; hexdec8:inst|dout[9] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 16.541 ns  ; hexdec8:inst|dout[9] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 16.540 ns  ; scndp5:inst3|scnt[0] ; SCAN[3] ; sclk       ;
+; N/A   ; None         ; 16.529 ns  ; scndp5:inst3|scnt[2] ; SCAN[4] ; sclk       ;
+; N/A   ; None         ; 16.519 ns  ; scndp5:inst3|scnt[2] ; SCAN[3] ; sclk       ;
+; N/A   ; None         ; 16.414 ns  ; scndp5:inst3|scnt[1] ; SCAN[4] ; sclk       ;
+; N/A   ; None         ; 16.394 ns  ; scndp5:inst3|scnt[1] ; SCAN[3] ; sclk       ;
+; N/A   ; None         ; 16.287 ns  ; hexdec8:inst|dout[1] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 16.279 ns  ; hexdec8:inst|dout[1] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 16.271 ns  ; hexdec8:inst|dout[1] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 16.267 ns  ; hexdec8:inst|dout[1] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 16.228 ns  ; hexdec8:inst|dout[8] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 16.227 ns  ; hexdec8:inst|dout[8] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 16.224 ns  ; hexdec8:inst|dout[8] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 16.223 ns  ; hexdec8:inst|dout[8] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 16.116 ns  ; hexdec8:inst|dout[9] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 16.114 ns  ; hexdec8:inst|dout[9] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 16.108 ns  ; hexdec8:inst|dout[9] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 15.842 ns  ; hexdec8:inst|dout[1] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 15.840 ns  ; hexdec8:inst|dout[1] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 15.834 ns  ; hexdec8:inst|dout[1] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 15.792 ns  ; hexdec8:inst|dout[8] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 15.790 ns  ; hexdec8:inst|dout[8] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 15.790 ns  ; hexdec8:inst|dout[8] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 14.533 ns  ; hexdec8:inst|dout[0] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 14.532 ns  ; hexdec8:inst|dout[0] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 14.529 ns  ; hexdec8:inst|dout[0] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 14.528 ns  ; hexdec8:inst|dout[0] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 14.097 ns  ; hexdec8:inst|dout[0] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 14.095 ns  ; hexdec8:inst|dout[0] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 14.095 ns  ; hexdec8:inst|dout[0] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 13.710 ns  ; hexdec8:inst|dout[7] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 13.710 ns  ; hexdec8:inst|dout[7] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 13.709 ns  ; hexdec8:inst|dout[7] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 13.709 ns  ; hexdec8:inst|dout[7] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 13.278 ns  ; hexdec8:inst|dout[7] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 13.277 ns  ; hexdec8:inst|dout[7] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 13.276 ns  ; hexdec8:inst|dout[7] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 13.221 ns  ; hexdec8:inst|dout[6] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 13.214 ns  ; hexdec8:inst|dout[6] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 13.206 ns  ; hexdec8:inst|dout[6] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 13.198 ns  ; hexdec8:inst|dout[6] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 13.181 ns  ; hexdec8:inst|dout[3] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 13.181 ns  ; hexdec8:inst|dout[3] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 13.180 ns  ; hexdec8:inst|dout[3] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 13.180 ns  ; hexdec8:inst|dout[3] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 13.173 ns  ; adc8i:inst1|rd       ; nRD     ; sclk       ;
+; N/A   ; None         ; 13.021 ns  ; hexdec8:inst|dout[5] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 13.013 ns  ; hexdec8:inst|dout[5] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 13.005 ns  ; hexdec8:inst|dout[5] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 13.001 ns  ; hexdec8:inst|dout[5] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 12.881 ns  ; hexdec8:inst|dout[4] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 12.880 ns  ; hexdec8:inst|dout[4] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 12.877 ns  ; hexdec8:inst|dout[4] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 12.876 ns  ; hexdec8:inst|dout[4] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 12.777 ns  ; hexdec8:inst|dout[6] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 12.775 ns  ; hexdec8:inst|dout[6] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 12.769 ns  ; hexdec8:inst|dout[6] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 12.749 ns  ; hexdec8:inst|dout[3] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 12.748 ns  ; hexdec8:inst|dout[3] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 12.747 ns  ; hexdec8:inst|dout[3] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 12.694 ns  ; hexdec8:inst|dout[2] ; SEG[1]  ; sclk       ;
+; N/A   ; None         ; 12.687 ns  ; hexdec8:inst|dout[2] ; SEG[6]  ; sclk       ;
+; N/A   ; None         ; 12.679 ns  ; hexdec8:inst|dout[2] ; SEG[2]  ; sclk       ;
+; N/A   ; None         ; 12.671 ns  ; hexdec8:inst|dout[2] ; SEG[0]  ; sclk       ;
+; N/A   ; None         ; 12.576 ns  ; hexdec8:inst|dout[5] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 12.574 ns  ; hexdec8:inst|dout[5] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 12.568 ns  ; hexdec8:inst|dout[5] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 12.445 ns  ; hexdec8:inst|dout[4] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 12.443 ns  ; hexdec8:inst|dout[4] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 12.443 ns  ; hexdec8:inst|dout[4] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 12.250 ns  ; hexdec8:inst|dout[2] ; SEG[5]  ; sclk       ;
+; N/A   ; None         ; 12.248 ns  ; hexdec8:inst|dout[2] ; SEG[4]  ; sclk       ;
+; N/A   ; None         ; 12.242 ns  ; hexdec8:inst|dout[2] ; SEG[3]  ; sclk       ;
+; N/A   ; None         ; 7.834 ns   ; hexdec8:inst|donf    ; DATA_V  ; sclk       ;
++-------+--------------+------------+----------------------+---------+------------+
+
+
++----------------------------------------------------------------+
+; tpd                                                            ;
++-------+-------------------+-----------------+---------+--------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From    ; To     ;
++-------+-------------------+-----------------+---------+--------+
+; N/A   ; None              ; 14.021 ns       ; addr[2] ; ADC_CS ;
+; N/A   ; None              ; 13.897 ns       ; addr[1] ; ADC_CS ;
+; N/A   ; None              ; 13.225 ns       ; addr[0] ; ADC_CS ;
++-------+-------------------+-----------------+---------+--------+
+
+
++---------------------------------------------------------------------------------------+
+; th                                                                                    ;
++---------------+-------------+-----------+------------+---------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From       ; To                  ; To Clock ;
++---------------+-------------+-----------+------------+---------------------+----------+
+; N/A           ; None        ; 0.877 ns  ; int        ; adc8i:inst1|stkp[0] ; sclk     ;
+; N/A           ; None        ; 0.875 ns  ; int        ; adc8i:inst1|stkp[1] ; sclk     ;
+; N/A           ; None        ; 0.866 ns  ; adco[6]    ; adc8i:inst1|data[6] ; sclk     ;
+; N/A           ; None        ; 0.742 ns  ; adco[5]    ; adc8i:inst1|data[5] ; sclk     ;
+; N/A           ; None        ; 0.696 ns  ; adco[1]    ; adc8i:inst1|data[1] ; sclk     ;
+; N/A           ; None        ; 0.572 ns  ; adco[2]    ; adc8i:inst1|data[2] ; sclk     ;
+; N/A           ; None        ; 0.568 ns  ; adco[7]    ; adc8i:inst1|data[7] ; sclk     ;
+; N/A           ; None        ; 0.433 ns  ; adco[4]    ; adc8i:inst1|data[4] ; sclk     ;
+; N/A           ; None        ; 0.387 ns  ; adco[3]    ; adc8i:inst1|data[3] ; sclk     ;
+; N/A           ; None        ; 0.099 ns  ; adco[0]    ; adc8i:inst1|data[0] ; sclk     ;
+; N/A           ; None        ; -1.310 ns ; sampsel[1] ; adc8i:inst1|sftp[0] ; sclk     ;
+; N/A           ; None        ; -1.919 ns ; sampsel[0] ; adc8i:inst1|sftp[0] ; sclk     ;
++---------------+-------------+-----------+------------+---------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Jun 23 14:03:25 2021
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off adc8dp -c adc8dp --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "sclk" is an undefined clock
+Warning: Found 2 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "adc8i:inst1|scount[10]" as buffer
+    Info: Detected ripple clock "adc8i:inst1|scount[7]" as buffer
+Info: Clock "sclk" has Internal fmax of 140.92 MHz between source register "adc8i:inst1|data[2]" and destination register "hexdec8:inst|hsr[2]" (period= 7.096 ns)
+    Info: + Longest register to register delay is 1.485 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X46_Y17_N5; Fanout = 2; REG Node = 'adc8i:inst1|data[2]'
+        Info: 2: + IC(1.176 ns) + CELL(0.309 ns) = 1.485 ns; Loc. = LC_X42_Y17_N8; Fanout = 1; REG Node = 'hexdec8:inst|hsr[2]'
+        Info: Total cell delay = 0.309 ns ( 20.81 % )
+        Info: Total interconnect delay = 1.176 ns ( 79.19 % )
+    Info: - Smallest clock skew is -5.350 ns
+        Info: + Shortest clock path from clock "sclk" to destination register is 3.187 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_153; Fanout = 72; CLK Node = 'sclk'
+            Info: 2: + IC(1.007 ns) + CELL(0.711 ns) = 3.187 ns; Loc. = LC_X42_Y17_N8; Fanout = 1; REG Node = 'hexdec8:inst|hsr[2]'
+            Info: Total cell delay = 2.180 ns ( 68.40 % )
+            Info: Total interconnect delay = 1.007 ns ( 31.60 % )
+        Info: - Longest clock path from clock "sclk" to source register is 8.537 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_153; Fanout = 72; CLK Node = 'sclk'
+            Info: 2: + IC(1.031 ns) + CELL(0.935 ns) = 3.435 ns; Loc. = LC_X9_Y15_N1; Fanout = 20; REG Node = 'adc8i:inst1|scount[7]'
+            Info: 3: + IC(4.391 ns) + CELL(0.711 ns) = 8.537 ns; Loc. = LC_X46_Y17_N5; Fanout = 2; REG Node = 'adc8i:inst1|data[2]'
+            Info: Total cell delay = 3.115 ns ( 36.49 % )
+            Info: Total interconnect delay = 5.422 ns ( 63.51 % )
+    Info: + Micro clock to output delay of source is 0.224 ns
+    Info: + Micro setup delay of destination is 0.037 ns
+Warning: Circuit may not operate. Detected 4 non-operational path(s) clocked by clock "sclk" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "adc8i:inst1|scount[20]" and destination pin or register "adc8i:inst1|sftp[0]" for clock "sclk" (Hold time is 4.296 ns)
+    Info: + Largest clock skew is 5.350 ns
+        Info: + Longest clock path from clock "sclk" to destination register is 8.561 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_153; Fanout = 72; CLK Node = 'sclk'
+            Info: 2: + IC(1.031 ns) + CELL(0.935 ns) = 3.435 ns; Loc. = LC_X9_Y15_N1; Fanout = 20; REG Node = 'adc8i:inst1|scount[7]'
+            Info: 3: + IC(4.415 ns) + CELL(0.711 ns) = 8.561 ns; Loc. = LC_X14_Y15_N4; Fanout = 2; REG Node = 'adc8i:inst1|sftp[0]'
+            Info: Total cell delay = 3.115 ns ( 36.39 % )
+            Info: Total interconnect delay = 5.446 ns ( 63.61 % )
+        Info: - Shortest clock path from clock "sclk" to source register is 3.211 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_153; Fanout = 72; CLK Node = 'sclk'
+            Info: 2: + IC(1.031 ns) + CELL(0.711 ns) = 3.211 ns; Loc. = LC_X14_Y15_N6; Fanout = 2; REG Node = 'adc8i:inst1|scount[20]'
+            Info: Total cell delay = 2.180 ns ( 67.89 % )
+            Info: Total interconnect delay = 1.031 ns ( 32.11 % )
+    Info: - Micro clock to output delay of source is 0.224 ns
+    Info: - Shortest register to register delay is 0.845 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X14_Y15_N6; Fanout = 2; REG Node = 'adc8i:inst1|scount[20]'
+        Info: 2: + IC(0.536 ns) + CELL(0.309 ns) = 0.845 ns; Loc. = LC_X14_Y15_N4; Fanout = 2; REG Node = 'adc8i:inst1|sftp[0]'
+        Info: Total cell delay = 0.309 ns ( 36.57 % )
+        Info: Total interconnect delay = 0.536 ns ( 63.43 % )
+    Info: + Micro hold delay of destination is 0.015 ns
+Info: tsu for register "adc8i:inst1|sftp[0]" (data pin = "sampsel[0]", clock pin = "sclk") is 1.971 ns
+    Info: + Longest pin to register delay is 10.495 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_1; Fanout = 1; PIN Node = 'sampsel[0]'
+        Info: 2: + IC(6.921 ns) + CELL(0.442 ns) = 8.832 ns; Loc. = LC_X12_Y15_N5; Fanout = 1; COMB Node = 'adc8i:inst1|Mux0~0'
+        Info: 3: + IC(1.056 ns) + CELL(0.607 ns) = 10.495 ns; Loc. = LC_X14_Y15_N4; Fanout = 2; REG Node = 'adc8i:inst1|sftp[0]'
+        Info: Total cell delay = 2.518 ns ( 23.99 % )
+        Info: Total interconnect delay = 7.977 ns ( 76.01 % )
+    Info: + Micro setup delay of destination is 0.037 ns
+    Info: - Shortest clock path from clock "sclk" to destination register is 8.561 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_153; Fanout = 72; CLK Node = 'sclk'
+        Info: 2: + IC(1.031 ns) + CELL(0.935 ns) = 3.435 ns; Loc. = LC_X9_Y15_N1; Fanout = 20; REG Node = 'adc8i:inst1|scount[7]'
+        Info: 3: + IC(4.415 ns) + CELL(0.711 ns) = 8.561 ns; Loc. = LC_X14_Y15_N4; Fanout = 2; REG Node = 'adc8i:inst1|sftp[0]'
+        Info: Total cell delay = 3.115 ns ( 36.39 % )
+        Info: Total interconnect delay = 5.446 ns ( 63.61 % )
+Info: tco from clock "sclk" to destination pin "SEG[1]" through register "scndp5:inst3|scnt[0]" is 24.323 ns
+    Info: + Longest clock path from clock "sclk" to source register is 8.554 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_153; Fanout = 72; CLK Node = 'sclk'
+        Info: 2: + IC(1.031 ns) + CELL(0.935 ns) = 3.435 ns; Loc. = LC_X11_Y15_N2; Fanout = 7; REG Node = 'adc8i:inst1|scount[10]'
+        Info: 3: + IC(4.408 ns) + CELL(0.711 ns) = 8.554 ns; Loc. = LC_X43_Y16_N6; Fanout = 13; REG Node = 'scndp5:inst3|scnt[0]'
+        Info: Total cell delay = 3.115 ns ( 36.42 % )
+        Info: Total interconnect delay = 5.439 ns ( 63.58 % )
+    Info: + Micro clock to output delay of source is 0.224 ns
+    Info: + Longest register to pin delay is 15.545 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X43_Y16_N6; Fanout = 13; REG Node = 'scndp5:inst3|scnt[0]'
+        Info: 2: + IC(2.064 ns) + CELL(0.114 ns) = 2.178 ns; Loc. = LC_X43_Y16_N8; Fanout = 3; COMB Node = 'scndp5:inst3|Mux8~5'
+        Info: 3: + IC(0.427 ns) + CELL(0.442 ns) = 3.047 ns; Loc. = LC_X43_Y16_N4; Fanout = 1; COMB Node = 'scndp5:inst3|Mux2~0'
+        Info: 4: + IC(1.502 ns) + CELL(0.442 ns) = 4.991 ns; Loc. = LC_X46_Y17_N7; Fanout = 1; COMB Node = 'scndp5:inst3|Mux2~1'
+        Info: 5: + IC(1.208 ns) + CELL(0.114 ns) = 6.313 ns; Loc. = LC_X45_Y18_N5; Fanout = 7; COMB Node = 'scndp5:inst3|Mux2~2'
+        Info: 6: + IC(5.132 ns) + CELL(0.442 ns) = 11.887 ns; Loc. = LC_X1_Y22_N2; Fanout = 1; COMB Node = 'scndp5:inst3|s[1]~108'
+        Info: 7: + IC(1.534 ns) + CELL(2.124 ns) = 15.545 ns; Loc. = PIN_12; Fanout = 0; PIN Node = 'SEG[1]'
+        Info: Total cell delay = 3.678 ns ( 23.66 % )
+        Info: Total interconnect delay = 11.867 ns ( 76.34 % )
+Info: Longest tpd from source pin "addr[2]" to destination pin "ADC_CS" is 14.021 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_7; Fanout = 1; PIN Node = 'addr[2]'
+    Info: 2: + IC(5.014 ns) + CELL(0.442 ns) = 6.925 ns; Loc. = LC_X1_Y25_N2; Fanout = 1; COMB Node = 'adc8i:inst1|cs~2'
+    Info: 3: + IC(4.988 ns) + CELL(2.108 ns) = 14.021 ns; Loc. = PIN_196; Fanout = 0; PIN Node = 'ADC_CS'
+    Info: Total cell delay = 4.019 ns ( 28.66 % )
+    Info: Total interconnect delay = 10.002 ns ( 71.34 % )
+Info: th for register "adc8i:inst1|stkp[0]" (data pin = "int", clock pin = "sclk") is 0.877 ns
+    Info: + Longest clock path from clock "sclk" to destination register is 8.537 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_153; Fanout = 72; CLK Node = 'sclk'
+        Info: 2: + IC(1.031 ns) + CELL(0.935 ns) = 3.435 ns; Loc. = LC_X9_Y15_N1; Fanout = 20; REG Node = 'adc8i:inst1|scount[7]'
+        Info: 3: + IC(4.391 ns) + CELL(0.711 ns) = 8.537 ns; Loc. = LC_X46_Y17_N8; Fanout = 3; REG Node = 'adc8i:inst1|stkp[0]'
+        Info: Total cell delay = 3.115 ns ( 36.49 % )
+        Info: Total interconnect delay = 5.422 ns ( 63.51 % )
+    Info: + Micro hold delay of destination is 0.015 ns
+    Info: - Shortest pin to register delay is 7.675 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.475 ns) = 1.475 ns; Loc. = PIN_194; Fanout = 2; PIN Node = 'int'
+        Info: 2: + IC(5.891 ns) + CELL(0.309 ns) = 7.675 ns; Loc. = LC_X46_Y17_N8; Fanout = 3; REG Node = 'adc8i:inst1|stkp[0]'
+        Info: Total cell delay = 1.784 ns ( 23.24 % )
+        Info: Total interconnect delay = 5.891 ns ( 76.76 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 188 megabytes
+    Info: Processing ended: Wed Jun 23 14:03:26 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

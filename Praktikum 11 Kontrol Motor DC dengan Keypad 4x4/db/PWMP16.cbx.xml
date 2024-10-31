@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="PWMP16">
+		<CBX_INST_ENTRY INSTANCE_NAME="|pwmp16|scankdpp4:inst7|keybpg:key|LPM_COUNTER:count4" CBX_FILE_NAME="cntr_n8i.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

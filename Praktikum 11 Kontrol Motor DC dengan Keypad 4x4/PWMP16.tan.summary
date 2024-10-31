@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.091 ns
+From           : colk[0]
+To             : scankdpp4:inst7|keybpg:key|debounceg:u0|count[7]
+From Clock     : --
+To Clock       : sclk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 21.902 ns
+From           : scankdpp4:inst7|sftd15:sft|dataq[2]
+To             : seg[6]
+From Clock     : sclk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 17.295 ns
+From           : clear
+To             : pwm
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -6.268 ns
+From           : colk[3]
+To             : scankdpp4:inst7|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[3]
+From Clock     : --
+To Clock       : sclk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sclk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 126.63 MHz ( period = 7.897 ns )
+From           : scankdpp4:inst7|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[0]
+To             : scankdpp4:inst7|keybpg:key|debounceg:u0|count[7]
+From Clock     : sclk
+To Clock       : sclk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'pclk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 241.37 MHz ( period = 4.143 ns )
+From           : pwm16:inst|cnt[0]
+To             : pwm16:inst|sgn
+From Clock     : pclk
+To Clock       : pclk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

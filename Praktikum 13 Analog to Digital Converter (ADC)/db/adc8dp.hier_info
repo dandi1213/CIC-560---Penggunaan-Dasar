@@ -1,0 +1,540 @@
+|adc8dp
+nWR <= adc8i:inst1.wr
+sclk => adc8i:inst1.clk
+sclk => hexdec8:inst.sysclk
+int => adc8i:inst1.int
+addr[0] => adc8i:inst1.a[0]
+addr[1] => adc8i:inst1.a[1]
+addr[2] => adc8i:inst1.a[2]
+adco[0] => adc8i:inst1.dati[0]
+adco[1] => adc8i:inst1.dati[1]
+adco[2] => adc8i:inst1.dati[2]
+adco[3] => adc8i:inst1.dati[3]
+adco[4] => adc8i:inst1.dati[4]
+adco[5] => adc8i:inst1.dati[5]
+adco[6] => adc8i:inst1.dati[6]
+adco[7] => adc8i:inst1.dati[7]
+sampsel[0] => adc8i:inst1.sel[0]
+sampsel[1] => adc8i:inst1.sel[1]
+nRD <= adc8i:inst1.rd
+ADC_CS <= adc8i:inst1.cs
+DATA_V <= hexdec8:inst.donf
+SCAN[0] <= scndp5:inst3.scan[0]
+SCAN[1] <= scndp5:inst3.scan[1]
+SCAN[2] <= scndp5:inst3.scan[2]
+SCAN[3] <= scndp5:inst3.scan[3]
+SCAN[4] <= scndp5:inst3.scan[4]
+SEG[6] <= scndp5:inst3.s[6]
+SEG[5] <= scndp5:inst3.s[5]
+SEG[4] <= scndp5:inst3.s[4]
+SEG[3] <= scndp5:inst3.s[3]
+SEG[2] <= scndp5:inst3.s[2]
+SEG[1] <= scndp5:inst3.s[1]
+SEG[0] <= scndp5:inst3.s[0]
+
+
+|adc8dp|adc8i:inst1
+clk => scount[21].CLK
+clk => scount[20].CLK
+clk => scount[19].CLK
+clk => scount[18].CLK
+clk => scount[17].CLK
+clk => scount[16].CLK
+clk => scount[15].CLK
+clk => scount[14].CLK
+clk => scount[13].CLK
+clk => scount[12].CLK
+clk => scount[11].CLK
+clk => scount[10].CLK
+clk => scount[9].CLK
+clk => scount[8].CLK
+clk => scount[7].CLK
+clk => scount[6].CLK
+clk => scount[5].CLK
+clk => scount[4].CLK
+clk => scount[3].CLK
+clk => scount[2].CLK
+clk => scount[1].CLK
+clk => scount[0].CLK
+int => Mux1.IN3
+int => Mux2.IN3
+dati[0] => data[0].DATAIN
+dati[1] => data[1].DATAIN
+dati[2] => data[2].DATAIN
+dati[3] => data[3].DATAIN
+dati[4] => data[4].DATAIN
+dati[5] => data[5].DATAIN
+dati[6] => data[6].DATAIN
+dati[7] => data[7].DATAIN
+a[0] => cs~0.IN1
+a[1] => cs~0.IN0
+a[2] => cs~1.IN1
+sel[0] => Mux0.IN1
+sel[1] => Mux0.IN0
+wr <= wr~0.DB_MAX_OUTPUT_PORT_TYPE
+rd <= rd~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cs <= cs~1.DB_MAX_OUTPUT_PORT_TYPE
+conv_done <= sftd[2].DB_MAX_OUTPUT_PORT_TYPE
+scandp <= scount[10].DB_MAX_OUTPUT_PORT_TYPE
+dato[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+dato[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+dato[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+dato[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+dato[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+dato[5] <= data[5].DB_MAX_OUTPUT_PORT_TYPE
+dato[6] <= data[6].DB_MAX_OUTPUT_PORT_TYPE
+dato[7] <= data[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst
+sysclk => stab.CLK
+sysclk => stas[1].CLK
+sysclk => stas[0].CLK
+sysclk => dly.CLK
+sysclk => donf~reg0.CLK
+sysclk => dout[9]~reg0.CLK
+sysclk => dout[8]~reg0.CLK
+sysclk => dout[7]~reg0.CLK
+sysclk => dout[6]~reg0.CLK
+sysclk => dout[5]~reg0.CLK
+sysclk => dout[4]~reg0.CLK
+sysclk => dout[3]~reg0.CLK
+sysclk => dout[2]~reg0.CLK
+sysclk => dout[1]~reg0.CLK
+sysclk => dout[0]~reg0.CLK
+sysclk => dsr[9].CLK
+sysclk => dsr[8].CLK
+sysclk => dsr[7].CLK
+sysclk => dsr[6].CLK
+sysclk => dsr[5].CLK
+sysclk => dsr[4].CLK
+sysclk => dsr[3].CLK
+sysclk => dsr[2].CLK
+sysclk => dsr[1].CLK
+sysclk => dsr[0].CLK
+sysclk => sft.CLK
+sysclk => chk.CLK
+sysclk => done.CLK
+sysclk => hsr[7].CLK
+sysclk => hsr[6].CLK
+sysclk => hsr[5].CLK
+sysclk => hsr[4].CLK
+sysclk => hsr[3].CLK
+sysclk => hsr[2].CLK
+sysclk => hsr[1].CLK
+sysclk => hsr[0].CLK
+sysclk => bcov.CLK
+sysclk => tdo[9].CLK
+sysclk => tdo[8].CLK
+sysclk => tdo[7].CLK
+sysclk => tdo[6].CLK
+sysclk => tdo[5].CLK
+sysclk => tdo[4].CLK
+sysclk => tdo[3].CLK
+sysclk => tdo[2].CLK
+sysclk => tdo[1].CLK
+sysclk => tdo[0].CLK
+sysclk => 74163:bcnt1.clk
+sta => stab.DATAIN
+hin[0] => hsr~42.IN1
+hin[1] => hsr~36.IN1
+hin[2] => hsr~30.IN1
+hin[3] => hsr~24.IN1
+hin[4] => hsr~18.IN1
+hin[5] => hsr~12.IN1
+hin[6] => hsr~6.IN1
+hin[7] => hsr~0.IN1
+donf <= donf~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= dout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= dout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= dout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[8] <= dout[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[9] <= dout[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:madd
+dataa[0] => addcore:adder.dataa[0]
+dataa[1] => addcore:adder.dataa[1]
+dataa[2] => addcore:adder.dataa[2]
+dataa[3] => addcore:adder.dataa[3]
+datab[0] => addcore:adder.datab[0]
+datab[1] => addcore:adder.datab[1]
+datab[2] => addcore:adder.datab[2]
+datab[3] => addcore:adder.datab[3]
+cin => ~NO_FANOUT~
+add_sub => ~NO_FANOUT~
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:result_ext_latency_ffs.result[0]
+result[1] <= altshift:result_ext_latency_ffs.result[1]
+result[2] <= altshift:result_ext_latency_ffs.result[2]
+result[3] <= altshift:result_ext_latency_ffs.result[3]
+cout <= cout~0.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= overflow~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:madd|addcore:adder
+datab[0] => datab_node[0].IN0
+datab[1] => datab_node[1].IN0
+datab[2] => datab_node[2].IN0
+datab[3] => datab_node[3].IN0
+cin => ~NO_FANOUT~
+add_sub => cin_node.IN0
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= a_csnbuffer:result_node.sout[0]
+result[1] <= a_csnbuffer:result_node.sout[1]
+result[2] <= a_csnbuffer:result_node.sout[2]
+result[3] <= a_csnbuffer:result_node.sout[3]
+cout <= a_csnbuffer:cout_node.sout[0]
+unreg_result[0] <= unreg_res_node[0].DB_MAX_OUTPUT_PORT_TYPE
+unreg_result[1] <= unreg_res_node[1].DB_MAX_OUTPUT_PORT_TYPE
+unreg_result[2] <= unreg_res_node[2].DB_MAX_OUTPUT_PORT_TYPE
+unreg_result[3] <= unreg_res_node[3].DB_MAX_OUTPUT_PORT_TYPE
+unreg_cout <= unreg_cout_node.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= a_csnbuffer:oflow_node.sout[0]
+bg_out <= <GND>
+bp_out <= <GND>
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:madd|addcore:adder|a_csnbuffer:oflow_node
+sin[0] => sout_node[0].DATAIN
+sin[1] => sout_node[1].DATAIN
+sin[2] => sout_node[2].DATAIN
+sin[3] => sout_node[3].DATAIN
+cin[0] => cout[0]~3.IN0
+cin[1] => cout[1]~2.IN0
+cin[2] => cout[2]~1.IN0
+cin[3] => cout[3]~0.IN0
+clk => ~NO_FANOUT~
+clrn => ~NO_FANOUT~
+ena => ~NO_FANOUT~
+sout[0] <= sout_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sout[1] <= sout_node[1].DB_MAX_OUTPUT_PORT_TYPE
+sout[2] <= sout_node[2].DB_MAX_OUTPUT_PORT_TYPE
+sout[3] <= sout_node[3].DB_MAX_OUTPUT_PORT_TYPE
+cout[0] <= cout[0]~3.DB_MAX_OUTPUT_PORT_TYPE
+cout[1] <= cout[1]~2.DB_MAX_OUTPUT_PORT_TYPE
+cout[2] <= cout[2]~1.DB_MAX_OUTPUT_PORT_TYPE
+cout[3] <= cout[3]~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:madd|addcore:adder|a_csnbuffer:result_node
+sin[0] => cs_buffer[0].SUM_IN
+sin[1] => cs_buffer[1].SUM_IN
+sin[2] => cs_buffer[2].SUM_IN
+sin[3] => cs_buffer[3].SUM_IN
+cin[0] => cs_buffer[0].CIN
+cin[1] => cs_buffer[1].CIN
+cin[2] => cs_buffer[2].CIN
+cin[3] => cs_buffer[3].CIN
+clk => ~NO_FANOUT~
+clrn => ~NO_FANOUT~
+ena => ~NO_FANOUT~
+sout[0] <= cs_buffer[0].DB_MAX_OUTPUT_PORT_TYPE
+sout[1] <= cs_buffer[1].DB_MAX_OUTPUT_PORT_TYPE
+sout[2] <= cs_buffer[2].DB_MAX_OUTPUT_PORT_TYPE
+sout[3] <= cs_buffer[3].DB_MAX_OUTPUT_PORT_TYPE
+cout[0] <= cs_buffer[0].DB_MAX_OUTPUT_PORT_TYPE
+cout[1] <= cs_buffer[1].DB_MAX_OUTPUT_PORT_TYPE
+cout[2] <= cs_buffer[2].DB_MAX_OUTPUT_PORT_TYPE
+cout[3] <= cs_buffer[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:madd|addcore:adder|a_csnbuffer:cout_node
+sin[0] => sout_node[0].DATAIN
+sin[1] => sout_node[1].DATAIN
+sin[2] => sout_node[2].DATAIN
+sin[3] => sout_node[3].DATAIN
+cin[0] => cout[0]~3.IN0
+cin[1] => cout[1]~2.IN0
+cin[2] => cout[2]~1.IN0
+cin[3] => cout[3]~0.IN0
+clk => ~NO_FANOUT~
+clrn => ~NO_FANOUT~
+ena => ~NO_FANOUT~
+sout[0] <= sout_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sout[1] <= sout_node[1].DB_MAX_OUTPUT_PORT_TYPE
+sout[2] <= sout_node[2].DB_MAX_OUTPUT_PORT_TYPE
+sout[3] <= sout_node[3].DB_MAX_OUTPUT_PORT_TYPE
+cout[0] <= cout[0]~3.DB_MAX_OUTPUT_PORT_TYPE
+cout[1] <= cout[1]~2.DB_MAX_OUTPUT_PORT_TYPE
+cout[2] <= cout[2]~1.DB_MAX_OUTPUT_PORT_TYPE
+cout[3] <= cout[3]~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:madd|altshift:result_ext_latency_ffs
+data[0] => result[0].DATAIN
+data[1] => result[1].DATAIN
+data[2] => result[2].DATAIN
+data[3] => result[3].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:madd|altshift:carry_ext_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:madd|altshift:oflow_ext_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:ladd
+dataa[0] => addcore:adder.dataa[0]
+dataa[1] => addcore:adder.dataa[1]
+dataa[2] => addcore:adder.dataa[2]
+dataa[3] => addcore:adder.dataa[3]
+datab[0] => addcore:adder.datab[0]
+datab[1] => addcore:adder.datab[1]
+datab[2] => addcore:adder.datab[2]
+datab[3] => addcore:adder.datab[3]
+cin => ~NO_FANOUT~
+add_sub => ~NO_FANOUT~
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:result_ext_latency_ffs.result[0]
+result[1] <= altshift:result_ext_latency_ffs.result[1]
+result[2] <= altshift:result_ext_latency_ffs.result[2]
+result[3] <= altshift:result_ext_latency_ffs.result[3]
+cout <= cout~0.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= overflow~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:ladd|addcore:adder
+datab[0] => datab_node[0].IN0
+datab[1] => datab_node[1].IN0
+datab[2] => datab_node[2].IN0
+datab[3] => datab_node[3].IN0
+cin => ~NO_FANOUT~
+add_sub => cin_node.IN0
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= a_csnbuffer:result_node.sout[0]
+result[1] <= a_csnbuffer:result_node.sout[1]
+result[2] <= a_csnbuffer:result_node.sout[2]
+result[3] <= a_csnbuffer:result_node.sout[3]
+cout <= a_csnbuffer:cout_node.sout[0]
+unreg_result[0] <= unreg_res_node[0].DB_MAX_OUTPUT_PORT_TYPE
+unreg_result[1] <= unreg_res_node[1].DB_MAX_OUTPUT_PORT_TYPE
+unreg_result[2] <= unreg_res_node[2].DB_MAX_OUTPUT_PORT_TYPE
+unreg_result[3] <= unreg_res_node[3].DB_MAX_OUTPUT_PORT_TYPE
+unreg_cout <= unreg_cout_node.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= a_csnbuffer:oflow_node.sout[0]
+bg_out <= <GND>
+bp_out <= <GND>
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:ladd|addcore:adder|a_csnbuffer:oflow_node
+sin[0] => sout_node[0].DATAIN
+sin[1] => sout_node[1].DATAIN
+sin[2] => sout_node[2].DATAIN
+sin[3] => sout_node[3].DATAIN
+cin[0] => cout[0]~3.IN0
+cin[1] => cout[1]~2.IN0
+cin[2] => cout[2]~1.IN0
+cin[3] => cout[3]~0.IN0
+clk => ~NO_FANOUT~
+clrn => ~NO_FANOUT~
+ena => ~NO_FANOUT~
+sout[0] <= sout_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sout[1] <= sout_node[1].DB_MAX_OUTPUT_PORT_TYPE
+sout[2] <= sout_node[2].DB_MAX_OUTPUT_PORT_TYPE
+sout[3] <= sout_node[3].DB_MAX_OUTPUT_PORT_TYPE
+cout[0] <= cout[0]~3.DB_MAX_OUTPUT_PORT_TYPE
+cout[1] <= cout[1]~2.DB_MAX_OUTPUT_PORT_TYPE
+cout[2] <= cout[2]~1.DB_MAX_OUTPUT_PORT_TYPE
+cout[3] <= cout[3]~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:ladd|addcore:adder|a_csnbuffer:result_node
+sin[0] => cs_buffer[0].SUM_IN
+sin[1] => cs_buffer[1].SUM_IN
+sin[2] => cs_buffer[2].SUM_IN
+sin[3] => cs_buffer[3].SUM_IN
+cin[0] => cs_buffer[0].CIN
+cin[1] => cs_buffer[1].CIN
+cin[2] => cs_buffer[2].CIN
+cin[3] => cs_buffer[3].CIN
+clk => ~NO_FANOUT~
+clrn => ~NO_FANOUT~
+ena => ~NO_FANOUT~
+sout[0] <= cs_buffer[0].DB_MAX_OUTPUT_PORT_TYPE
+sout[1] <= cs_buffer[1].DB_MAX_OUTPUT_PORT_TYPE
+sout[2] <= cs_buffer[2].DB_MAX_OUTPUT_PORT_TYPE
+sout[3] <= cs_buffer[3].DB_MAX_OUTPUT_PORT_TYPE
+cout[0] <= cs_buffer[0].DB_MAX_OUTPUT_PORT_TYPE
+cout[1] <= cs_buffer[1].DB_MAX_OUTPUT_PORT_TYPE
+cout[2] <= cs_buffer[2].DB_MAX_OUTPUT_PORT_TYPE
+cout[3] <= cs_buffer[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:ladd|addcore:adder|a_csnbuffer:cout_node
+sin[0] => sout_node[0].DATAIN
+sin[1] => sout_node[1].DATAIN
+sin[2] => sout_node[2].DATAIN
+sin[3] => sout_node[3].DATAIN
+cin[0] => cout[0]~3.IN0
+cin[1] => cout[1]~2.IN0
+cin[2] => cout[2]~1.IN0
+cin[3] => cout[3]~0.IN0
+clk => ~NO_FANOUT~
+clrn => ~NO_FANOUT~
+ena => ~NO_FANOUT~
+sout[0] <= sout_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sout[1] <= sout_node[1].DB_MAX_OUTPUT_PORT_TYPE
+sout[2] <= sout_node[2].DB_MAX_OUTPUT_PORT_TYPE
+sout[3] <= sout_node[3].DB_MAX_OUTPUT_PORT_TYPE
+cout[0] <= cout[0]~3.DB_MAX_OUTPUT_PORT_TYPE
+cout[1] <= cout[1]~2.DB_MAX_OUTPUT_PORT_TYPE
+cout[2] <= cout[2]~1.DB_MAX_OUTPUT_PORT_TYPE
+cout[3] <= cout[3]~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:ladd|altshift:result_ext_latency_ffs
+data[0] => result[0].DATAIN
+data[1] => result[1].DATAIN
+data[2] => result[2].DATAIN
+data[3] => result[3].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:ladd|altshift:carry_ext_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|LPM_ADD_SUB:ladd|altshift:oflow_ext_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|hexdec8:inst|74163:bcnt1
+clk => f74163:sub.clk
+ldn => f74163:sub.ldn
+clrn => f74163:sub.clrn
+enp => f74163:sub.enp
+ent => f74163:sub.ent
+d => f74163:sub.d
+c => f74163:sub.c
+b => f74163:sub.b
+a => f74163:sub.a
+qd <= f74163:sub.qd
+qc <= f74163:sub.qc
+qb <= f74163:sub.qb
+qa <= f74163:sub.qa
+rco <= f74163:sub.rco
+
+
+|adc8dp|hexdec8:inst|74163:bcnt1|f74163:sub
+RCO <= 129.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 134.CLK
+CLK => 122.CLK
+CLK => 111.CLK
+CLK => 34.CLK
+CLRN => 137.IN0
+CLRN => 126.IN0
+CLRN => 115.IN0
+CLRN => 68.IN0
+D => 136.IN0
+LDN => 144.IN0
+LDN => 132.IN0
+LDN => 121.IN0
+LDN => 110.IN0
+LDN => 71.IN0
+ENP => 130.IN0
+ENP => 119.IN0
+ENP => 108.IN0
+ENP => 105.IN0
+C => 124.IN0
+B => 113.IN0
+A => 70.IN0
+ENT => 140.DATAIN
+QD <= 134.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 122.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 111.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adc8dp|scndp5:inst3
+scnclk => scnt[2].CLK
+scnclk => scnt[1].CLK
+scnclk => scnt[0].CLK
+datai[0] => Mux3.IN5
+datai[1] => Mux2.IN5
+datai[2] => Mux1.IN5
+datai[3] => Mux0.IN5
+datai[4] => Mux3.IN1
+datai[4] => Mux3.IN2
+datai[4] => Mux3.IN3
+datai[4] => Mux3.IN4
+datai[5] => Mux2.IN1
+datai[5] => Mux2.IN2
+datai[5] => Mux2.IN3
+datai[5] => Mux2.IN4
+datai[6] => Mux1.IN1
+datai[6] => Mux1.IN2
+datai[6] => Mux1.IN3
+datai[6] => Mux1.IN4
+datai[7] => Mux0.IN1
+datai[7] => Mux0.IN2
+datai[7] => Mux0.IN3
+datai[7] => Mux0.IN4
+datai[8] => Mux3.IN0
+datai[9] => Mux2.IN0
+datah[0] => Mux3.IN7
+datah[1] => Mux2.IN7
+datah[2] => Mux1.IN7
+datah[3] => Mux0.IN7
+datah[4] => Mux3.IN6
+datah[5] => Mux2.IN6
+datah[6] => Mux1.IN6
+datah[7] => Mux0.IN6
+scan[0] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+scan[1] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+scan[2] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+scan[3] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+scan[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+s[6] <= s[6]~0.DB_MAX_OUTPUT_PORT_TYPE
+s[5] <= s[5]~53.DB_MAX_OUTPUT_PORT_TYPE
+s[4] <= s[4]~62.DB_MAX_OUTPUT_PORT_TYPE
+s[3] <= s[3]~71.DB_MAX_OUTPUT_PORT_TYPE
+s[2] <= s[2]~80.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s[1]~89.DB_MAX_OUTPUT_PORT_TYPE
+s[0] <= s[0]~106.DB_MAX_OUTPUT_PORT_TYPE
+
+

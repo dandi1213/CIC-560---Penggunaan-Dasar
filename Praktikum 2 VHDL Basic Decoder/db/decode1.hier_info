@@ -1,0 +1,20 @@
+|decode1
+address[0] => Equal0.IN31
+address[1] => Equal0.IN30
+address[2] => Equal0.IN29
+address[3] => Equal0.IN28
+address[4] => Equal0.IN27
+address[5] => Equal0.IN26
+address[6] => Equal0.IN25
+address[7] => Equal0.IN24
+address[8] => Equal0.IN23
+address[9] => Equal0.IN22
+address[10] => Equal0.IN21
+address[11] => Equal0.IN20
+address[12] => Equal0.IN19
+address[13] => Equal0.IN18
+address[14] => Equal0.IN17
+address[15] => Equal0.IN16
+chip_enable <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+

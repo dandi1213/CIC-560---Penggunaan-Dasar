@@ -1,0 +1,110 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+# Date created = 18:51:29  February 22, 2024
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		scankdpp4_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY Cyclone
+set_global_assignment -name DEVICE EP1C12Q240C8
+set_global_assignment -name TOP_LEVEL_ENTITY scankdpp4
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:51:29  FEBRUARY 22, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name DEVICE_FILTER_PACKAGE PQFP
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 240
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VHDL_FILE sftd15.vhd
+set_global_assignment -name VHDL_FILE sel4.vhd
+set_global_assignment -name VHDL_FILE scankdpp4.vhd
+set_global_assignment -name VHDL_FILE keyps4.vhd
+set_global_assignment -name VHDL_FILE keybpg.vhd
+set_global_assignment -name VHDL_FILE decod4.vhd
+set_global_assignment -name VHDL_FILE debounceg.vhd
+set_global_assignment -name CYCLONE_CONFIGURATION_SCHEME "PASSIVE SERIAL"
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name CYCLONE_CONFIGURATION_DEVICE EPC2
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVCMOS"
+set_global_assignment -name SMART_RECOMPILE ON
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_location_assignment PIN_28 -to clk
+set_location_assignment PIN_1 -to clr
+set_location_assignment PIN_168 -to colk[3]
+set_location_assignment PIN_173 -to colk[0]
+set_location_assignment PIN_170 -to colk[1]
+set_location_assignment PIN_169 -to colk[2]
+set_location_assignment PIN_116 -to det[0]
+set_location_assignment PIN_115 -to det[1]
+set_location_assignment PIN_114 -to det[2]
+set_location_assignment PIN_113 -to det[3]
+set_location_assignment PIN_163 -to keydata[0]
+set_location_assignment PIN_162 -to keydata[1]
+set_location_assignment PIN_161 -to keydata[2]
+set_location_assignment PIN_160 -to keydata[3]
+set_location_assignment PIN_159 -to keydata[4]
+set_location_assignment PIN_158 -to keydata[5]
+set_location_assignment PIN_156 -to keydata[6]
+set_location_assignment PIN_144 -to keydata[7]
+set_location_assignment PIN_143 -to keydata[8]
+set_location_assignment PIN_141 -to keydata[9]
+set_location_assignment PIN_140 -to keydata[10]
+set_location_assignment PIN_139 -to keydata[11]
+set_location_assignment PIN_138 -to keydata[12]
+set_location_assignment PIN_137 -to keydata[13]
+set_location_assignment PIN_136 -to keydata[14]
+set_location_assignment PIN_135 -to keydata[15]
+set_location_assignment PIN_164 -to rowk[0]
+set_location_assignment PIN_165 -to rowk[1]
+set_location_assignment PIN_166 -to rowk[2]
+set_location_assignment PIN_167 -to rowk[3]
+set_location_assignment PIN_11 -to s[0]
+set_location_assignment PIN_12 -to s[1]
+set_location_assignment PIN_13 -to s[2]
+set_location_assignment PIN_14 -to s[3]
+set_location_assignment PIN_15 -to s[4]
+set_location_assignment PIN_16 -to s[5]
+set_location_assignment PIN_17 -to s[6]
+set_location_assignment PIN_134 -to selout[0]
+set_location_assignment PIN_133 -to selout[1]
+set_location_assignment PIN_132 -to selout[2]
+set_location_assignment PIN_131 -to selout[3]
+set_global_assignment -name MISC_FILE "D:/Tugas/Embeded System/Embeded System 2/VHDL 4x4 Keypad/scankdpp4.dpf"
+set_global_assignment -name MISC_FILE "G:/POLMAN/SEMESTER 4/PRAKTEK/STT1/RABU/Praktikum 5 VHDL 4X4 Keypad/scankdpp4.dpf"

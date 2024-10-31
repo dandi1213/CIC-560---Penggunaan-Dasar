@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="adc8dp">
+		<CBX_INST_ENTRY INSTANCE_NAME="|adc8dp|hexdec8:inst|LPM_ADD_SUB:ladd" CBX_FILE_NAME="add_sub_bvf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|adc8dp|hexdec8:inst|LPM_ADD_SUB:madd" CBX_FILE_NAME="add_sub_bvf.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

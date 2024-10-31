@@ -1,0 +1,56 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity FourDigitSevenSegment is
+    Port ( clk : in STD_LOGIC;
+           seg : out STD_LOGIC_VECTOR (6 downto 0);
+           digit_select : out STD_LOGIC_VECTOR (3 downto 0));
+end FourDigitSevenSegment;
+
+architecture Behavioral of FourDigitSevenSegment is
+
+    signal counter : integer := 0;
+    signal digit : integer := 0;
+    signal seg_data : STD_LOGIC_VECTOR(6 downto 0);
+
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            counter <= counter + 1;
+            if counter = 100000 then  -- Adjust this value for your clock speed
+                counter <= 0;
+                digit <= digit + 1;
+                if digit = 4 then
+                    digit <= 0;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process(digit)
+    begin
+        case digit is
+            when 0 =>
+                seg_data <= "1111001"; -- Display '1'
+                digit_select <= "1110"; -- Select the first digit
+            when 1 =>
+                seg_data <= "0100100"; -- Display '2'
+                digit_select <= "1101"; -- Select the second digit
+            when 2 =>
+                seg_data <= "0110000"; -- Display '3'
+                digit_select <= "1011"; -- Select the third digit
+            when 3 =>
+                seg_data <= "0011001"; -- Display '4'
+                digit_select <= "0111"; -- Select the fourth digit
+            when others =>
+                seg_data <= "1111111"; -- Turn off all segments
+                digit_select <= "1111"; -- Turn off all digits
+        end case;
+    end process;
+
+    seg <= seg_data;
+
+end Behavioral;

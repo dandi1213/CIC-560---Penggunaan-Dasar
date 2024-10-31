@@ -1,0 +1,566 @@
+Simulator report for STPC4K
+Wed Aug 27 09:31:26 2008
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 10.0 ms      ;
+; Simulation Netlist Size     ; 231 nodes    ;
+; Simulation Coverage         ;      58.79 % ;
+; Total Number of Transitions ; 9426661      ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone      ;
+; Device                      ; EP1C12Q240C8 ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                       ;
++--------------------------------------------------------------------------------------------+---------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                     ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------+---------------+
+; Simulation mode                                                                            ; Timing                                      ; Timing        ;
+; Start time                                                                                 ; 0 ns                                        ; 0 ns          ;
+; Vector input source                                                                        ; E:\Projects\CIC-560\6-13 stpct4k\STPC4K.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                          ; On            ;
+; Check outputs                                                                              ; Off                                         ; Off           ;
+; Report simulation coverage                                                                 ; On                                          ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                          ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                          ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                          ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                         ; Off           ;
+; Detect glitches                                                                            ; Off                                         ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                         ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                         ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                         ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                          ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                  ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                         ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On                                          ;               ;
+; Glitch Filtering                                                                           ; Off                                         ; Off           ;
++--------------------------------------------------------------------------------------------+---------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      58.79 % ;
+; Total nodes checked                                 ; 231          ;
+; Total output ports checked                          ; 313          ;
+; Total output ports with complete 1/0-value coverage ; 184          ;
+; Total output ports with no 1/0-value coverage       ; 93           ;
+; Total output ports with no 1-value coverage         ; 104          ;
+; Total output ports with no 0-value coverage         ; 118          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                           ;
++-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                               ; Output Port Name                                                                                         ; Output Port Type ;
++-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------+
+; |STPCT4K|scankdpp4:inst|sftd15:sft|\din:3:dff1                                          ; |STPCT4K|scankdpp4:inst|sftd15:sft|\din:3:dff1                                                           ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[1]                                                  ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[1]~695                                                               ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[1]                                                  ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[1]~695COUT1_713                                                      ; cout1            ;
+; |STPCT4K|stpct4:inst1|Equal0~162                                                        ; |STPCT4K|stpct4:inst1|Equal0~162                                                                         ; combout          ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[2]                                                  ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[2]~698                                                               ; cout             ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[0]                                                  ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[0]~699                                                               ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[0]                                                  ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[0]~699COUT1_712                                                      ; cout1            ;
+; |STPCT4K|stpct4:inst1|Equal0~164                                                        ; |STPCT4K|stpct4:inst1|Equal0~164                                                                         ; combout          ;
+; |STPCT4K|stpct4:inst1|Equal0~166                                                        ; |STPCT4K|stpct4:inst1|Equal0~166                                                                         ; combout          ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[3]                                                  ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[3]~704COUT1_714                                                      ; cout1            ;
+; |STPCT4K|stpct4:inst1|Equal0~168                                                        ; |STPCT4K|stpct4:inst1|Equal0~168                                                                         ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux8~24                                                           ; |STPCT4K|stpct4:inst1|Mux8~24                                                                            ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[2] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[2]                  ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[2] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|counter_cella2~COUT        ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[2] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|counter_cella2~COUTCOUT1_9 ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[3] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[3]                  ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|decod4:u2|d0                                         ; |STPCT4K|scankdpp4:inst|keybpg:key|decod4:u2|d0                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|decod4:u2|d2~34                                      ; |STPCT4K|scankdpp4:inst|keybpg:key|decod4:u2|d2~34                                                       ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|decod4:u2|d2~35                                      ; |STPCT4K|scankdpp4:inst|keybpg:key|decod4:u2|d2~35                                                       ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|decod4:u2|d2~36                                      ; |STPCT4K|scankdpp4:inst|keybpg:key|decod4:u2|d2~36                                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|scn[7]                                                            ; |STPCT4K|stpct4:inst1|scn[7]~48COUT1_62                                                                  ; cout1            ;
+; |STPCT4K|stpct4:inst1|Mux5~37                                                           ; |STPCT4K|stpct4:inst1|Mux5~37                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux5~38                                                           ; |STPCT4K|stpct4:inst1|Mux5~38                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux5~39                                                           ; |STPCT4K|stpct4:inst1|Mux5~39                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux7~4                                                            ; |STPCT4K|stpct4:inst1|Mux7~4                                                                             ; combout          ;
+; |STPCT4K|scankdpp4:inst|Mux0~4                                                          ; |STPCT4K|scankdpp4:inst|Mux0~4                                                                           ; combout          ;
+; |STPCT4K|scankdpp4:inst|Mux0~4                                                          ; |STPCT4K|scankdpp4:inst|sel[1]                                                                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux1~37                                                         ; |STPCT4K|scankdpp4:inst|Mux1~37                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|Mux1~37                                                         ; |STPCT4K|scankdpp4:inst|sel[0]                                                                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux1~38                                                         ; |STPCT4K|scankdpp4:inst|Mux1~38                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|Mux1~39                                                         ; |STPCT4K|scankdpp4:inst|Mux1~39                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[3]                                             ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[3]                                                              ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux4~17                                                         ; |STPCT4K|scankdpp4:inst|Mux4~17                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|Mux4~18                                                         ; |STPCT4K|scankdpp4:inst|Mux4~18                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[1]                                             ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[1]                                                              ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux6~22                                                         ; |STPCT4K|scankdpp4:inst|Mux6~22                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|Mux6~23                                                         ; |STPCT4K|scankdpp4:inst|Mux6~23                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[0]                                             ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[0]                                                              ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux7~36                                                         ; |STPCT4K|scankdpp4:inst|Mux7~36                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|Mux7~36                                                         ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[4]                                                              ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux7~37                                                         ; |STPCT4K|scankdpp4:inst|Mux7~37                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[2]                                             ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[2]                                                              ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux5~35                                                         ; |STPCT4K|scankdpp4:inst|Mux5~35                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|Mux5~36                                                         ; |STPCT4K|scankdpp4:inst|Mux5~36                                                                          ; combout          ;
+; |STPCT4K|scankdpp4:inst|s[6]~647                                                        ; |STPCT4K|scankdpp4:inst|s[6]~647                                                                         ; combout          ;
+; |STPCT4K|scankdpp4:inst|s[5]~648                                                        ; |STPCT4K|scankdpp4:inst|s[5]~648                                                                         ; combout          ;
+; |STPCT4K|scankdpp4:inst|s[4]~649                                                        ; |STPCT4K|scankdpp4:inst|s[4]~649                                                                         ; combout          ;
+; |STPCT4K|scankdpp4:inst|s[3]~650                                                        ; |STPCT4K|scankdpp4:inst|s[3]~650                                                                         ; combout          ;
+; |STPCT4K|scankdpp4:inst|s[2]~651                                                        ; |STPCT4K|scankdpp4:inst|s[2]~651                                                                         ; combout          ;
+; |STPCT4K|scankdpp4:inst|s[1]~652                                                        ; |STPCT4K|scankdpp4:inst|s[1]~652                                                                         ; combout          ;
+; |STPCT4K|scankdpp4:inst|s[0]~653                                                        ; |STPCT4K|scankdpp4:inst|s[0]~653                                                                         ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux1~27                                                           ; |STPCT4K|stpct4:inst1|Mux1~27                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux1~28                                                           ; |STPCT4K|stpct4:inst1|Mux1~28                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux3~27                                                           ; |STPCT4K|stpct4:inst1|Mux3~27                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux3~28                                                           ; |STPCT4K|stpct4:inst1|Mux3~28                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux2~35                                                           ; |STPCT4K|stpct4:inst1|Mux2~35                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux2~36                                                           ; |STPCT4K|stpct4:inst1|Mux2~36                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux0~25                                                           ; |STPCT4K|stpct4:inst1|Mux0~25                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|Mux0~26                                                           ; |STPCT4K|stpct4:inst1|Mux0~26                                                                            ; combout          ;
+; |STPCT4K|stpct4:inst1|segd7:dec1|s[6]~640                                               ; |STPCT4K|stpct4:inst1|segd7:dec1|s[6]~640                                                                ; combout          ;
+; |STPCT4K|stpct4:inst1|segd7:dec1|s[5]~641                                               ; |STPCT4K|stpct4:inst1|segd7:dec1|s[5]~641                                                                ; combout          ;
+; |STPCT4K|stpct4:inst1|segd7:dec1|s[4]~642                                               ; |STPCT4K|stpct4:inst1|segd7:dec1|s[4]~642                                                                ; combout          ;
+; |STPCT4K|stpct4:inst1|segd7:dec1|s[3]~643                                               ; |STPCT4K|stpct4:inst1|segd7:dec1|s[3]~643                                                                ; combout          ;
+; |STPCT4K|stpct4:inst1|segd7:dec1|s[2]~644                                               ; |STPCT4K|stpct4:inst1|segd7:dec1|s[2]~644                                                                ; combout          ;
+; |STPCT4K|stpct4:inst1|segd7:dec1|s[1]~645                                               ; |STPCT4K|stpct4:inst1|segd7:dec1|s[1]~645                                                                ; combout          ;
+; |STPCT4K|stpct4:inst1|segd7:dec1|s[0]~646                                               ; |STPCT4K|stpct4:inst1|segd7:dec1|s[0]~646                                                                ; combout          ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|\din:2:dff1                                          ; |STPCT4K|scankdpp4:inst|sftd15:sft|\din:2:dff1                                                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stk[0]                                     ; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stk[0]                                                      ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stdp[0]                                    ; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stdp[0]                                                     ; regout           ;
+; |STPCT4K|clock:inst2|scount[16]                                                         ; |STPCT4K|clock:inst2|scount[16]~98                                                                       ; cout             ;
+; |STPCT4K|clock:inst2|scount[15]                                                         ; |STPCT4K|clock:inst2|scount[15]~99COUT1_130                                                              ; cout1            ;
+; |STPCT4K|clock:inst2|Mux0~31                                                            ; |STPCT4K|clock:inst2|Mux0~31                                                                             ; combout          ;
+; |STPCT4K|clock:inst2|scount[17]                                                         ; |STPCT4K|clock:inst2|scount[17]~100                                                                      ; cout0            ;
+; |STPCT4K|clock:inst2|Mux0~32                                                            ; |STPCT4K|clock:inst2|Mux0~32                                                                             ; combout          ;
+; |STPCT4K|clock:inst2|Mux0~33                                                            ; |STPCT4K|clock:inst2|Mux0~33                                                                             ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[0]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[0]                                                 ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[0]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[0]~652                                             ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[0]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[0]~652COUT1_670                                    ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[1]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[1]~653                                             ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[1]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[1]~653COUT1_671                                    ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[2]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[2]~654                                             ; cout             ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[3]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[3]~655                                             ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[4]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[4]~656                                             ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~142                              ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~142                                               ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[5]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[5]~657                                             ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[6]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[6]~658                                             ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[7]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[7]~659                                             ; cout             ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[8]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[8]~660COUT1_676                                    ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~143                              ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~143                                               ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[9]                                ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[9]~661COUT1_677                                    ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[10]                               ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[10]~662COUT1_678                                   ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[11]                               ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[11]~663COUT1_679                                   ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[12]                               ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[12]~664                                            ; cout             ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~144                              ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~144                                               ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[13]                               ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[13]~665                                            ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[14]                               ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[14]~666                                            ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~145                              ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~145                                               ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~146                              ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~146                                               ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~147                              ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|Equal1~147                                               ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[1] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[1]                  ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[1] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|counter_cella1~COUT        ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[1] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|counter_cella1~COUTCOUT1   ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[0] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[0]                  ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[0] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|counter_cella0~COUT        ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|safe_q[0] ; |STPCT4K|scankdpp4:inst|keybpg:key|lpm_counter:count4|cntr_n8i:auto_generated|counter_cella0~COUTCOUT1_3 ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|sel4:u1|Mux0~12                                      ; |STPCT4K|scankdpp4:inst|keybpg:key|sel4:u1|Mux0~12                                                       ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|sel4:u1|Mux0~13                                      ; |STPCT4K|scankdpp4:inst|keybpg:key|sel4:u1|Mux0~13                                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|scn[6]                                                            ; |STPCT4K|stpct4:inst1|scn[6]~50COUT1_61                                                                  ; cout1            ;
+; |STPCT4K|clock:inst2|scount[5]                                                          ; |STPCT4K|clock:inst2|scount[5]                                                                           ; regout           ;
+; |STPCT4K|clock:inst2|scount[5]                                                          ; |STPCT4K|clock:inst2|scount[5]~101COUT1_122                                                              ; cout1            ;
+; |STPCT4K|clock:inst2|scount[4]                                                          ; |STPCT4K|clock:inst2|scount[4]                                                                           ; regout           ;
+; |STPCT4K|clock:inst2|scount[4]                                                          ; |STPCT4K|clock:inst2|scount[4]~102COUT1_121                                                              ; cout1            ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|\din:1:dff1                                          ; |STPCT4K|scankdpp4:inst|sftd15:sft|\din:1:dff1                                                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stk[1]                                     ; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stk[1]                                                      ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stk[2]                                     ; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stk[2]                                                      ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stdp[1]                                    ; |STPCT4K|scankdpp4:inst|keybpg:key|keyps4:u3|stdp[1]                                                     ; regout           ;
+; |STPCT4K|clock:inst2|scount[14]                                                         ; |STPCT4K|clock:inst2|scount[14]~105COUT1_129                                                             ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[0]~668                            ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[0]~668                                             ; combout          ;
+; |STPCT4K|stpct4:inst1|scn[5]                                                            ; |STPCT4K|stpct4:inst1|scn[5]~51                                                                          ; cout             ;
+; |STPCT4K|clock:inst2|scount[3]                                                          ; |STPCT4K|clock:inst2|scount[3]~106COUT1_120                                                              ; cout1            ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|\din:0:dff1                                          ; |STPCT4K|scankdpp4:inst|sftd15:sft|\din:0:dff1                                                           ; regout           ;
+; |STPCT4K|clock:inst2|scount[13]                                                         ; |STPCT4K|clock:inst2|scount[13]~107COUT1_128                                                             ; cout1            ;
+; |STPCT4K|stpct4:inst1|scn[4]                                                            ; |STPCT4K|stpct4:inst1|scn[4]~52                                                                          ; cout0            ;
+; |STPCT4K|stpct4:inst1|scn[4]                                                            ; |STPCT4K|stpct4:inst1|scn[4]~52COUT1                                                                     ; cout1            ;
+; |STPCT4K|clock:inst2|scount[2]                                                          ; |STPCT4K|clock:inst2|scount[2]~108COUT1_119                                                              ; cout1            ;
+; |STPCT4K|clock:inst2|scount[12]                                                         ; |STPCT4K|clock:inst2|scount[12]~109COUT1_127                                                             ; cout1            ;
+; |STPCT4K|stpct4:inst1|scn[3]                                                            ; |STPCT4K|stpct4:inst1|scn[3]~53                                                                          ; cout0            ;
+; |STPCT4K|stpct4:inst1|scn[3]                                                            ; |STPCT4K|stpct4:inst1|scn[3]~53COUT1_60                                                                  ; cout1            ;
+; |STPCT4K|clock:inst2|scount[1]                                                          ; |STPCT4K|clock:inst2|scount[1]~110                                                                       ; cout             ;
+; |STPCT4K|clock:inst2|scount[11]                                                         ; |STPCT4K|clock:inst2|scount[11]~111                                                                      ; cout             ;
+; |STPCT4K|stpct4:inst1|scn[2]                                                            ; |STPCT4K|stpct4:inst1|scn[2]~54                                                                          ; cout0            ;
+; |STPCT4K|stpct4:inst1|scn[2]                                                            ; |STPCT4K|stpct4:inst1|scn[2]~54COUT1_59                                                                  ; cout1            ;
+; |STPCT4K|clock:inst2|scount[0]                                                          ; |STPCT4K|clock:inst2|scount[0]                                                                           ; regout           ;
+; |STPCT4K|clock:inst2|scount[10]                                                         ; |STPCT4K|clock:inst2|scount[10]~112                                                                      ; cout0            ;
+; |STPCT4K|stpct4:inst1|scn[1]                                                            ; |STPCT4K|stpct4:inst1|scn[1]~55                                                                          ; cout0            ;
+; |STPCT4K|stpct4:inst1|scn[1]                                                            ; |STPCT4K|stpct4:inst1|scn[1]~55COUT1_58                                                                  ; cout1            ;
+; |STPCT4K|clock:inst2|scount[9]                                                          ; |STPCT4K|clock:inst2|scount[9]~113                                                                       ; cout0            ;
+; |STPCT4K|stpct4:inst1|scn[0]                                                            ; |STPCT4K|stpct4:inst1|scn[0]                                                                             ; regout           ;
+; |STPCT4K|clock:inst2|scount[8]                                                          ; |STPCT4K|clock:inst2|scount[8]~114                                                                       ; cout0            ;
+; |STPCT4K|clock:inst2|scount[7]                                                          ; |STPCT4K|clock:inst2|scount[7]~115                                                                       ; cout0            ;
+; |STPCT4K|clock:inst2|scount[6]                                                          ; |STPCT4K|clock:inst2|scount[6]~116                                                                       ; cout             ;
+; |STPCT4K|stpct4:inst1|LessThan0~263                                                     ; |STPCT4K|stpct4:inst1|LessThan0~265                                                                      ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~268                                                     ; |STPCT4K|stpct4:inst1|LessThan0~270                                                                      ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~273                                                     ; |STPCT4K|stpct4:inst1|LessThan0~275                                                                      ; cout             ;
+; |STPCT4K|stpct4:inst1|LessThan0~278                                                     ; |STPCT4K|stpct4:inst1|LessThan0~280                                                                      ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~278                                                     ; |STPCT4K|stpct4:inst1|LessThan0~280COUT1_290                                                             ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~283                                                     ; |STPCT4K|stpct4:inst1|LessThan0~285                                                                      ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~283                                                     ; |STPCT4K|stpct4:inst1|LessThan0~285COUT1_289                                                             ; cout1            ;
+; |STPCT4K|STPCLK                                                                         ; |STPCT4K|STPCLK                                                                                          ; combout          ;
+; |STPCT4K|EN_PRS                                                                         ; |STPCT4K|EN_PRS                                                                                          ; combout          ;
+; |STPCT4K|SYSCLK                                                                         ; |STPCT4K|SYSCLK                                                                                          ; combout          ;
+; |STPCT4K|COLK[2]                                                                        ; |STPCT4K|COLK[2]                                                                                         ; combout          ;
+; |STPCT4K|COLK[3]                                                                        ; |STPCT4K|COLK[3]                                                                                         ; combout          ;
+; |STPCT4K|SDO                                                                            ; |STPCT4K|SDO                                                                                             ; padio            ;
+; |STPCT4K|MCT[3]                                                                         ; |STPCT4K|MCT[3]                                                                                          ; padio            ;
+; |STPCT4K|MCT[2]                                                                         ; |STPCT4K|MCT[2]                                                                                          ; padio            ;
+; |STPCT4K|MCT[1]                                                                         ; |STPCT4K|MCT[1]                                                                                          ; padio            ;
+; |STPCT4K|MCT[0]                                                                         ; |STPCT4K|MCT[0]                                                                                          ; padio            ;
+; |STPCT4K|R0W[3]                                                                         ; |STPCT4K|R0W[3]                                                                                          ; padio            ;
+; |STPCT4K|R0W[2]                                                                         ; |STPCT4K|R0W[2]                                                                                          ; padio            ;
+; |STPCT4K|R0W[1]                                                                         ; |STPCT4K|R0W[1]                                                                                          ; padio            ;
+; |STPCT4K|R0W[0]                                                                         ; |STPCT4K|R0W[0]                                                                                          ; padio            ;
+; |STPCT4K|SCAN[3]                                                                        ; |STPCT4K|SCAN[3]                                                                                         ; padio            ;
+; |STPCT4K|SCAN[2]                                                                        ; |STPCT4K|SCAN[2]                                                                                         ; padio            ;
+; |STPCT4K|SCAN[1]                                                                        ; |STPCT4K|SCAN[1]                                                                                         ; padio            ;
+; |STPCT4K|SCAN[0]                                                                        ; |STPCT4K|SCAN[0]                                                                                         ; padio            ;
+; |STPCT4K|SCN[3]                                                                         ; |STPCT4K|SCN[3]                                                                                          ; padio            ;
+; |STPCT4K|SCN[2]                                                                         ; |STPCT4K|SCN[2]                                                                                          ; padio            ;
+; |STPCT4K|SCN[1]                                                                         ; |STPCT4K|SCN[1]                                                                                          ; padio            ;
+; |STPCT4K|SCN[0]                                                                         ; |STPCT4K|SCN[0]                                                                                          ; padio            ;
+; |STPCT4K|SEG[6]                                                                         ; |STPCT4K|SEG[6]                                                                                          ; padio            ;
+; |STPCT4K|SEG[5]                                                                         ; |STPCT4K|SEG[5]                                                                                          ; padio            ;
+; |STPCT4K|SEG[4]                                                                         ; |STPCT4K|SEG[4]                                                                                          ; padio            ;
+; |STPCT4K|SEG[3]                                                                         ; |STPCT4K|SEG[3]                                                                                          ; padio            ;
+; |STPCT4K|SEG[2]                                                                         ; |STPCT4K|SEG[2]                                                                                          ; padio            ;
+; |STPCT4K|SEG[1]                                                                         ; |STPCT4K|SEG[1]                                                                                          ; padio            ;
+; |STPCT4K|SEG[0]                                                                         ; |STPCT4K|SEG[0]                                                                                          ; padio            ;
+; |STPCT4K|SEGM[6]                                                                        ; |STPCT4K|SEGM[6]                                                                                         ; padio            ;
+; |STPCT4K|SEGM[5]                                                                        ; |STPCT4K|SEGM[5]                                                                                         ; padio            ;
+; |STPCT4K|SEGM[4]                                                                        ; |STPCT4K|SEGM[4]                                                                                         ; padio            ;
+; |STPCT4K|SEGM[3]                                                                        ; |STPCT4K|SEGM[3]                                                                                         ; padio            ;
+; |STPCT4K|SEGM[2]                                                                        ; |STPCT4K|SEGM[2]                                                                                         ; padio            ;
+; |STPCT4K|SEGM[1]                                                                        ; |STPCT4K|SEGM[1]                                                                                         ; padio            ;
+; |STPCT4K|SEGM[0]                                                                        ; |STPCT4K|SEGM[0]                                                                                         ; padio            ;
++-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                              ;
++-----------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; Node Name                                                 ; Output Port Name                                                       ; Output Port Type ;
++-----------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[4]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[4]~694                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[4]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[4]~694COUT1_715                    ; cout1            ;
+; |STPCT4K|stpct4:inst1|PRSD[4]                             ; |STPCT4K|stpct4:inst1|PRSD[4]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[9]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[9]~696COUT1_719                    ; cout1            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[8]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[8]~697                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[8]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[8]~697COUT1_718                    ; cout1            ;
+; |STPCT4K|stpct4:inst1|PRSD[9]                             ; |STPCT4K|stpct4:inst1|PRSD[9]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~163                          ; |STPCT4K|stpct4:inst1|Equal0~163                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|Equal0~163                          ; |STPCT4K|stpct4:inst1|PRSD[8]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[11]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[11]~700COUT1_721                   ; cout1            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[10]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[10]~701                            ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[10]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[10]~701COUT1_720                   ; cout1            ;
+; |STPCT4K|stpct4:inst1|PRSD[11]                            ; |STPCT4K|stpct4:inst1|PRSD[11]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~165                          ; |STPCT4K|stpct4:inst1|Equal0~165                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|Equal0~165                          ; |STPCT4K|stpct4:inst1|PRSD[10]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[12]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[12]~702                            ; cout             ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[5]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[5]~703                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|PRSD[12]                            ; |STPCT4K|stpct4:inst1|PRSD[12]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~167                          ; |STPCT4K|stpct4:inst1|Equal0~167                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[3]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[3]~704                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|Equal0~168                          ; |STPCT4K|stpct4:inst1|PRSD[15]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[13]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[13]~706                            ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[7]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[7]~707                             ; cout             ;
+; |STPCT4K|stpct4:inst1|PRSD[13]                            ; |STPCT4K|stpct4:inst1|PRSD[13]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~169                          ; |STPCT4K|stpct4:inst1|Equal0~169                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|Equal0~169                          ; |STPCT4K|stpct4:inst1|PRSD[7]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[14]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[14]~708                            ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[14]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[14]~708COUT1_723                   ; cout1            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[6]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[6]~709                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[6]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[6]~709COUT1_717                    ; cout1            ;
+; |STPCT4K|stpct4:inst1|PRSD[14]                            ; |STPCT4K|stpct4:inst1|PRSD[14]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~170                          ; |STPCT4K|stpct4:inst1|Equal0~170                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|Equal0~170                          ; |STPCT4K|stpct4:inst1|PRSD[6]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~171                          ; |STPCT4K|stpct4:inst1|Equal0~171                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|cntn_en~1                           ; |STPCT4K|stpct4:inst1|cntn_en~1                                        ; combout          ;
+; |STPCT4K|stpct4:inst1|scn[7]                              ; |STPCT4K|stpct4:inst1|scn[7]~48                                        ; cout0            ;
+; |STPCT4K|scankdpp4:inst|Mux4~17                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[11]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[15]              ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[15]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux4~18                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[7]                            ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux6~22                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[9]                            ; regout           ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[13]              ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[13]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[12]              ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[12]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux7~37                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[8]                            ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux5~35                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[6]                            ; regout           ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[14]              ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[14]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux5~36                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[10]                           ; regout           ;
+; |STPCT4K|clock:inst2|scount[20]                           ; |STPCT4K|clock:inst2|scount[20]~94                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[20]                           ; |STPCT4K|clock:inst2|scount[20]~94COUT1_134                            ; cout1            ;
+; |STPCT4K|clock:inst2|scount[22]                           ; |STPCT4K|clock:inst2|scount[22]~95                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[22]                           ; |STPCT4K|clock:inst2|scount[22]~95COUT1_135                            ; cout1            ;
+; |STPCT4K|clock:inst2|scount[18]                           ; |STPCT4K|clock:inst2|scount[18]~96                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[18]                           ; |STPCT4K|clock:inst2|scount[18]~96COUT1_132                            ; cout1            ;
+; |STPCT4K|clock:inst2|scount[15]                           ; |STPCT4K|clock:inst2|scount[15]~99                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[17]                           ; |STPCT4K|clock:inst2|scount[17]~100COUT1_131                           ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[3]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[3]~655COUT1_672  ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[4]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[4]~656COUT1_673  ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[5]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[5]~657COUT1_674  ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[6]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[6]~658COUT1_675  ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[8]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[8]~660           ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[9]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[9]~661           ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[10] ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[10]~662          ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[11] ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[11]~663          ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[13] ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[13]~665COUT1_680 ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[14] ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[14]~666COUT1_681 ; cout1            ;
+; |STPCT4K|stpct4:inst1|scn[6]                              ; |STPCT4K|stpct4:inst1|scn[6]~50                                        ; cout0            ;
+; |STPCT4K|clock:inst2|scount[5]                            ; |STPCT4K|clock:inst2|scount[5]~101                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[4]                            ; |STPCT4K|clock:inst2|scount[4]~102                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[19]                           ; |STPCT4K|clock:inst2|scount[19]~103                                    ; cout0            ;
+; |STPCT4K|clock:inst2|scount[19]                           ; |STPCT4K|clock:inst2|scount[19]~103COUT1_133                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[21]                           ; |STPCT4K|clock:inst2|scount[21]~104                                    ; cout             ;
+; |STPCT4K|clock:inst2|scount[14]                           ; |STPCT4K|clock:inst2|scount[14]~105                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~213                       ; |STPCT4K|stpct4:inst1|LessThan0~215                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~213                       ; |STPCT4K|stpct4:inst1|LessThan0~215COUT1_300                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[3]                            ; |STPCT4K|clock:inst2|scount[3]~106                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[13]                           ; |STPCT4K|clock:inst2|scount[13]~107                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~218                       ; |STPCT4K|stpct4:inst1|LessThan0~220                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~218                       ; |STPCT4K|stpct4:inst1|LessThan0~220COUT1_299                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[2]                            ; |STPCT4K|clock:inst2|scount[2]~108                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[12]                           ; |STPCT4K|clock:inst2|scount[12]~109                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~228                       ; |STPCT4K|stpct4:inst1|LessThan0~230                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~228                       ; |STPCT4K|stpct4:inst1|LessThan0~230COUT1_298                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[10]                           ; |STPCT4K|clock:inst2|scount[10]~112COUT1_126                           ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~233                       ; |STPCT4K|stpct4:inst1|LessThan0~235                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~233                       ; |STPCT4K|stpct4:inst1|LessThan0~235COUT1_297                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[9]                            ; |STPCT4K|clock:inst2|scount[9]~113COUT1_125                            ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~238                       ; |STPCT4K|stpct4:inst1|LessThan0~240                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~238                       ; |STPCT4K|stpct4:inst1|LessThan0~240COUT1_296                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[8]                            ; |STPCT4K|clock:inst2|scount[8]~114COUT1_124                            ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~243                       ; |STPCT4K|stpct4:inst1|LessThan0~245                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~243                       ; |STPCT4K|stpct4:inst1|LessThan0~245COUT1_295                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[7]                            ; |STPCT4K|clock:inst2|scount[7]~115COUT1_123                            ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~248                       ; |STPCT4K|stpct4:inst1|LessThan0~250                                    ; cout             ;
+; |STPCT4K|stpct4:inst1|LessThan0~253                       ; |STPCT4K|stpct4:inst1|LessThan0~255COUT1_294                           ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~258                       ; |STPCT4K|stpct4:inst1|LessThan0~260                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~258                       ; |STPCT4K|stpct4:inst1|LessThan0~260COUT1_293                           ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~263                       ; |STPCT4K|stpct4:inst1|LessThan0~265COUT1_292                           ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~268                       ; |STPCT4K|stpct4:inst1|LessThan0~270COUT1_291                           ; cout1            ;
+; |STPCT4K|EN_RUN                                           ; |STPCT4K|EN_RUN                                                        ; combout          ;
+; |STPCT4K|sel[0]                                           ; |STPCT4K|sel[0]                                                        ; combout          ;
+; |STPCT4K|sel[1]                                           ; |STPCT4K|sel[1]                                                        ; combout          ;
+; |STPCT4K|sel[2]                                           ; |STPCT4K|sel[2]                                                        ; combout          ;
+; |STPCT4K|CLEAR                                            ; |STPCT4K|CLEAR                                                         ; combout          ;
+; |STPCT4K|COLK[1]                                          ; |STPCT4K|COLK[1]                                                       ; combout          ;
+; |STPCT4K|COLK[0]                                          ; |STPCT4K|COLK[0]                                                       ; combout          ;
++-----------------------------------------------------------+------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                              ;
++-----------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; Node Name                                                 ; Output Port Name                                                       ; Output Port Type ;
++-----------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[4]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[4]~694                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|PRSD[4]                             ; |STPCT4K|stpct4:inst1|PRSD[4]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~162                          ; |STPCT4K|stpct4:inst1|PRSD[1]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[9]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[9]~696                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[9]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[9]~696COUT1_719                    ; cout1            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[8]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[8]~697COUT1_718                    ; cout1            ;
+; |STPCT4K|stpct4:inst1|PRSD[9]                             ; |STPCT4K|stpct4:inst1|PRSD[9]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~163                          ; |STPCT4K|stpct4:inst1|Equal0~163                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|Equal0~163                          ; |STPCT4K|stpct4:inst1|PRSD[8]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|PRSD[2]                             ; |STPCT4K|stpct4:inst1|PRSD[2]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~164                          ; |STPCT4K|stpct4:inst1|PRSD[0]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[11]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[11]~700                            ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[11]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[11]~700COUT1_721                   ; cout1            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[10]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[10]~701COUT1_720                   ; cout1            ;
+; |STPCT4K|stpct4:inst1|PRSD[11]                            ; |STPCT4K|stpct4:inst1|PRSD[11]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~165                          ; |STPCT4K|stpct4:inst1|Equal0~165                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|Equal0~165                          ; |STPCT4K|stpct4:inst1|PRSD[10]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[12]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[12]~702                            ; cout             ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[5]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[5]~703                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[5]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[5]~703COUT1_716                    ; cout1            ;
+; |STPCT4K|stpct4:inst1|PRSD[12]                            ; |STPCT4K|stpct4:inst1|PRSD[12]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~167                          ; |STPCT4K|stpct4:inst1|PRSD[5]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[3]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[3]~704                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|PRSD[3]                             ; |STPCT4K|stpct4:inst1|PRSD[3]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~168                          ; |STPCT4K|stpct4:inst1|PRSD[15]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[13]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[13]~706                            ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[13]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[13]~706COUT1_722                   ; cout1            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[7]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[7]~707                             ; cout             ;
+; |STPCT4K|stpct4:inst1|PRSD[13]                            ; |STPCT4K|stpct4:inst1|PRSD[13]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~169                          ; |STPCT4K|stpct4:inst1|Equal0~169                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|Equal0~169                          ; |STPCT4K|stpct4:inst1|PRSD[7]                                          ; regout           ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[14]                   ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[14]~708                            ; cout0            ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[6]                    ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[6]~709                             ; cout0            ;
+; |STPCT4K|stpct4:inst1|PRSD[14]                            ; |STPCT4K|stpct4:inst1|PRSD[14]                                         ; regout           ;
+; |STPCT4K|stpct4:inst1|Equal0~170                          ; |STPCT4K|stpct4:inst1|Equal0~170                                       ; combout          ;
+; |STPCT4K|stpct4:inst1|Equal0~170                          ; |STPCT4K|stpct4:inst1|PRSD[6]                                          ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|datalt[3]              ; |STPCT4K|scankdpp4:inst|keybpg:key|datalt[3]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|datalt[2]              ; |STPCT4K|scankdpp4:inst|keybpg:key|datalt[2]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|datalt[1]              ; |STPCT4K|scankdpp4:inst|keybpg:key|datalt[1]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|datalt[0]              ; |STPCT4K|scankdpp4:inst|keybpg:key|datalt[0]                           ; regout           ;
+; |STPCT4K|stpct4:inst1|scn[7]                              ; |STPCT4K|stpct4:inst1|scn[7]~48                                        ; cout0            ;
+; |STPCT4K|scankdpp4:inst|Mux4~17                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[11]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[15]              ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[15]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux4~18                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[7]                            ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux6~22                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[9]                            ; regout           ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[13]              ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[13]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux6~23                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[5]                            ; regout           ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[12]              ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[12]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux7~37                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[8]                            ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux5~35                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[6]                            ; regout           ;
+; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[14]              ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[14]                           ; regout           ;
+; |STPCT4K|scankdpp4:inst|Mux5~36                           ; |STPCT4K|scankdpp4:inst|sftd15:sft|dataq[10]                           ; regout           ;
+; |STPCT4K|clock:inst2|scount[20]                           ; |STPCT4K|clock:inst2|scount[20]~94                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[20]                           ; |STPCT4K|clock:inst2|scount[20]~94COUT1_134                            ; cout1            ;
+; |STPCT4K|clock:inst2|scount[22]                           ; |STPCT4K|clock:inst2|scount[22]~95                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[22]                           ; |STPCT4K|clock:inst2|scount[22]~95COUT1_135                            ; cout1            ;
+; |STPCT4K|clock:inst2|scount[18]                           ; |STPCT4K|clock:inst2|scount[18]~96COUT1_132                            ; cout1            ;
+; |STPCT4K|clock:inst2|Mux0~29                              ; |STPCT4K|clock:inst2|Mux0~29                                           ; combout          ;
+; |STPCT4K|clock:inst2|Mux0~30                              ; |STPCT4K|clock:inst2|Mux0~30                                           ; combout          ;
+; |STPCT4K|clock:inst2|scount[15]                           ; |STPCT4K|clock:inst2|scount[15]~99                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[17]                           ; |STPCT4K|clock:inst2|scount[17]~100COUT1_131                           ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~208                       ; |STPCT4K|stpct4:inst1|LessThan0~208                                    ; combout          ;
+; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[9]~710                ; |STPCT4K|stpct4:inst1|cnt16:cntn|ct[9]~710                             ; combout          ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[3]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[3]~655COUT1_672  ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[4]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[4]~656COUT1_673  ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[5]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[5]~657COUT1_674  ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[6]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[6]~658COUT1_675  ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[8]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[8]~660           ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[9]  ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[9]~661           ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[10] ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[10]~662          ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[11] ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[11]~663          ; cout0            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[13] ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[13]~665COUT1_680 ; cout1            ;
+; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[14] ; |STPCT4K|scankdpp4:inst|keybpg:key|debounceg:u0|count[14]~666COUT1_681 ; cout1            ;
+; |STPCT4K|stpct4:inst1|scn[6]                              ; |STPCT4K|stpct4:inst1|scn[6]~50                                        ; cout0            ;
+; |STPCT4K|clock:inst2|scount[5]                            ; |STPCT4K|clock:inst2|scount[5]~101                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[4]                            ; |STPCT4K|clock:inst2|scount[4]~102                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[19]                           ; |STPCT4K|clock:inst2|scount[19]~103                                    ; cout0            ;
+; |STPCT4K|clock:inst2|scount[19]                           ; |STPCT4K|clock:inst2|scount[19]~103COUT1_133                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[21]                           ; |STPCT4K|clock:inst2|scount[21]~104                                    ; cout             ;
+; |STPCT4K|clock:inst2|scount[14]                           ; |STPCT4K|clock:inst2|scount[14]~105                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~213                       ; |STPCT4K|stpct4:inst1|LessThan0~215                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~213                       ; |STPCT4K|stpct4:inst1|LessThan0~215COUT1_300                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[3]                            ; |STPCT4K|clock:inst2|scount[3]~106                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[13]                           ; |STPCT4K|clock:inst2|scount[13]~107                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~218                       ; |STPCT4K|stpct4:inst1|LessThan0~220                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~218                       ; |STPCT4K|stpct4:inst1|LessThan0~220COUT1_299                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[2]                            ; |STPCT4K|clock:inst2|scount[2]~108                                     ; cout0            ;
+; |STPCT4K|clock:inst2|scount[12]                           ; |STPCT4K|clock:inst2|scount[12]~109                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~223                       ; |STPCT4K|stpct4:inst1|LessThan0~225                                    ; cout             ;
+; |STPCT4K|stpct4:inst1|LessThan0~228                       ; |STPCT4K|stpct4:inst1|LessThan0~230                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~228                       ; |STPCT4K|stpct4:inst1|LessThan0~230COUT1_298                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[10]                           ; |STPCT4K|clock:inst2|scount[10]~112COUT1_126                           ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~233                       ; |STPCT4K|stpct4:inst1|LessThan0~235                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~233                       ; |STPCT4K|stpct4:inst1|LessThan0~235COUT1_297                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[9]                            ; |STPCT4K|clock:inst2|scount[9]~113COUT1_125                            ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~238                       ; |STPCT4K|stpct4:inst1|LessThan0~240                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~238                       ; |STPCT4K|stpct4:inst1|LessThan0~240COUT1_296                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[8]                            ; |STPCT4K|clock:inst2|scount[8]~114COUT1_124                            ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~243                       ; |STPCT4K|stpct4:inst1|LessThan0~245                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~243                       ; |STPCT4K|stpct4:inst1|LessThan0~245COUT1_295                           ; cout1            ;
+; |STPCT4K|clock:inst2|scount[7]                            ; |STPCT4K|clock:inst2|scount[7]~115COUT1_123                            ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~253                       ; |STPCT4K|stpct4:inst1|LessThan0~255                                    ; cout0            ;
+; |STPCT4K|stpct4:inst1|LessThan0~253                       ; |STPCT4K|stpct4:inst1|LessThan0~255COUT1_294                           ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~258                       ; |STPCT4K|stpct4:inst1|LessThan0~260COUT1_293                           ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~263                       ; |STPCT4K|stpct4:inst1|LessThan0~265COUT1_292                           ; cout1            ;
+; |STPCT4K|stpct4:inst1|LessThan0~268                       ; |STPCT4K|stpct4:inst1|LessThan0~270COUT1_291                           ; cout1            ;
+; |STPCT4K|EN_RUN                                           ; |STPCT4K|EN_RUN                                                        ; combout          ;
+; |STPCT4K|sel[0]                                           ; |STPCT4K|sel[0]                                                        ; combout          ;
+; |STPCT4K|sel[1]                                           ; |STPCT4K|sel[1]                                                        ; combout          ;
+; |STPCT4K|sel[2]                                           ; |STPCT4K|sel[2]                                                        ; combout          ;
+; |STPCT4K|CLEAR                                            ; |STPCT4K|CLEAR                                                         ; combout          ;
+; |STPCT4K|COLK[1]                                          ; |STPCT4K|COLK[1]                                                       ; combout          ;
+; |STPCT4K|COLK[0]                                          ; |STPCT4K|COLK[0]                                                       ; combout          ;
+; |STPCT4K|CMPO                                             ; |STPCT4K|CMPO                                                          ; padio            ;
+; |STPCT4K|KEY_DATA[3]                                      ; |STPCT4K|KEY_DATA[3]                                                   ; padio            ;
+; |STPCT4K|KEY_DATA[2]                                      ; |STPCT4K|KEY_DATA[2]                                                   ; padio            ;
+; |STPCT4K|KEY_DATA[1]                                      ; |STPCT4K|KEY_DATA[1]                                                   ; padio            ;
+; |STPCT4K|KEY_DATA[0]                                      ; |STPCT4K|KEY_DATA[0]                                                   ; padio            ;
++-----------------------------------------------------------+------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 6.0 Build 178 04/27/2006 SJ Full Version
+    Info: Processing started: Wed Aug 27 09:26:46 2008
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off STPCT4K -c STPC4K
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of STPC4K.vwf called STPC4K.sim_ori.vwf is created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      58.79 %
+Info: Number of transitions in simulation is 9426661
+Info: Vector file STPC4K.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Processing ended: Wed Aug 27 09:31:25 2008
+    Info: Elapsed time: 00:04:40
+
+
